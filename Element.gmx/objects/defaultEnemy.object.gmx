@@ -28,13 +28,13 @@
             <string>/// Initial values
 
 instanceHealth = 12;
-runSpeed = 5;
-walkSpeed = 2;
+runSpeed = 150 / room_speed;
+walkSpeed = 60 / room_speed;
 walking = false;
 walkTimer = 0;
 fall = 0;
-fallMax = 20;
-fallMult = 1;
+fallMax = 600 / room_speed;
+fallMult = 30 / room_speed;
 left = true;
 right = false;
 dead = false;
@@ -42,7 +42,7 @@ hitByEarth = false;
 hitByWater = false;
 
 randomize();
-alarm[0] = irandom(30);
+alarm[0] = irandom(room_speed);
 </string>
           </argument>
         </arguments>
@@ -91,7 +91,7 @@ hitByWater = false;
             <kind>1</kind>
             <string>/// Start move
 
-walkTimer = 15;
+walkTimer =  room_speed / 2;
 walking = true;
 walkDirection = irandom(1);
 </string>
@@ -138,7 +138,7 @@ if(!dead) {
                 global.enemyHitId = noone;
                 global.enemyHitType = noone;
                 hitByWater = true; 
-                alarm[1] = 60; 
+                alarm[1] = room_speed * 2; 
             }
         }
     }
@@ -153,6 +153,18 @@ if(!dead) {
 if(instanceHealth &lt;= 0) {
     dead = true;
     instance_change(defaultEnemyDead, true);
+}
+
+colliding = instance_place(x, y, notPlayerSolids);
+
+if(colliding != noone) {
+    if(x != colliding.x) {
+        if(x &lt; colliding.x + colliding.sprite_width/2) {
+            x = colliding.x - 11;
+        } else {
+            x = colliding.x + 32;
+        }
+    }
 }
 </string>
           </argument>
@@ -218,7 +230,7 @@ if(!dead) {
                     walkTimer--;
                 } else {
                     walking = false;
-                    alarm[0] = irandom(30);
+                    alarm[0] = irandom(room_speed);
                 }
             
                 if(walking) {

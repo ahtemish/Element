@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// Initial values
 
-flingHeight = 6;
+flingHeight = 180 / room_speed;
 goingDown = false;
 </string>
           </argument>
@@ -60,51 +60,41 @@ if(flingHeight &gt;= 6 &amp;&amp; goingDown) {
     if(flingHeight &lt;= 2 &amp;&amp; !goingDown) {
         goingDown = true;
     }
-    if(place_free(x, y - flingHeight)
-       || place_meeting(x, y - flingHeight, enemy)) {
+    if(place_free(x, y - flingHeight * 0.5)
+       || place_meeting(x, y - flingHeight * 0.5, enemy)) {
         if(goingDown) {
             y += flingHeight * 0.5;
         } else {
             y -= flingHeight * 0.5;
         }
     } else {
-        y -= (distance_to_object(instance_nearest(x, y - flingHeight, all)) - 1);
-        if(goingDown) {
-            flingHeight = 6;
-        } else {
-            flingHeight = 2;
-        }
+        hitByEarth = false;
+        instance_change(defaultEnemy, false);
     }
     
     if(left) {
-        if(place_free(x + flingHeight * 1.5, y) 
-           || place_meeting(x + flingHeight * 1.5, y, enemy)) {
+        image_index = defaultEnemyStandLeft_spr;
+        if(place_free(x + flingHeight * 2, y) 
+           || place_meeting(x + flingHeight * 2, y, enemy)) {
             x += flingHeight * 2;
         } else {
-            x += (distance_to_object(instance_nearest(x + flingHeight * 1.5, y, all)) - 1);
-            if(goingDown) {
-                flingHeight = 6;
-            } else {
-                flingHeight = 2;
-            }
+            hitByEarth = false;
+            instance_change(defaultEnemy, false);
         }
     } else {
-        if(place_free(x - flingHeight * 1.5, y) 
-           || place_meeting(x - flingHeight * 1.5, y, enemy)) {
+        image_index = defaultEnemyStandRight_spr;
+        if(place_free(x - flingHeight * 2, y) 
+           || place_meeting(x - flingHeight * 2, y, enemy)) {
             x -= flingHeight * 2;
         } else {
-            x -= (distance_to_object(instance_nearest(x - flingHeight * 1.5, y, all)) - 1);
-            if(goingDown) {
-                flingHeight = 6;
-            } else {
-                flingHeight = 2;
-            }
+            hitByEarth = false;
+            instance_change(defaultEnemy, false);
         }
     }
     if(goingDown) {
-        flingHeight++;
+        flingHeight += 30 / room_speed;
     } else {
-        flingHeight--;
+        flingHeight -= 30 / room_speed;
     }
 }
 </string>

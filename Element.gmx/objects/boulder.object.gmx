@@ -30,8 +30,8 @@
 moveRight = false;
 moveLeft = false;
 fall = 0;
-fallMult = 1;
-fallMax = 20;
+fallMult = 30 / room_speed;
+fallMax = 600 / room_speed;
 </string>
           </argument>
         </arguments>
@@ -93,12 +93,12 @@ else {
 }
 
 if(moveRight) {
-    if(place_free(x + 3, y)) {
-        x += 3;
+    if(place_free(x + 90 / room_speed, y)) {
+        x += 90 / room_speed;
     }
 } else if(moveLeft) {
-    if(place_free(x - 3, y)) {
-        x -= 3;
+    if(place_free(x - 90 / room_speed, y)) {
+        x -= 90 / room_speed;
     }
 }
 </string>

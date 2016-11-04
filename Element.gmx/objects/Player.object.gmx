@@ -25,13 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initiate variables
+            <string>///Initial values
 {
     jump = 0;
     fall = 0;
-    fallMax = 20;
-    fallMult = 1;
-    movement = 4;
+    fallMax = 600 / room_speed;
+    fallMult = 30 / room_speed;
+    movement = 120 / room_speed;
     left = false;
     right = true;
     runLeft = false;
@@ -205,6 +205,39 @@ instance_deactivate_object(falseTrapDoor);
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Unstick from collisions
+
+colliding = instance_place(x, y, notPlayerSolids);
+
+if(colliding != noone &amp;&amp; colliding != trapDoor) {
+    if(x &lt; colliding.x + colliding.sprite_width/2) {
+        x = colliding.x - 11;
+    } else {
+        x = colliding.x + 32;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -226,15 +259,15 @@ instance_deactivate_object(falseTrapDoor);
 
 if(place_meeting(x, y, water)) {
     inWater = true;
-    fallMult = 0.5;
-    fallMax = 5;
+    fallMult = 15 / room_speed;
+    fallMax = 300 / room_speed;
     if(waterAbility) {
         fall = 0;
     }
 } else {
     inWater = false;
-    fallMult = 1;
-    fallMax = 20;
+    fallMult = 30 / room_speed;
+    fallMax = 600 / room_speed;
 }
 
 if(!ladder) {
@@ -244,20 +277,22 @@ if(!ladder) {
             if(jumpHeight == 0) {
                 jump = false;
             } else {
-                if(place_free(x, y - jumpHeight)) {
+                if(place_free(x, y - jumpHeight)
+                   || place_meeting(x, y - jumpHeight, trapDoor)) {
                     y -= jumpHeight;
-                    jumpHeight--;
-                } else {
+                    if(jumpHeight == 15 &amp;&amp; room_speed == 60) {
+                        jumpHeight -= 5;
+                    } else {
+                        jumpHeight -= 30 / room_speed;
+                    }
                     if(place_meeting(x, y - jumpHeight, trapDoor)) {
-                        y -= jumpHeight;
-                        jumpHeight--;
                         instance_deactivate_object(trapDoor);
                         instance_activate_object(falseTrapDoor);
-                        alarm[0] = 10;
-                    } else {
-                        y -= (distance_to_object(instance_nearest(x, y - jumpHeight, notPlayerSolids)) - 1);
-                        jumpHeight = 0;
+                        alarm[0] = room_speed / 3;
                     }
+                } else {
+                    y -= (distance_to_object(instance_nearest(x, y - jumpHeight, notPlayerSolids)) - 1);
+                    jumpHeight = 0;
                 }            
             }
         } else {
@@ -276,12 +311,17 @@ if(!ladder) {
     if(waterJump &gt; 0) {
         if(place_free(x, y - waterJump)) {
             y -= waterJump;
-            waterJump--;
+            waterJump -= 30 / room_speed;
         } else {
             y -= (distance_to_object(instance_nearest(x, y - waterJump, notPlayerSolids)) - 1);
             waterJump = 0;
         }
     }
+}
+if(place_meeting(x, y, trapDoor)) {
+    instance_deactivate_object(trapDoor);
+    instance_activate_object(falseTrapDoor);
+    alarm[0] = room_speed / 3;
 }
 </string>
           </argument>
@@ -372,24 +412,24 @@ if(airAbility) {
     
 if(runRight) {
     effectiveSpeed *= 1.5;
-    alarm[2]++;
+    alarm[2] += room_speed / 30;
 }
 if(!boulderMove) {
     if (place_free(x + effectiveSpeed, y)) {
         x += effectiveSpeed;
         ladder = false;
     }  else if(place_meeting(x + effectiveSpeed, y, boulder) &amp;&amp; earthAbility) {
-        alarm[4] = 10;
+        alarm[4] = room_speed / 3;
         boulderMove = true;
         with(instance_nearest(x + effectiveSpeed, y, boulder)) {
             moveRight = true;
-            alarm[0] = 10;
+            alarm[0] = room_speed / 3;
         }
         runRight = false;
     } else {
         if(place_meeting(x + effectiveSpeed, y, ladderRight)) {
-            x += distance_to_object(instance_place(x + effectiveSpeed, y, ladderRight)) - 4;
-            y -= 3;
+            x = instance_place(x + effectiveSpeed, y, ladderRight).x + 18;
+            y -= 90 / room_speed;
             ladder = true;
             runRight = false;
         } else {
@@ -492,24 +532,24 @@ if(airAbility) {
     
 if(runLeft) {
     effectiveSpeed *= 1.5;
-    alarm[1]++;
+    alarm[1] += room_speed / 30;
 }
 if(!boulderMove) {
     if (place_free(x - effectiveSpeed,y)) {
         x -= effectiveSpeed;
         ladder = false;
     } else if(place_meeting(x - effectiveSpeed, y, boulder) &amp;&amp; earthAbility) {
-        alarm[4] = 10;
+        alarm[4] = room_speed / 3;
         boulderMove = true;
         with(instance_nearest(x - effectiveSpeed, y, boulder)) {
             moveLeft = true;
-            alarm[0] = 10;
+            alarm[0] = room_speed / 3;
         }
         runLeft = false;
     }else {
         if(place_meeting(x - effectiveSpeed, y, ladderLeft)) {
-            x -= (distance_to_object(instance_place(x - effectiveSpeed, y, ladderLeft)) - 4);
-            y -= 3;
+            x = instance_place(x - effectiveSpeed, y, ladderLeft).x + 4;
+            y -= 90 / room_speed;
             ladder = true;
             runLeft = false;
         } else {
@@ -678,9 +718,10 @@ if(left) {
           <argument>
             <kind>1</kind>
             <string>/// Drop
-if(place_meeting(x, y + 1, trapDoor)) {
+if(place_meeting(x, y + 1, trapDoor) &amp;&amp; !ladder) {
     instance_deactivate_object(trapDoor);
     instance_activate_object(falseTrapDoor);
+    alarm[0] = room_speed / 3;
 }
 </string>
           </argument>
@@ -756,7 +797,7 @@ if(!punch) {
     punch = true;
     
     if(airAbility) {
-        alarm[3] = 4; 
+        alarm[3] = room_speed * (4/30); 
         if(left) {
             sprite_index = punchLeftAir_spr;
             for(i = 1; i &lt; 6; i++) {
@@ -777,7 +818,7 @@ if(!punch) {
             }
         }
     } else if(earthAbility) {
-        alarm[3] = 12;
+        alarm[3] = room_speed * (12/30);
         if(left) {
             sprite_index = punchLeftEarth_spr;
             for(i = 1; i &lt; 10; i++) {
@@ -798,7 +839,7 @@ if(!punch) {
             }
         }
     } else if(waterAbility) {
-        alarm[3] = 8;
+        alarm[3] = room_speed * (8/30);
         if(left) {
             sprite_index = punchLeftWater_spr;
             for(i = 1; i &lt; 8; i++) {
@@ -819,7 +860,7 @@ if(!punch) {
             }
         }
     } else {
-        alarm[3] = 8;
+        alarm[3] = room_speed * (8/30);
         if(left) {
             sprite_index = punchLeftFire_spr;
             instance_create(x - 9, y + 8, fireball);
@@ -852,7 +893,7 @@ if(!punch) {
           <argument>
             <kind>1</kind>
             <string>///Start timer on reactivation
-alarm[0] = 5;
+alarm[0] = room_speed / 6;
 </string>
           </argument>
         </arguments>
@@ -877,7 +918,7 @@ alarm[0] = 5;
             <kind>1</kind>
             <string>/// Start run timer
 runRight = true;
-alarm[2] = 5;
+alarm[2] = room_speed / 6;
 </string>
           </argument>
         </arguments>
@@ -902,7 +943,7 @@ alarm[2] = 5;
             <kind>1</kind>
             <string>/// Start run timer
 runLeft = true;
-alarm[1] = 5;
+alarm[1] = room_speed / 6;
 </string>
           </argument>
         </arguments>

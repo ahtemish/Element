@@ -79,7 +79,6 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <scripts name="scripts"/>
   <objects name="objects">
     <object>objects\Player</object>
     <objects name="Terrain">
@@ -109,6 +108,7 @@
     <object>objects\boulder</object>
     <object>objects\notPlayer</object>
     <object>objects\notPlayerSolids</object>
+    <object>objects\viewScreen</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\prototypeLevel</room>
