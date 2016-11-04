@@ -20,6 +20,6 @@
   <width>11</width>
   <height>32</height>
   <frames>
-    <frame index="0">images\punchRight_spr_0.png</frame>
+    <frame index="0">images\punchLeftEarth_spr_0.png</frame>
   </frames>
 </sprite>

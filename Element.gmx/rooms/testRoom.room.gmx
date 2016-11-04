@@ -177,7 +177,7 @@
     <instance objName="falseTrapDoor" x="420" y="105" name="inst_8AFC118C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="falseTrapDoor" x="399" y="105" name="inst_3AE0F13C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ground" x="273" y="84" name="inst_B7ECD2B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="firePerson" x="651" y="84" name="inst_FD573B82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="defaultEnemy" x="651" y="84" name="inst_FD573B82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

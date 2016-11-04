@@ -6,14 +6,45 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\fireballRight_spr</sprite>
+    <sprite>sprites\fireballLeft_spr</sprite>
+    <sprite>sprites\boulder_spr</sprite>
     <sprites name="Player">
       <sprites name="Left">
-        <sprite>sprites\standLeft_spr</sprite>
-        <sprite>sprites\punchLeft_spr</sprite>
+        <sprites name="Air">
+          <sprite>sprites\standLeftAir_spr</sprite>
+          <sprite>sprites\punchLeftAir_spr</sprite>
+        </sprites>
+        <sprites name="Earth">
+          <sprite>sprites\standLeftEarth_spr</sprite>
+          <sprite>sprites\punchLeftEarth_spr</sprite>
+        </sprites>
+        <sprites name="Water">
+          <sprite>sprites\standLeftWater_spr</sprite>
+          <sprite>sprites\punchLeftWater_spr</sprite>
+        </sprites>
+        <sprites name="Fire">
+          <sprite>sprites\standLeftFire_spr</sprite>
+          <sprite>sprites\punchLeftFire_spr</sprite>
+        </sprites>
       </sprites>
       <sprites name="Right">
-        <sprite>sprites\standRight_spr</sprite>
-        <sprite>sprites\punchRight_spr</sprite>
+        <sprites name="Air">
+          <sprite>sprites\standRightAir_spr</sprite>
+          <sprite>sprites\punchRightAir_spr</sprite>
+        </sprites>
+        <sprites name="Earth">
+          <sprite>sprites\standRightEarth_spr</sprite>
+          <sprite>sprites\punchRightEarth_spr</sprite>
+        </sprites>
+        <sprites name="Water">
+          <sprite>sprites\standRightWater_spr</sprite>
+          <sprite>sprites\punchRightWater_spr</sprite>
+        </sprites>
+        <sprites name="Fire">
+          <sprite>sprites\standRightFire_spr</sprite>
+          <sprite>sprites\punchRightFire_spr</sprite>
+        </sprites>
       </sprites>
       <sprite>sprites\playerMask_spr</sprite>
     </sprites>
@@ -27,18 +58,20 @@
       <sprite>sprites\groundSideLeft_spr</sprite>
       <sprite>sprites\ladderLeft_spr</sprite>
       <sprite>sprites\ladderRight_spr</sprite>
+      <sprite>sprites\waterTop_spr</sprite>
+      <sprite>sprites\water_spr</sprite>
     </sprites>
     <sprites name="Enemies">
-      <sprites name="Fire Person">
+      <sprites name="defaultEnemy">
         <sprites name="Left">
-          <sprite>sprites\firePersonStandLeft_spr</sprite>
-          <sprite>sprites\firePersonPunchLeft_spr</sprite>
-          <sprite>sprites\firePersonDieLeft_spr</sprite>
+          <sprite>sprites\defaultEnemyStandLeft_spr</sprite>
+          <sprite>sprites\defaultEnemyPunchLeft_spr</sprite>
+          <sprite>sprites\defaultEnemyDieLeft_spr</sprite>
         </sprites>
         <sprites name="Right">
-          <sprite>sprites\firePersonStandRight_spr</sprite>
-          <sprite>sprites\firePersonPunchRight_spr</sprite>
-          <sprite>sprites\firePersonDieRight_spr</sprite>
+          <sprite>sprites\defaultEnemyStandRight_spr</sprite>
+          <sprite>sprites\defaultEnemyPunchRight_spr</sprite>
+          <sprite>sprites\defaultEnemyDieRight_spr</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -51,25 +84,31 @@
   <objects name="objects">
     <object>objects\Player</object>
     <objects name="Terrain">
+      <object>objects\terrain</object>
+      <object>objects\ground</object>
+      <object>objects\groundSideRight</object>
+      <object>objects\groundSideLeft</object>
+      <object>objects\groundCornerTopRight</object>
+      <object>objects\groundCornerTopLeft</object>
+      <object>objects\groundDirt</object>
       <object>objects\trapDoor</object>
       <object>objects\falseTrapDoor</object>
-      <objects name="Ground">
-        <object>objects\ground</object>
-        <object>objects\groundSideRight</object>
-        <object>objects\groundSideLeft</object>
-        <object>objects\groundCornerTopRight</object>
-        <object>objects\groundCornerTopLeft</object>
-        <object>objects\groundDirt</object>
-      </objects>
       <object>objects\ladderLeft</object>
       <object>objects\ladderRight</object>
+      <object>objects\waterTop</object>
+      <object>objects\water</object>
+      <object>objects\backGroundTerrain</object>
     </objects>
     <objects name="Enemies">
       <object>objects\enemy</object>
-      <object>objects\firePerson</object>
-      <object>objects\firePersonDead</object>
+      <object>objects\defaultEnemy</object>
+      <object>objects\defaultEnemyDead</object>
+      <object>objects\defaultEnemyFlung</object>
     </objects>
+    <object>objects\fireball</object>
+    <object>objects\boulder</object>
     <object>objects\notPlayer</object>
+    <object>objects\notPlayerSolids</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\prototypeLevel</room>
