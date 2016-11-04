@@ -60,6 +60,7 @@
       <sprite>sprites\ladderRight_spr</sprite>
       <sprite>sprites\waterTop_spr</sprite>
       <sprite>sprites\water_spr</sprite>
+      <sprite>sprites\sign_spr</sprite>
     </sprites>
     <sprites name="Enemies">
       <sprites name="defaultEnemy">
@@ -78,9 +79,7 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <scripts name="scripts">
-    <script>scripts\Gravity.gml</script>
-  </scripts>
+  <scripts name="scripts"/>
   <objects name="objects">
     <object>objects\Player</object>
     <objects name="Terrain">
@@ -95,9 +94,10 @@
       <object>objects\falseTrapDoor</object>
       <object>objects\ladderLeft</object>
       <object>objects\ladderRight</object>
+      <object>objects\backGroundTerrain</object>
       <object>objects\waterTop</object>
       <object>objects\water</object>
-      <object>objects\backGroundTerrain</object>
+      <object>objects\signPost</object>
     </objects>
     <objects name="Enemies">
       <object>objects\enemy</object>
