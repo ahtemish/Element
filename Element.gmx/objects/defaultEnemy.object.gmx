@@ -40,9 +40,72 @@ right = false;
 dead = false;
 hitByEarth = false;
 hitByWater = false;
+reverse = false;
+minimumDistance = 6;
+damage = 1;
+punch = false;
+
 
 randomize();
 alarm[0] = irandom(room_speed);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Can punch again
+
+punch = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>other</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Stop punch
+
+alarm[3] = room_speed * (16/30);
+if(hitByWater) {
+    alarm[3] *= 3;
+}
+if(left) {
+    sprite_index = defaultEnemyStandLeft_spr;
+} else {
+    sprite_index = defaultEnemyStandRight_spr;
+}
 </string>
           </argument>
         </arguments>
@@ -131,7 +194,16 @@ if(!dead) {
                 global.enemyHit = false;
                 global.enemyHitId = noone;
                 global.enemyHitType = noone;
-                hitByEarth = true;  
+                hitByEarth = true;
+                for(i = 0; i &lt; instance_number(enemy); i++) {
+                    anotherEnemy = instance_find(enemy, i);
+                    if(abs(anotherEnemy.x - x) &lt; sprite_width) {
+                        with(anotherEnemy) {
+                            instanceHealth -= 3;
+                            hitByEarth = true;
+                        }
+                    }
+                }
             }  else if(global.enemyHitType == "water") {
                 instanceHealth -= 4;
                 global.enemyHit = false;
@@ -148,23 +220,12 @@ if(!dead) {
             instance_destroy();
         }
     }
+    CollisionChecking();
 }
     
 if(instanceHealth &lt;= 0) {
     dead = true;
     instance_change(defaultEnemyDead, true);
-}
-
-colliding = instance_place(x, y, notPlayerSolids);
-
-if(colliding != noone) {
-    if(x != colliding.x) {
-        if(x &lt; colliding.x + colliding.sprite_width/2) {
-            x = colliding.x - 11;
-        } else {
-            x = colliding.x + 32;
-        }
-    }
 }
 </string>
           </argument>
@@ -194,64 +255,75 @@ if(!dead) {
     if(hitByEarth) {
         instance_change(defaultEnemyFlung, true);
     } else {
+        Gravity();
+    
         run = runSpeed;
         walk = walkSpeed;
         if(hitByWater) {
             run /= 2;
             walk /= 2;
         }
-        if (place_free(x, y + fallMult + fall)) {
-            if (fall &lt; fallMax) {
-                fall += fallMult;
-            }
-            y += fall;
-        }
-        else {
-            fall = 0;
-            
-            if(distance_to_object(Player) &lt; 150) {
-                if(Player.x &lt; x) {
-                    left = true;
-                    right = false;
-                    if (place_free(x - run,y) &amp;&amp; abs(Player.x - x) &gt; run) {
-                        sprite_index = defaultEnemyStandLeft_spr;
-                        x -= run;
-                    }
-                } else {
-                    left = false;
-                    right = true;
-                    if (place_free(x + run,y) &amp;&amp; abs(Player.x - x) &gt; run) {
-                        sprite_index = defaultEnemyStandRight_spr;
-                        x += run;
-                    }
-                }
-            } else {
-                if(walkTimer &gt; 0) {
-                    walkTimer--;
-                } else {
-                    walking = false;
-                    alarm[0] = irandom(room_speed);
-                }
-            
-                if(walking) {
-                    if(walkDirection == 0) {
+        if(distance_to_object(Player) &lt; 150) {
+            if(!punch) {
+                if((abs(Player.x - x) &gt; minimumDistance + sprite_width)) {
+                    if(Player.x &lt; x) {
                         left = true;
                         right = false;
-                        sprite_index = defaultEnemyStandLeft_spr;
-                        if (place_free(x - walk, y)) {
-                            x -= walk;
-                        } else {
-                            x -= distance_to_object(instance_place(x - walk, y, all)) - 1;
+                        if(abs(Player.x - x) &gt; run) {
+                            sprite_index = defaultEnemyStandLeft_spr;
+                            if (place_free(x - run,y)
+                                || place_meeting(x - run, y, enemy)) {
+                                x -= run;
+                            }
                         }
                     } else {
                         left = false;
                         right = true;
-                        sprite_index = defaultEnemyStandRight_spr;
-                        if (place_free(x + walk, y)) {
-                            x += walk;
-                        } else {
-                            x += distance_to_object(instance_place(x + walk, y, all)) - 1;
+                        if (abs(Player.x - x) &gt; run) {
+                            sprite_index = defaultEnemyStandRight_spr;
+                            if (place_free(x + run, y) 
+                                || place_meeting(x + run, y, enemy)) {
+                                x += run;
+                            }
                         }
+                    }
+                } else if (Player.y == y) {
+                    alarm[2] = room_speed * (8/30);
+                    Player.health -= damage;
+                    punch = true;
+                    if(left) {
+                        sprite_index = defaultEnemyPunchLeft_spr;
+                    } else {
+                        sprite_index = defaultEnemyPunchRight_spr;
+                    }
+                }
+            }
+        } else {
+            if(walkTimer &gt; 0) {
+                walkTimer--;
+            } else {
+                walking = false;
+                alarm[0] = irandom(room_speed);
+            }
+        
+            if(walking) {
+                if(walkDirection == 0) {
+                    left = true;
+                    right = false;
+                    sprite_index = defaultEnemyStandLeft_spr;
+                    if (place_free(x - walk, y) || place_meeting(x - walk, y, enemy)) {
+                        x -= walk;
+                    } else {
+                        x -= distance_to_object(instance_place(x - walk, y, all)) - 1;
+                    }
+                } else {
+                    left = false;
+                    right = true;
+                    sprite_index = defaultEnemyStandRight_spr;
+                    if (place_free(x + walk, y) || place_meeting(x + walk, y, enemy)) {
+                        x += walk;
+                    } else {
+                        x += distance_to_object(instance_place(x + walk, y, all)) - 1;
                     }
                 }
             }

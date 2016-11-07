@@ -36,6 +36,8 @@
     right = true;
     runLeft = false;
     runRight = false;
+    canRunLeft = false;
+    canRunRight = false;
     punch = false;
     airAbility = true;
     earthAbility = false;
@@ -45,6 +47,10 @@
     inWater = false;
     waterJump = 0;
     boulderMove = false;
+    health = 10
+    dash = false;
+    dashCooldown = false;
+    dead = false;
     
     global.enemyHit = false;
     global.enemyHitId = noone;
@@ -52,6 +58,31 @@
     
     instance_deactivate_object(falseTrapDoor);
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Can dash again
+
+dashCooldown = false;
 </string>
           </argument>
         </arguments>
@@ -151,6 +182,10 @@ if(airAbility) {
             <kind>1</kind>
             <string>/// Can no longer run
 runRight = false;
+
+alarm[5] = room_speed * (15/30);
+dashCooldown = true;
+dash = false;
 </string>
           </argument>
         </arguments>
@@ -174,7 +209,12 @@ runRight = false;
           <argument>
             <kind>1</kind>
             <string>/// Can no longer run
+canRunLeft = false;
 runLeft = false;
+
+alarm[5] = room_speed * (15/30);
+dashCooldown = true;
+dash = false;
 </string>
           </argument>
         </arguments>
@@ -224,14 +264,15 @@ instance_deactivate_object(falseTrapDoor);
             <kind>1</kind>
             <string>/// Unstick from collisions
 
-colliding = instance_place(x, y, notPlayerSolids);
+if(dash) {
+    CollisionCheckingDash();
+} else {
+    CollisionChecking();
+}
 
-if(colliding != noone &amp;&amp; colliding != trapDoor) {
-    if(x &lt; colliding.x + colliding.sprite_width/2) {
-        x = colliding.x - 11;
-    } else {
-        x = colliding.x + 32;
-    }
+if(health &lt;= 0) {
+    dead = true;
+    instance_change(PlayerDead, true);
 }
 </string>
           </argument>
@@ -257,6 +298,7 @@ if(colliding != noone &amp;&amp; colliding != trapDoor) {
             <kind>1</kind>
             <string>///  Do gravity
 
+
 if(place_meeting(x, y, water)) {
     inWater = true;
     fallMult = 15 / room_speed;
@@ -270,52 +312,31 @@ if(place_meeting(x, y, water)) {
     fallMax = 600 / room_speed;
 }
 
-if(!ladder) {
-    if((inWater &amp;&amp; (!waterAbility || place_empty(x, y - 16))) 
-        || (!inWater &amp;&amp;waterJump &lt;= 0)) {
-        if(jump) {
-            if(jumpHeight == 0) {
-                jump = false;
+if(!dash) {
+    if(!ladder) {
+        if((inWater &amp;&amp; (!waterAbility || place_empty(x, y - 16))) 
+            || (!inWater &amp;&amp; waterJump &lt;= 0)) {
+            if(jump) {
+                jumpHeight = Jump(jumpHeight);
             } else {
-                if(place_free(x, y - jumpHeight)
-                   || place_meeting(x, y - jumpHeight, trapDoor)) {
-                    y -= jumpHeight;
-                    if(jumpHeight == 15 &amp;&amp; room_speed == 60) {
-                        jumpHeight -= 5;
-                    } else {
-                        jumpHeight -= 30 / room_speed;
-                    }
-                    if(place_meeting(x, y - jumpHeight, trapDoor)) {
-                        instance_deactivate_object(trapDoor);
-                        instance_activate_object(falseTrapDoor);
-                        alarm[0] = room_speed / 3;
-                    }
-                } else {
-                    y -= (distance_to_object(instance_nearest(x, y - jumpHeight, notPlayerSolids)) - 1);
-                    jumpHeight = 0;
-                }            
+                Gravity();
             }
-        } else {
-            if (place_free(x,y + fallMult + fall)) {
-                if (fall &lt; fallMax) {
-                    fall += fallMult;
-                }
-                y += fall;
-            }
-            else {
-                fall = 0;
-            }
+        }
+        if(waterJump &gt; 0) {
+            waterJump = Jump(waterJump);
         }
     }
-    
-    if(waterJump &gt; 0) {
-        if(place_free(x, y - waterJump)) {
-            y -= waterJump;
-            waterJump -= 30 / room_speed;
-        } else {
-            y -= (distance_to_object(instance_nearest(x, y - waterJump, notPlayerSolids)) - 1);
-            waterJump = 0;
-        }
+} else {
+    if(inWater) {
+        effectiveSpeed = movement * 0.3;
+    } else {
+        effectiveSpeed = movement * 1.5;
+    }
+    effectiveSpeed *= 11;
+    if(left) {
+        run_left(effectiveSpeed);
+    } else {
+        run_right(effectiveSpeed);
     }
 }
 if(place_meeting(x, y, trapDoor)) {
@@ -347,11 +368,13 @@ if(place_meeting(x, y, trapDoor)) {
             <kind>1</kind>
             <string>/// Swim down
 
-if(inWater &amp;&amp; waterAbility) {
-    if(place_free(x, y + movement)) {
-        y += movement;
-    } else {
-        y += distance_to_object(instance_place(x, y + movement, notPlayerSolids)) - 1;
+if(!dead) {
+    if(inWater &amp;&amp; waterAbility) {
+        if(place_free(x, y + movement)) {
+            y += movement;
+        } else {
+            y += distance_to_object(instance_place(x, y + movement, notPlayerSolids)) - 1;
+        }
     }
 }
 </string>
@@ -380,63 +403,50 @@ if(inWater &amp;&amp; waterAbility) {
 right = true;
 left = false;
 
-if(!punch) {
-    if(airAbility) {
+if(!dead) {
+    if(!punch) {
+        if(airAbility) {
         sprite_index = standRightAir_spr;
-    } else if(earthAbility) {
-        sprite_index = standRightEarth_spr;
-    } else if(waterAbility) {
-        sprite_index = standRightWater_spr;
-    } else {
-        sprite_index = standRightFire_spr;
-    }
-}
-
-if(airAbility) {
-    if(inWater) {
-        effectiveSpeed = movement * 0.3;
-    } else {
-        effectiveSpeed = movement * 1.5;
-    }
-} else if(earthAbility) {
-    effectiveSpeed = movement * 0.7;
-} else if(waterAbility) {
-    effectiveSpeed = movement;
-} else {
-    if(inWater) {
-        effectiveSpeed = movement * 0.3;
-    } else {
-        effectiveSpeed = movement;
-    }
-}
-    
-if(runRight) {
-    effectiveSpeed *= 1.5;
-    alarm[2] += room_speed / 30;
-}
-if(!boulderMove) {
-    if (place_free(x + effectiveSpeed, y)) {
-        x += effectiveSpeed;
-        ladder = false;
-    }  else if(place_meeting(x + effectiveSpeed, y, boulder) &amp;&amp; earthAbility) {
-        alarm[4] = room_speed / 3;
-        boulderMove = true;
-        with(instance_nearest(x + effectiveSpeed, y, boulder)) {
-            moveRight = true;
-            alarm[0] = room_speed / 3;
-        }
-        runRight = false;
-    } else {
-        if(place_meeting(x + effectiveSpeed, y, ladderRight)) {
-            x = instance_place(x + effectiveSpeed, y, ladderRight).x + 18;
-            y -= 90 / room_speed;
-            ladder = true;
-            runRight = false;
+        } else if(earthAbility) {
+            sprite_index = standRightEarth_spr;
+        } else if(waterAbility) {
+            sprite_index = standRightWater_spr;
         } else {
-            x += distance_to_object(instance_place(x + effectiveSpeed, y, notPlayerSolids)) - 1;
-            ladder = false;
-            runRight = false;
+            sprite_index = standRightFire_spr;
         }
+    }
+
+    if(airAbility) {
+        if(inWater) {
+            effectiveSpeed = movement * 0.3;
+        } else {
+            effectiveSpeed = movement * 1.5;
+        }
+    } else if(earthAbility) {
+        effectiveSpeed = movement * 0.7;
+    } else if(waterAbility) {
+        effectiveSpeed = movement;
+    } else {
+        if(inWater) {
+            effectiveSpeed = movement * 0.3;
+        } else {
+            effectiveSpeed = movement;
+        }
+    }
+    
+    if(runRight) {
+        if (airAbility &amp;&amp; !dash &amp;&amp; place_meeting(x, y + sprite_height, terrain)
+            &amp;&amp; !dashCooldown) {
+            alarm[2] = room_speed * (3/30);
+            dash = true;
+        } else if (!airAbility) {
+            effectiveSpeed *= 1.5;
+            alarm[2] += room_speed / 30;
+        }
+    }
+
+    if ((airAbility &amp;&amp; !dash) || !airAbility) {
+        run_right(effectiveSpeed);
     }
 }
 </string>
@@ -463,15 +473,28 @@ if(!boulderMove) {
             <kind>1</kind>
             <string>/// Swim up
 
-if(inWater &amp;&amp; waterAbility) {
-    if(!place_empty(x, y - 14)) {
-        if(place_free(x, y - movement)) {
-            y -= movement;
+if(!dead) {
+    if (inWater &amp;&amp; waterAbility) {
+        if (!place_empty(x, y - 14)) {
+            if (place_free(x, y - movement)) {
+                y -= movement;
+            } else {
+                y -= distance_to_object(instance_place(x, y - movement, notPlayerSolids)) - 1;
+            }
         } else {
-            y -= distance_to_object(instance_place(x, y - movement, notPlayerSolids)) - 1;
+            waterJump = 9;
         }
-    } else {
-        waterJump = 9;
+    }
+    if (ladder) {
+        if (place_meeting(x - 1, y, terrain) || place_meeting(x + sprite_width, y, terrain)) { 
+            y -= 90 / room_speed;
+        } else if (place_meeting(x - 1, y + 90 / room_speed, terrain)) {
+            x -= 1;
+            ladder = false;
+        } else if (place_meeting(x + 1, y + 90 / room_speed, terrain)) {
+            x += 1;
+            ladder = false;
+        }
     }
 }
 </string>
@@ -500,63 +523,50 @@ if(inWater &amp;&amp; waterAbility) {
 right = false;
 left = true;
 
-if(!punch) {
-    if(airAbility) {
-        sprite_index = standLeftAir_spr;
-    } else if(earthAbility) {
-        sprite_index = standLeftEarth_spr;
-    } else if(waterAbility) {
-        sprite_index = standLeftWater_spr;
-    } else {
-        sprite_index = standLeftFire_spr;
-    }
-}
-
-if(airAbility) {
-    if(inWater) {
-        effectiveSpeed = movement * 0.3;
-    } else {
-        effectiveSpeed = movement * 1.5;
-    }
-} else if(earthAbility) {
-    effectiveSpeed = movement * 0.7;
-} else if(waterAbility) {
-    effectiveSpeed = movement;
-} else {
-    if(inWater) {
-        effectiveSpeed = movement * 0.3;
-    } else {
-        effectiveSpeed = movement;
-    }
-}
-    
-if(runLeft) {
-    effectiveSpeed *= 1.5;
-    alarm[1] += room_speed / 30;
-}
-if(!boulderMove) {
-    if (place_free(x - effectiveSpeed,y)) {
-        x -= effectiveSpeed;
-        ladder = false;
-    } else if(place_meeting(x - effectiveSpeed, y, boulder) &amp;&amp; earthAbility) {
-        alarm[4] = room_speed / 3;
-        boulderMove = true;
-        with(instance_nearest(x - effectiveSpeed, y, boulder)) {
-            moveLeft = true;
-            alarm[0] = room_speed / 3;
-        }
-        runLeft = false;
-    }else {
-        if(place_meeting(x - effectiveSpeed, y, ladderLeft)) {
-            x = instance_place(x - effectiveSpeed, y, ladderLeft).x + 4;
-            y -= 90 / room_speed;
-            ladder = true;
-            runLeft = false;
+if(!dead) {
+    if(!punch) {
+        if(airAbility) {
+            sprite_index = standLeftAir_spr;
+        } else if(earthAbility) {
+            sprite_index = standLeftEarth_spr;
+        } else if(waterAbility) {
+            sprite_index = standLeftWater_spr;
         } else {
-            x -= distance_to_object(instance_place(x - effectiveSpeed, y, notPlayerSolids)) - 1;
-            ladder = false;
-            runLeft = false;
+            sprite_index = standLeftFire_spr;
         }
+    }
+
+    if(airAbility) {
+        if(inWater) {
+            effectiveSpeed = movement * 0.3;
+        } else {
+            effectiveSpeed = movement * 1.5;
+        }
+    } else if(earthAbility) {
+        effectiveSpeed = movement * 0.7;
+    } else if(waterAbility) {
+        effectiveSpeed = movement;
+    } else {
+        if(inWater) {
+            effectiveSpeed = movement * 0.3;
+        } else {
+            effectiveSpeed = movement;
+        }
+    }
+    
+    if(runLeft) {
+        if (airAbility &amp;&amp; !dash &amp;&amp; place_meeting(x, y + sprite_height, terrain)
+            &amp;&amp; !dashCooldown) {
+            alarm[1] = room_speed * (3/30);
+            dash = true;
+        } else if (!airAbility) {
+            effectiveSpeed *= 1.5;
+            alarm[1] += room_speed / 30;
+        }
+    }
+
+    if ((airAbility &amp;&amp; !dash) || !airAbility) {
+        run_left(effectiveSpeed);
     }
 }
 </string>
@@ -564,7 +574,7 @@ if(!boulderMove) {
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="52">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -581,58 +591,24 @@ if(!boulderMove) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Activate Fire
-
-airAbility = false;
-earthAbility = false;
-waterAbility = false;
-fireAbility = true;
-
-if(left) {
-    sprite_index = standLeftFire_spr;
+            <string>if(health &gt; 0) {
+    draw_set_halign(fa_left);
+    draw_text(5, 5, "Health:");
+    draw_text(70, 5, health);
 } else {
-    sprite_index = standRightFire_spr;
+    draw_set_alpha(0.5);
+    draw_rectangle_colour(view_xport, view_yport, view_xport + view_wport, view_yport + view_hport, c_black, c_black, c_black, c_black, false);
+    draw_sprite(button_spr, 0, view_xport + (view_wport / 2), view_yport + (view_hport / 2));
+    draw_set_alpha(1);
+    draw_set_halign(fa_center);
+    draw_text(view_xport + view_wport / 2, view_yport + view_hport / 2, "Restart?");
 }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="51">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Activate Water
-
-airAbility = false;
-earthAbility = false;
-waterAbility = true;
-fireAbility = false;
-
-if(left) {
-    sprite_index = standLeftWater_spr;
-} else {
-    sprite_index = standRightWater_spr;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="50">
+    <event eventtype="9" enumb="83">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -651,22 +627,96 @@ if(left) {
             <kind>1</kind>
             <string>/// Activate Earth
 
-airAbility = false;
-earthAbility = true;
-waterAbility = false;
-fireAbility = false;
-
-if(left) {
-    sprite_index = standLeftEarth_spr;
-} else {
-    sprite_index = standRightEarth_spr;
+if(!dead) {
+    airAbility = false;
+    earthAbility = true;
+    waterAbility = false;
+    fireAbility = false;
+    
+    if(left) {
+        sprite_index = standLeftEarth_spr;
+    } else {
+        sprite_index = standRightEarth_spr;
+    }
 }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="49">
+    <event eventtype="9" enumb="70">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Activate Fire
+
+if(!dead) {
+    airAbility = false;
+    earthAbility = false;
+    waterAbility = false;
+    fireAbility = true;
+
+    if(left) {
+        sprite_index = standLeftFire_spr;
+    } else {
+        sprite_index = standRightFire_spr;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="68">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Activate Water
+
+if(!dead) {
+    airAbility = false;
+    earthAbility = false;
+    waterAbility = true;
+    fireAbility = false;
+
+    if(left) {
+        sprite_index = standLeftWater_spr;
+    } else {
+        sprite_index = standRightWater_spr;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="65">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -685,15 +735,17 @@ if(left) {
             <kind>1</kind>
             <string>/// Activate air
 
-airAbility = true;
-earthAbility = false;
-waterAbility = false;
-fireAbility = false;
+if(!dead) {
+    airAbility = true;
+    earthAbility = false;
+    waterAbility = false;
+    fireAbility = false;
 
-if(left) {
-    sprite_index = standLeftAir_spr;
-} else {
-    sprite_index = standRightAir_spr;
+    if(left) {
+        sprite_index = standLeftAir_spr;
+    } else {
+        sprite_index = standRightAir_spr;
+    }
 }
 </string>
           </argument>
@@ -718,10 +770,13 @@ if(left) {
           <argument>
             <kind>1</kind>
             <string>/// Drop
-if(place_meeting(x, y + 1, trapDoor) &amp;&amp; !ladder) {
-    instance_deactivate_object(trapDoor);
-    instance_activate_object(falseTrapDoor);
-    alarm[0] = room_speed / 3;
+
+if(!dead) {
+    if(place_meeting(x, y + 1, trapDoor) &amp;&amp; !ladder) {
+        instance_deactivate_object(trapDoor);
+        instance_activate_object(falseTrapDoor);
+        alarm[0] = room_speed / 3;
+    }
 }
 </string>
           </argument>
@@ -747,22 +802,24 @@ if(place_meeting(x, y + 1, trapDoor) &amp;&amp; !ladder) {
             <kind>1</kind>
             <string>/// Jump
 
-if(place_empty(x, y - 16) &amp;&amp; waterAbility &amp;&amp; inWater) {
-        waterJump = 9;
-}
-if((!inWater || (inWater &amp;&amp; !waterAbility)) &amp;&amp; !boulderMove) {
-    if(!place_free(x, y + 1)) {
-        jump = true;
-        fall = 0;
-        if(airAbility) {
-            jumpHeight = 15;
-        } else if(earthAbility) {
-            jumpHeight = 6;
-        } else {
-            jumpHeight = 9;
-        }
-        if(inWater) {
-            jumpHeight /= 2;
+if(!dead) {
+    if(place_empty(x, y - 16) &amp;&amp; waterAbility &amp;&amp; inWater) {
+            waterJump = 9;
+    }
+    if((!inWater || (inWater &amp;&amp; !waterAbility)) &amp;&amp; !boulderMove) {
+        if(!place_free(x, y + 1)) {
+            jump = true;
+            fall = 0;
+            if(airAbility) {
+                jumpHeight = 11;
+            } else if(earthAbility) {
+                jumpHeight = 6;
+            } else {
+                jumpHeight = 9;
+            }
+            if(inWater) {
+                jumpHeight /= 2;
+            }
         }
     }
 }
@@ -790,83 +847,85 @@ if((!inWater || (inWater &amp;&amp; !waterAbility)) &amp;&amp; !boulderMove) {
             <kind>1</kind>
             <string>/// Punch
 
-if(!punch) {
-    global.enemyHit = false;
-    global.enemyHitId = noone;
-    global.enemyHitType = noone;
-    punch = true;
-    
-    if(airAbility) {
-        alarm[3] = room_speed * (4/30); 
-        if(left) {
-            sprite_index = punchLeftAir_spr;
-            for(i = 1; i &lt; 6; i++) {
-                if(place_meeting(x - i, y, enemy)) {
-                    global.enemyHitId = instance_place(x - i, y, enemy);
-                    global.enemyHit = true;
-                    global.enemyHitType = "air";
+if(!dead) {
+    if(!punch) {
+        global.enemyHit = false;
+        global.enemyHitId = noone;
+        global.enemyHitType = noone;
+        punch = true;
+        
+        if(airAbility) {
+            alarm[3] = room_speed * (4/30); 
+            if(left) {
+                sprite_index = punchLeftAir_spr;
+                for(i = 1; i &lt; 6; i++) {
+                    if(place_meeting(x - i, y, enemy)) {
+                        global.enemyHitId = instance_place(x - i, y, enemy);
+                        global.enemyHit = true;
+                        global.enemyHitType = "air";
+                    }
+                }            
+            } else {
+                sprite_index = punchRightAir_spr;
+                for(i = 1; i &lt; 6; i++) {
+                    if(place_meeting(x + i, y, enemy)) {
+                        global.enemyHitId = instance_place(x + i, y, enemy);
+                        global.enemyHit = true;
+                        global.enemyHitType = "air";
+                    }
                 }
-            }            
+            }
+        } else if(earthAbility) {
+            alarm[3] = room_speed * (12/30);
+            if(left) {
+                sprite_index = punchLeftEarth_spr;
+                for(i = 1; i &lt; 10; i++) {
+                    if(place_meeting(x - i, y, enemy)) {
+                        global.enemyHitId = instance_place(x - i, y, enemy);
+                        global.enemyHit = true;
+                        global.enemyHitType = "earth";
+                    }
+                }
+            } else {
+                sprite_index = punchRightEarth_spr;
+                for(i = 1; i &lt; 6; i++) {
+                    if(place_meeting(x + i, y, enemy)) {
+                        global.enemyHitId = instance_place(x + i, y, enemy);
+                        global.enemyHit = true;
+                        global.enemyHitType = "earth";
+                    }
+                }
+            }
+        } else if(waterAbility) {
+            alarm[3] = room_speed * (8/30);
+            if(left) {
+                sprite_index = punchLeftWater_spr;
+                for(i = 1; i &lt; 8; i++) {
+                    if(place_meeting(x - i, y, enemy)) {
+                        global.enemyHitId = instance_place(x - i, y, enemy);
+                        global.enemyHit = true;
+                        global.enemyHitType = "water";
+                    }
+                }
+            } else {
+                sprite_index = punchRightWater_spr;
+                for(i = 1; i &lt; 8; i++) {
+                    if(place_meeting(x + i, y, enemy)) {
+                        global.enemyHitId = instance_place(x + i, y, enemy);
+                        global.enemyHit = true;
+                        global.enemyHitType = "water";
+                    }
+                }
+            }
         } else {
-            sprite_index = punchRightAir_spr;
-            for(i = 1; i &lt; 6; i++) {
-                if(place_meeting(x + i, y, enemy)) {
-                    global.enemyHitId = instance_place(x + i, y, enemy);
-                    global.enemyHit = true;
-                    global.enemyHitType = "air";
-                }
+            alarm[3] = room_speed * (8/30);
+            if(left) {
+                sprite_index = punchLeftFire_spr;
+                instance_create(x - 9, y + 8, fireball);
+            } else {
+                sprite_index = punchRightFire_spr;
+                instance_create(x + 9, y + 8, fireball);
             }
-        }
-    } else if(earthAbility) {
-        alarm[3] = room_speed * (12/30);
-        if(left) {
-            sprite_index = punchLeftEarth_spr;
-            for(i = 1; i &lt; 10; i++) {
-                if(place_meeting(x - i, y, enemy)) {
-                    global.enemyHitId = instance_place(x - i, y, enemy);
-                    global.enemyHit = true;
-                    global.enemyHitType = "earth";
-                }
-            }
-        } else {
-            sprite_index = punchRightEarth_spr;
-            for(i = 1; i &lt; 6; i++) {
-                if(place_meeting(x + i, y, enemy)) {
-                    global.enemyHitId = instance_place(x + i, y, enemy);
-                    global.enemyHit = true;
-                    global.enemyHitType = "earth";
-                }
-            }
-        }
-    } else if(waterAbility) {
-        alarm[3] = room_speed * (8/30);
-        if(left) {
-            sprite_index = punchLeftWater_spr;
-            for(i = 1; i &lt; 8; i++) {
-                if(place_meeting(x - i, y, enemy)) {
-                    global.enemyHitId = instance_place(x - i, y, enemy);
-                    global.enemyHit = true;
-                    global.enemyHitType = "water";
-                }
-            }
-        } else {
-            sprite_index = punchRightWater_spr;
-            for(i = 1; i &lt; 8; i++) {
-                if(place_meeting(x + i, y, enemy)) {
-                    global.enemyHitId = instance_place(x + i, y, enemy);
-                    global.enemyHit = true;
-                    global.enemyHitType = "water";
-                }
-            }
-        }
-    } else {
-        alarm[3] = room_speed * (8/30);
-        if(left) {
-            sprite_index = punchLeftFire_spr;
-            instance_create(x - 9, y + 8, fireball);
-        } else {
-            sprite_index = punchRightFire_spr;
-            instance_create(x + 9, y + 8, fireball);
         }
     }
 }
@@ -917,8 +976,9 @@ alarm[0] = room_speed / 6;
           <argument>
             <kind>1</kind>
             <string>/// Start run timer
+
 runRight = true;
-alarm[2] = room_speed / 6;
+alarm[2] = room_speed * (10/30);
 </string>
           </argument>
         </arguments>
@@ -942,8 +1002,9 @@ alarm[2] = room_speed / 6;
           <argument>
             <kind>1</kind>
             <string>/// Start run timer
+
 runLeft = true;
-alarm[1] = room_speed / 6;
+alarm[1] = room_speed * (10/30);
 </string>
           </argument>
         </arguments>

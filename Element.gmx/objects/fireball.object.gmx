@@ -61,9 +61,9 @@ if(Player.x &lt; x) {
             <string>/// Move
 
 if(left) {
-    x -= 180 / room_speed;
+    x -= 300 / room_speed;
 } else {
-    x += 180 / room_speed;
+    x += 300 / room_speed;
 }
 if(place_meeting(x, y, terrain)) {
     instance_destroy();

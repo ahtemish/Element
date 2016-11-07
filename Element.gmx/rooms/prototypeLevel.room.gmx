@@ -319,12 +319,6 @@
     <instance objName="ground" x="96" y="640" name="inst_56812F97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ground" x="64" y="640" name="inst_552FEC2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundSideRight" x="480" y="704" name="inst_8A9B5F81" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ladderLeft" x="512" y="544" name="inst_9350C844" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ladderLeft" x="512" y="576" name="inst_6BCA6910" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ladderLeft" x="512" y="608" name="inst_BA10A579" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ladderLeft" x="512" y="640" name="inst_31FE8695" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ladderLeft" x="512" y="672" name="inst_F5778679" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ladderLeft" x="512" y="704" name="inst_BF05C2AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundDirt" x="672" y="640" name="inst_F7F834FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundDirt" x="704" y="640" name="inst_02162377" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundDirt" x="736" y="640" name="inst_36304783" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -333,7 +327,6 @@
     <instance objName="groundDirt" x="832" y="640" name="inst_4E856726" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundDirt" x="864" y="640" name="inst_BC9C4DCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundDirt" x="896" y="640" name="inst_24300DF3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ladderRight" x="1024" y="416" name="inst_2577C64F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="defaultEnemy" x="1024" y="704" name="inst_009E2ECA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="defaultEnemy" x="1120" y="704" name="inst_5CF2FC91" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="trapDoor" x="1408" y="320" name="inst_39B29ED8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -911,11 +904,6 @@
     <instance objName="groundSideRight" x="1792" y="416" name="inst_7D76AA47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundSideRight" x="1792" y="448" name="inst_FAF1763C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundSideRight" x="1824" y="512" name="inst_631DD9D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ladderLeft" x="2624" y="704" name="inst_1D0A0FD1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ladderLeft" x="2624" y="672" name="inst_B819774E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ladderLeft" x="2624" y="640" name="inst_9F56AB8B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ladderLeft" x="2624" y="608" name="inst_E3DD6AC0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ladderLeft" x="2624" y="576" name="inst_2F816A31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundCornerTopRight" x="2592" y="576" name="inst_34C370F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundSideRight" x="2592" y="704" name="inst_11674FAE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundSideRight" x="2592" y="672" name="inst_98FEBCB4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1833,10 +1821,11 @@
     <instance objName="Player" x="64" y="608" name="inst_346978C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="signPost" x="96" y="608" name="inst_FCC13A37" locked="0" code="signText = &quot;Use the arrow keys to move around.&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="signPost" x="224" y="576" name="inst_BC0C33AE" locked="0" code="signText = &quot;Space is to attack.&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="signPost" x="416" y="512" name="inst_C00B1B9A" locked="0" code="signText = &quot;You can also switch elements with 1-4!&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="signPost" x="864" y="416" name="inst_83A57A78" locked="0" code="signText = &quot;Each element has a different effect for movement and attacks, try it out!&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="signPost" x="672" y="512" name="inst_C00B1B9A" locked="0" code="signText = &quot;You can also switch elements with 1-4!&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="signPost" x="896" y="416" name="inst_83A57A78" locked="0" code="signText = &quot;Each element has a different effect for movement and attacks, try it out!&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="trapDoor" x="1472" y="320" name="inst_7A9E4218" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="falseTrapDoor" x="1472" y="320" name="inst_5F772A86" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="signPost" x="2528" y="544" name="inst_EEB48113" locked="0" code="signText = &quot;You can sprint by double tapping a movement key!&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

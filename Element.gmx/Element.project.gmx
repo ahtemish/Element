@@ -14,36 +14,44 @@
         <sprites name="Air">
           <sprite>sprites\standLeftAir_spr</sprite>
           <sprite>sprites\punchLeftAir_spr</sprite>
+          <sprite>sprites\dieLeftAir_spr</sprite>
         </sprites>
         <sprites name="Earth">
           <sprite>sprites\standLeftEarth_spr</sprite>
           <sprite>sprites\punchLeftEarth_spr</sprite>
+          <sprite>sprites\dieLeftEarth_spr</sprite>
         </sprites>
         <sprites name="Water">
           <sprite>sprites\standLeftWater_spr</sprite>
           <sprite>sprites\punchLeftWater_spr</sprite>
+          <sprite>sprites\dieLeftWater_spr</sprite>
         </sprites>
         <sprites name="Fire">
           <sprite>sprites\standLeftFire_spr</sprite>
           <sprite>sprites\punchLeftFire_spr</sprite>
+          <sprite>sprites\dieLeftFire_spr</sprite>
         </sprites>
       </sprites>
       <sprites name="Right">
         <sprites name="Air">
           <sprite>sprites\standRightAir_spr</sprite>
           <sprite>sprites\punchRightAir_spr</sprite>
+          <sprite>sprites\dieRightAir_spr</sprite>
         </sprites>
         <sprites name="Earth">
           <sprite>sprites\standRightEarth_spr</sprite>
           <sprite>sprites\punchRightEarth_spr</sprite>
+          <sprite>sprites\dieRightEarth_spr</sprite>
         </sprites>
         <sprites name="Water">
           <sprite>sprites\standRightWater_spr</sprite>
           <sprite>sprites\punchRightWater_spr</sprite>
+          <sprite>sprites\dieRightWater_spr</sprite>
         </sprites>
         <sprites name="Fire">
           <sprite>sprites\standRightFire_spr</sprite>
           <sprite>sprites\punchRightFire_spr</sprite>
+          <sprite>sprites\dieRightFire_spr</sprite>
         </sprites>
       </sprites>
       <sprite>sprites\playerMask_spr</sprite>
@@ -76,11 +84,20 @@
         </sprites>
       </sprites>
     </sprites>
+    <sprite>sprites\button_spr</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\CollisionChecking.gml</script>
+    <script>scripts\Gravity.gml</script>
+    <script>scripts\Jump.gml</script>
+    <script>scripts\run_right.gml</script>
+    <script>scripts\run_left.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\Player</object>
+    <object>objects\PlayerDead</object>
     <objects name="Terrain">
       <object>objects\terrain</object>
       <object>objects\ground</object>
@@ -109,6 +126,8 @@
     <object>objects\notPlayer</object>
     <object>objects\notPlayerSolids</object>
     <object>objects\viewScreen</object>
+    <object>objects\button</object>
+    <object>objects\mouseFollow</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\prototypeLevel</room>
