@@ -292,7 +292,7 @@
     <instance objName="groundDirt" x="1184" y="512" name="inst_0E86D6DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundDirt" x="1216" y="512" name="inst_96AA27C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundDirt" x="1248" y="576" name="inst_4369082E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="defaultEnemy" x="1120" y="384" name="inst_4153FFE1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="1120" y="384" name="inst_4153FFE1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundSideLeft" x="640" y="640" name="inst_2A5FD2CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundDirt" x="352" y="672" name="inst_750D34E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundDirt" x="384" y="672" name="inst_4C2BFFBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -327,8 +327,8 @@
     <instance objName="groundDirt" x="832" y="640" name="inst_4E856726" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundDirt" x="864" y="640" name="inst_BC9C4DCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundDirt" x="896" y="640" name="inst_24300DF3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="defaultEnemy" x="1024" y="704" name="inst_009E2ECA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="defaultEnemy" x="1120" y="704" name="inst_5CF2FC91" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="1024" y="704" name="inst_009E2ECA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="1120" y="704" name="inst_5CF2FC91" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="trapDoor" x="1408" y="320" name="inst_39B29ED8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="trapDoor" x="1440" y="320" name="inst_A408A516" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="falseTrapDoor" x="1408" y="320" name="inst_6A12A674" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -909,7 +909,7 @@
     <instance objName="groundSideRight" x="2592" y="672" name="inst_98FEBCB4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundSideRight" x="2592" y="640" name="inst_DC84D22C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundSideRight" x="2592" y="608" name="inst_EC61F7EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="defaultEnemy" x="3904" y="416" name="inst_9AC73B7B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="4064" y="352" name="inst_9AC73B7B" locked="0" code="earthAbility = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="water" x="3904" y="672" name="inst_D830D610" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="water" x="3872" y="672" name="inst_4FEF4C09" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="water" x="3872" y="640" name="inst_4345DC26" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1760,16 +1760,16 @@
     <instance objName="groundDirt" x="5027" y="736" name="inst_787AFF32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ground" x="4544" y="544" name="inst_F46CBBE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundDirt" x="4547" y="544" name="inst_BBC31CB8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="defaultEnemy" x="2848" y="704" name="inst_618B1D20" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="defaultEnemy" x="2944" y="704" name="inst_5092ED11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="defaultEnemy" x="3072" y="704" name="inst_87C40257" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="defaultEnemy" x="3168" y="704" name="inst_E3CB3EAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="defaultEnemy" x="1632" y="288" name="inst_F6168BB5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="defaultEnemy" x="896" y="704" name="inst_910CC8C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="defaultEnemy" x="5984" y="384" name="inst_04720A73" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="defaultEnemy" x="5888" y="384" name="inst_0F68C4CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="defaultEnemy" x="5792" y="384" name="inst_621EB4B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="defaultEnemy" x="5696" y="384" name="inst_4CC983F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="2848" y="704" name="inst_618B1D20" locked="0" code="waterAbility = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="2944" y="704" name="inst_5092ED11" locked="0" code="waterAbility = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="3072" y="704" name="inst_87C40257" locked="0" code="fireAbility = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="3168" y="704" name="inst_E3CB3EAC" locked="0" code="fireAbility = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="1632" y="288" name="inst_F6168BB5" locked="0" code="airAbility = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="896" y="704" name="inst_910CC8C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="5984" y="384" name="inst_04720A73" locked="0" code="fireAbility = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="5888" y="384" name="inst_0F68C4CD" locked="0" code="earthAbility = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="5792" y="384" name="inst_621EB4B3" locked="0" code="waterAbility = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="5696" y="384" name="inst_4CC983F8" locked="0" code="airAbility = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ground" x="5408" y="288" name="inst_99D954D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ground" x="5376" y="288" name="inst_DF78867A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ground" x="5312" y="288" name="inst_B3BF40F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1817,15 +1817,16 @@
     <instance objName="groundDirt" x="5472" y="288" name="inst_5F100C8D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundDirt" x="6112" y="256" name="inst_C6913051" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="signPost" x="4000" y="608" name="inst_E0A6CD40" locked="0" code="signText = &quot;Congratulations! Nothing's here.&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="signPost" x="6048" y="192" name="inst_7B745ECB" locked="0" code="signText = &quot;Nothing is up here either. Thanks for the effort though!&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="signPost" x="6048" y="192" name="inst_7B745ECB" locked="0" code="signText = &quot;You survived! Good job, i guess the enemies weren't too hard for you ;)&quot;;&#xA;offset = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Player" x="64" y="608" name="inst_346978C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="signPost" x="96" y="608" name="inst_FCC13A37" locked="0" code="signText = &quot;Use the arrow keys to move around.&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="signPost" x="224" y="576" name="inst_BC0C33AE" locked="0" code="signText = &quot;Space is to attack.&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="signPost" x="672" y="512" name="inst_C00B1B9A" locked="0" code="signText = &quot;You can also switch elements with 1-4!&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="signPost" x="896" y="416" name="inst_83A57A78" locked="0" code="signText = &quot;Each element has a different effect for movement and attacks, try it out!&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="signPost" x="96" y="608" name="inst_FCC13A37" locked="0" code="signText = &quot;Use the arrow keys to move around.&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="signPost" x="224" y="576" name="inst_BC0C33AE" locked="0" code="signText = &quot;Space is to attack.&quot;;&#xA;offset = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="signPost" x="672" y="512" name="inst_C00B1B9A" locked="0" code="signText = &quot;You can also switch elements with A, S, D, and F!&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="signPost" x="896" y="416" name="inst_83A57A78" locked="0" code="signText = &quot;Each element has a different effect for movement and attacks, try it out!&quot;;&#xA;offset = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="trapDoor" x="1472" y="320" name="inst_7A9E4218" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="falseTrapDoor" x="1472" y="320" name="inst_5F772A86" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="signPost" x="2528" y="544" name="inst_EEB48113" locked="0" code="signText = &quot;You can sprint by double tapping a movement key!&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="384" y="512" name="inst_90EB710F" locked="0" code="fireAbility = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

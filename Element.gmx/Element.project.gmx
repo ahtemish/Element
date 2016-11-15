@@ -8,6 +8,8 @@
   <sprites name="sprites">
     <sprite>sprites\fireballRight_spr</sprite>
     <sprite>sprites\fireballLeft_spr</sprite>
+    <sprite>sprites\waterwhipRight_spr</sprite>
+    <sprite>sprites\waterwhipLeft_spr</sprite>
     <sprite>sprites\boulder_spr</sprite>
     <sprites name="Player">
       <sprites name="Left">
@@ -83,8 +85,67 @@
           <sprite>sprites\defaultEnemyDieRight_spr</sprite>
         </sprites>
       </sprites>
+      <sprites name="AirEnemy">
+        <sprites name="Left">
+          <sprite>sprites\airEnemyStandLeft_spr</sprite>
+          <sprite>sprites\airEnemyPunchLeft_spr</sprite>
+          <sprite>sprites\airEnemyDieLeft_spr</sprite>
+        </sprites>
+        <sprites name="Right">
+          <sprite>sprites\airEnemyStandRight_spr</sprite>
+          <sprite>sprites\airEnemyPunchRight_spr</sprite>
+          <sprite>sprites\airEnemyDieRight_spr</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="EarthEnemy">
+        <sprites name="Left">
+          <sprite>sprites\earthEnemyStandLeft_spr</sprite>
+          <sprite>sprites\earthEnemyPunchLeft_spr</sprite>
+          <sprite>sprites\earthEnemyDieLeft_spr</sprite>
+        </sprites>
+        <sprites name="Right">
+          <sprite>sprites\earthEnemyStandRight_spr</sprite>
+          <sprite>sprites\earthEnemyPunchRight_spr</sprite>
+          <sprite>sprites\earthEnemyDieRight_spr</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="WaterEnemy">
+        <sprites name="Left">
+          <sprite>sprites\waterEnemyStandLeft_spr</sprite>
+          <sprite>sprites\waterEnemyPunchLeft_spr</sprite>
+          <sprite>sprites\waterEnemyDieLeft_spr</sprite>
+        </sprites>
+        <sprites name="Right">
+          <sprite>sprites\waterEnemyStandRight_spr</sprite>
+          <sprite>sprites\waterEnemyPunchRight_spr</sprite>
+          <sprite>sprites\waterEnemyDieRight_spr</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="FireEnemy">
+        <sprites name="Left">
+          <sprite>sprites\fireEnemyStandLeft_spr</sprite>
+          <sprite>sprites\fireEnemyPunchLeft_spr</sprite>
+          <sprite>sprites\fireEnemyDieLeft_spr</sprite>
+        </sprites>
+        <sprites name="Right">
+          <sprite>sprites\fireEnemyStandRight_spr</sprite>
+          <sprite>sprites\fireEnemyPunchRight_spr</sprite>
+          <sprite>sprites\fireEnemyDieRight_spr</sprite>
+        </sprites>
+      </sprites>
     </sprites>
     <sprite>sprites\button_spr</sprite>
+    <sprites name="Element GUI">
+      <sprite>sprites\elementHolder_spr</sprite>
+      <sprite>sprites\airElement_spr</sprite>
+      <sprite>sprites\airElementActive_spr</sprite>
+      <sprite>sprites\earthElement_spr</sprite>
+      <sprite>sprites\earthElementActive_spr</sprite>
+      <sprite>sprites\waterElement_spr</sprite>
+      <sprite>sprites\waterElementActive_spr</sprite>
+      <sprite>sprites\fireElement_spr</sprite>
+      <sprite>sprites\fireElementActive_spr</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -117,9 +178,9 @@
     </objects>
     <objects name="Enemies">
       <object>objects\enemy</object>
-      <object>objects\defaultEnemy</object>
-      <object>objects\defaultEnemyDead</object>
-      <object>objects\defaultEnemyFlung</object>
+      <object>objects\elementalEnemy</object>
+      <object>objects\elementalEnemyDead</object>
+      <object>objects\elementalEnemyFlung</object>
     </objects>
     <object>objects\fireball</object>
     <object>objects\boulder</object>
@@ -128,6 +189,7 @@
     <object>objects\viewScreen</object>
     <object>objects\button</object>
     <object>objects\mouseFollow</object>
+    <object>objects\elements</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\prototypeLevel</room>

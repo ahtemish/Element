@@ -47,17 +47,47 @@
     inWater = false;
     waterJump = 0;
     boulderMove = false;
-    health = 10
+    health = 15;
     dash = false;
     dashCooldown = false;
     dead = false;
+    drawWhip = false;
     
-    global.enemyHit = false;
-    global.enemyHitId = noone;
-    global.enemyHitType = noone;
+    for(i = 0; i &lt; 6; i++) {
+        global.enemyHit[i] = false;
+        global.enemyHitId[i] = noone;
+        global.enemyHitType[i] = noone;
+    }
     
     instance_deactivate_object(falseTrapDoor);
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="6">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Dash cooldown
+
+alarm[5] = room_speed * (15/30);
+dashCooldown = true;
+dash = false;
 </string>
           </argument>
         </arguments>
@@ -82,7 +112,11 @@
             <kind>1</kind>
             <string>/// Can dash again
 
-dashCooldown = false;
+if(place_meeting(x, y + 1, terrain)) {
+    dashCooldown = false;
+} else {
+    alarm[5] = room_speed * (15/30);
+}
 </string>
           </argument>
         </arguments>
@@ -132,6 +166,7 @@ boulderMove = false;
             <kind>1</kind>
             <string>/// End punch
 punch = false;
+drawWhip = false;
 
 if(airAbility) {
     if(left) {
@@ -182,10 +217,6 @@ if(airAbility) {
             <kind>1</kind>
             <string>/// Can no longer run
 runRight = false;
-
-alarm[5] = room_speed * (15/30);
-dashCooldown = true;
-dash = false;
 </string>
           </argument>
         </arguments>
@@ -211,10 +242,6 @@ dash = false;
             <string>/// Can no longer run
 canRunLeft = false;
 runLeft = false;
-
-alarm[5] = room_speed * (15/30);
-dashCooldown = true;
-dash = false;
 </string>
           </argument>
         </arguments>
@@ -270,9 +297,55 @@ if(dash) {
     CollisionChecking();
 }
 
+if(place_meeting(x, y, fireball)) {
+    conFireball = instance_place(x, y, fireball);
+    if(conFireball.firedBy = enemy) {
+        fireDamage = 1.25;
+        if(earthAbility) {
+            fireDamage *= 0.7;
+        }
+        if(waterAbility || earthAbility) {
+            fireDamage /= 2;
+        }
+        health -= fireDamage;
+        with(conFireball) {
+            instance_destroy();
+        }
+    }
+}
+
 if(health &lt;= 0) {
     dead = true;
     instance_change(PlayerDead, true);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Reset hit values
+
+for(i = 0; i &lt; 6; i++) {
+    global.enemyHit[i] = false;
+    global.enemyHitId[i] = noone;
+    global.enemyHitType[i] = noone;
 }
 </string>
           </argument>
@@ -400,20 +473,18 @@ if(!dead) {
           <argument>
             <kind>1</kind>
             <string>/// Move right
-right = true;
-left = false;
 
-if(!dead) {
-    if(!punch) {
-        if(airAbility) {
+if(!dead &amp;&amp; !punch) {
+    right = true;
+    left = false;
+    if(airAbility) {
         sprite_index = standRightAir_spr;
-        } else if(earthAbility) {
-            sprite_index = standRightEarth_spr;
-        } else if(waterAbility) {
-            sprite_index = standRightWater_spr;
-        } else {
-            sprite_index = standRightFire_spr;
-        }
+    } else if(earthAbility) {
+        sprite_index = standRightEarth_spr;
+    } else if(waterAbility) {
+        sprite_index = standRightWater_spr;
+    } else {
+        sprite_index = standRightFire_spr;
     }
 
     if(airAbility) {
@@ -435,14 +506,8 @@ if(!dead) {
     }
     
     if(runRight) {
-        if (airAbility &amp;&amp; !dash &amp;&amp; place_meeting(x, y + sprite_height, terrain)
-            &amp;&amp; !dashCooldown) {
-            alarm[2] = room_speed * (3/30);
-            dash = true;
-        } else if (!airAbility) {
-            effectiveSpeed *= 1.5;
-            alarm[2] += room_speed / 30;
-        }
+        effectiveSpeed *= 1.5;
+        alarm[2] += room_speed / 30;
     }
 
     if ((airAbility &amp;&amp; !dash) || !airAbility) {
@@ -520,20 +585,18 @@ if(!dead) {
           <argument>
             <kind>1</kind>
             <string>/// Move left
-right = false;
-left = true;
 
-if(!dead) {
-    if(!punch) {
-        if(airAbility) {
-            sprite_index = standLeftAir_spr;
-        } else if(earthAbility) {
-            sprite_index = standLeftEarth_spr;
-        } else if(waterAbility) {
-            sprite_index = standLeftWater_spr;
-        } else {
-            sprite_index = standLeftFire_spr;
-        }
+if(!dead &amp;&amp; !punch) {
+    right = false;
+    left = true;
+    if(airAbility) {
+        sprite_index = standLeftAir_spr;
+    } else if(earthAbility) {
+        sprite_index = standLeftEarth_spr;
+    } else if(waterAbility) {
+        sprite_index = standLeftWater_spr;
+    } else {
+        sprite_index = standLeftFire_spr;
     }
 
     if(airAbility) {
@@ -555,20 +618,37 @@ if(!dead) {
     }
     
     if(runLeft) {
-        if (airAbility &amp;&amp; !dash &amp;&amp; place_meeting(x, y + sprite_height, terrain)
-            &amp;&amp; !dashCooldown) {
-            alarm[1] = room_speed * (3/30);
-            dash = true;
-        } else if (!airAbility) {
-            effectiveSpeed *= 1.5;
-            alarm[1] += room_speed / 30;
-        }
+        effectiveSpeed *= 1.5;
+        alarm[1] += room_speed / 30;
     }
 
     if ((airAbility &amp;&amp; !dash) || !airAbility) {
         run_left(effectiveSpeed);
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>health = 0;
 </string>
           </argument>
         </arguments>
@@ -592,9 +672,27 @@ if(!dead) {
           <argument>
             <kind>1</kind>
             <string>if(health &gt; 0) {
-    draw_set_halign(fa_left);
-    draw_text(5, 5, "Health:");
-    draw_text(70, 5, health);
+    middleW = view_xport + (view_wport / 2);
+    draw_set_halign(fa_center);
+    draw_text(middleW - 48, view_yport + 83, "Health:");
+    draw_text(middleW, view_yport + 83, health);
+    draw_healthbar(middleW + 20, view_yport + 83, middleW + 100, view_yport + 95, health * 100/15, c_black, c_red, c_green, 0, true, true);
+    
+    
+    draw_sprite(elementHolder_spr, 0, view_xport + (view_wport / 2), view_yport + 45);
+    if(airAbility) {
+        draw_sprite(airElementActive_spr, 0, view_xport + (view_wport / 2) - 96, view_yport + 45);
+    } else if(earthAbility) {
+        draw_sprite(earthElementActive_spr, 0, view_xport + (view_wport / 2) - 32, view_yport + 45);
+    } else if(waterAbility) {
+        draw_sprite(waterElementActive_spr, 0, view_xport + (view_wport / 2) + 32, view_yport + 45);
+    } else {
+        draw_sprite(fireElementActive_spr, 0, view_xport + (view_wport / 2) + 96, view_yport + 45);
+    }
+    draw_sprite(airElement_spr, 0, view_xport + (view_wport / 2) - 96, view_yport + 45);
+    draw_sprite(earthElement_spr, 0, view_xport + (view_wport / 2) - 32, view_yport + 45);
+    draw_sprite(waterElement_spr, 0, view_xport + (view_wport / 2) + 32, view_yport + 45);
+    draw_sprite(fireElement_spr, 0, view_xport + (view_wport / 2) + 96, view_yport + 45);
 } else {
     draw_set_alpha(0.5);
     draw_rectangle_colour(view_xport, view_yport, view_xport + view_wport, view_yport + view_hport, c_black, c_black, c_black, c_black, false);
@@ -602,6 +700,65 @@ if(!dead) {
     draw_set_alpha(1);
     draw_set_halign(fa_center);
     draw_text(view_xport + view_wport / 2, view_yport + view_hport / 2, "Restart?");
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Draw
+draw_self();
+if (drawWhip) {
+    if(left) {
+        draw_sprite(waterwhipLeft_spr, 0, x, y);
+    } else {
+        draw_sprite(waterwhipRight_spr, 0, x + sprite_width, y);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="86">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Dash
+
+if (airAbility &amp;&amp; !dash &amp;&amp; !dashCooldown) {
+    alarm[6] = room_speed * (3/30);
+    dash = true;
 }
 </string>
           </argument>
@@ -802,7 +959,7 @@ if(!dead) {
             <kind>1</kind>
             <string>/// Jump
 
-if(!dead) {
+if(!dead &amp;&amp; !punch) {
     if(place_empty(x, y - 16) &amp;&amp; waterAbility &amp;&amp; inWater) {
             waterJump = 9;
     }
@@ -845,33 +1002,29 @@ if(!dead) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Punch
+            <string>/// Attack
 
 if(!dead) {
     if(!punch) {
-        global.enemyHit = false;
-        global.enemyHitId = noone;
-        global.enemyHitType = noone;
+        num = 0;
         punch = true;
         
         if(airAbility) {
             alarm[3] = room_speed * (4/30); 
             if(left) {
                 sprite_index = punchLeftAir_spr;
-                for(i = 1; i &lt; 6; i++) {
+                for(i = 1; i &lt; sprite_width / 2; i++) {
                     if(place_meeting(x - i, y, enemy)) {
-                        global.enemyHitId = instance_place(x - i, y, enemy);
-                        global.enemyHit = true;
-                        global.enemyHitType = "air";
+                        global.enemyHitId[num] = instance_place(x - i, y, enemy);
+                        global.enemyHitType[num] = "air";
                     }
                 }            
             } else {
                 sprite_index = punchRightAir_spr;
-                for(i = 1; i &lt; 6; i++) {
+                for(i = 1; i &lt; sprite_width / 2; i++) {
                     if(place_meeting(x + i, y, enemy)) {
-                        global.enemyHitId = instance_place(x + i, y, enemy);
-                        global.enemyHit = true;
-                        global.enemyHitType = "air";
+                        global.enemyHitId[num] = instance_place(x + i, y, enemy);
+                        global.enemyHitType[num] = "air";
                     }
                 }
             }
@@ -879,41 +1032,46 @@ if(!dead) {
             alarm[3] = room_speed * (12/30);
             if(left) {
                 sprite_index = punchLeftEarth_spr;
-                for(i = 1; i &lt; 10; i++) {
-                    if(place_meeting(x - i, y, enemy)) {
-                        global.enemyHitId = instance_place(x - i, y, enemy);
-                        global.enemyHit = true;
-                        global.enemyHitType = "earth";
+                for (j = 0; j &lt; instance_number(enemy); j++) {
+                    possibleHit = instance_find(enemy, j);
+                    if(possibleHit.x &gt; x - (sprite_width * 2) &amp;&amp; possibleHit.x &lt; x) {
+                        global.enemyHitId[num] = possibleHit;
+                        global.enemyHitType[num] = "earth";
+                        num++;
                     }
                 }
             } else {
                 sprite_index = punchRightEarth_spr;
-                for(i = 1; i &lt; 6; i++) {
-                    if(place_meeting(x + i, y, enemy)) {
-                        global.enemyHitId = instance_place(x + i, y, enemy);
-                        global.enemyHit = true;
-                        global.enemyHitType = "earth";
+                for (j = 0; j &lt; instance_number(enemy); j++) {
+                    possibleHit = instance_find(enemy, j);
+                    if(possibleHit.x &lt; x + (sprite_width * 2) &amp;&amp; possibleHit.x &gt; x) {
+                        global.enemyHitId[num] = possibleHit;
+                        global.enemyHitType[num] = "earth";
+                        num++;
                     }
                 }
             }
         } else if(waterAbility) {
             alarm[3] = room_speed * (8/30);
+            drawWhip = true;
             if(left) {
                 sprite_index = punchLeftWater_spr;
-                for(i = 1; i &lt; 8; i++) {
-                    if(place_meeting(x - i, y, enemy)) {
-                        global.enemyHitId = instance_place(x - i, y, enemy);
-                        global.enemyHit = true;
-                        global.enemyHitType = "water";
+                for (j = 0; j &lt; instance_number(enemy); j++) {
+                    possibleHit = instance_find(enemy, j);
+                    if(possibleHit.x &gt; x - (sprite_width * 2) &amp;&amp; possibleHit.x &lt; x) {
+                        global.enemyHitId[num] = possibleHit;
+                        global.enemyHitType[num] = "water";
+                        num++;
                     }
                 }
             } else {
                 sprite_index = punchRightWater_spr;
-                for(i = 1; i &lt; 8; i++) {
-                    if(place_meeting(x + i, y, enemy)) {
-                        global.enemyHitId = instance_place(x + i, y, enemy);
-                        global.enemyHit = true;
-                        global.enemyHitType = "water";
+                for (j = 0; j &lt; instance_number(enemy); j++) {
+                    possibleHit = instance_find(enemy, j);
+                    if(possibleHit.x &lt; x + (sprite_width * 2) &amp;&amp; possibleHit.x &gt; x) {
+                        global.enemyHitId[num] = possibleHit;
+                        global.enemyHitType[num] = "water";
+                        num++;
                     }
                 }
             }
@@ -921,11 +1079,12 @@ if(!dead) {
             alarm[3] = room_speed * (8/30);
             if(left) {
                 sprite_index = punchLeftFire_spr;
-                instance_create(x - 9, y + 8, fireball);
+                plFireball = instance_create(x - 5, y + 8, fireball);
             } else {
                 sprite_index = punchRightFire_spr;
-                instance_create(x + 9, y + 8, fireball);
+                plFireball = instance_create(x + 5, y + 8, fireball);
             }
+            plFireball.firedBy = Player;
         }
     }
 }

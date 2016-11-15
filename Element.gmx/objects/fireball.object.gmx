@@ -25,17 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Set direction
+            <string>/// Initial
 
-if(Player.x &lt; x) {
-    left = false;
-    right = true;
-    sprite_index = fireballRight_spr;
-} else {
-    left = true;
-    right = false;
-    sprite_index = fireballLeft_spr;
-}
+firedBy = noone;
+initial = true;
 </string>
           </argument>
         </arguments>
@@ -59,6 +52,19 @@ if(Player.x &lt; x) {
           <argument>
             <kind>1</kind>
             <string>/// Move
+
+if(initial) {
+    if(firedBy.left) {
+        left = true;
+        right = false;
+        sprite_index = fireballLeft_spr;
+    } else {
+        left = false;
+        right = true;
+        sprite_index = fireballRight_spr;
+    }
+    initial = false;
+}
 
 if(left) {
     x -= 300 / room_speed;

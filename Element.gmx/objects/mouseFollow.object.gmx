@@ -51,11 +51,15 @@ y = mouse_y;
             <kind>1</kind>
             <string>/// Restart game
 
-middleW = view_xport[0] + view_wport[0] / 2;
+middleW = 0;
 middleH = view_hport[0] / 2;
 
-if(Player.x &gt;=512) {
+if(Player.x &lt; 512) {
+    middleW = view_xport[0] + view_wport[0] / 2;
+} else if(Player.x &gt;=512 &amp;&amp; Player.x &lt;= room_width - 512) {
     middleW = Player.x;
+} else {
+    middleW = room_width - view_wport[0] / 2;
 }
 if(distance_to_point(middleW, y) &lt; 128 &amp;&amp; distance_to_point(x, middleH) &lt; 64) {
     room_restart();
