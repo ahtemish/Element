@@ -133,6 +133,22 @@
           <sprite>sprites\fireEnemyDieRight_spr</sprite>
         </sprites>
       </sprites>
+      <sprites name="Dog">
+        <sprites name="Left">
+          <sprite>sprites\dogStandLeft_spr</sprite>
+          <sprite>sprites\dogWalkLeft_spr</sprite>
+          <sprite>sprites\dogPunchLeft_spr</sprite>
+          <sprite>sprites\dogDieLeft_spr</sprite>
+          <sprite>sprites\dogFireLeft_spr</sprite>
+        </sprites>
+        <sprites name="Right">
+          <sprite>sprites\dogStandRight_spr</sprite>
+          <sprite>sprites\dogWalkRight_spr</sprite>
+          <sprite>sprites\dogPunchRight_spr</sprite>
+          <sprite>sprites\dogDieRight_spr</sprite>
+          <sprite>sprites\dogFireRight_spr</sprite>
+        </sprites>
+      </sprites>
     </sprites>
     <sprite>sprites\button_spr</sprite>
     <sprites name="Element GUI">
@@ -190,6 +206,7 @@
     <object>objects\button</object>
     <object>objects\mouseFollow</object>
     <object>objects\elements</object>
+    <object>objects\dogFire</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\prototypeLevel</room>

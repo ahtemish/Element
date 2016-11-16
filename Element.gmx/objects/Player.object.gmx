@@ -1013,20 +1013,12 @@ if(!dead) {
             alarm[3] = room_speed * (4/30); 
             if(left) {
                 sprite_index = punchLeftAir_spr;
-                for(i = 1; i &lt; sprite_width / 2; i++) {
-                    if(place_meeting(x - i, y, enemy)) {
-                        global.enemyHitId[num] = instance_place(x - i, y, enemy);
-                        global.enemyHitType[num] = "air";
-                    }
-                }            
+                global.enemyHitId[num] = collision_rectangle(x - (sprite_width / 2), y, x, y + sprite_height, enemy, false, true);
+                global.enemyHitType[num] = "air";        
             } else {
                 sprite_index = punchRightAir_spr;
-                for(i = 1; i &lt; sprite_width / 2; i++) {
-                    if(place_meeting(x + i, y, enemy)) {
-                        global.enemyHitId[num] = instance_place(x + i, y, enemy);
-                        global.enemyHitType[num] = "air";
-                    }
-                }
+                global.enemyHitId[num] = collision_rectangle(x + sprite_width, y, x + (sprite_width * 1.5), y + sprite_height, enemy, false, true);
+                global.enemyHitType[num] = "air";
             }
         } else if(earthAbility) {
             alarm[3] = room_speed * (12/30);
@@ -1034,7 +1026,7 @@ if(!dead) {
                 sprite_index = punchLeftEarth_spr;
                 for (j = 0; j &lt; instance_number(enemy); j++) {
                     possibleHit = instance_find(enemy, j);
-                    if(possibleHit.x &gt; x - (sprite_width * 2) &amp;&amp; possibleHit.x &lt; x) {
+                    if(possibleHit == collision_rectangle(x - sprite_width, y, x, y + sprite_height, possibleHit, false, true)) {
                         global.enemyHitId[num] = possibleHit;
                         global.enemyHitType[num] = "earth";
                         num++;
@@ -1044,7 +1036,7 @@ if(!dead) {
                 sprite_index = punchRightEarth_spr;
                 for (j = 0; j &lt; instance_number(enemy); j++) {
                     possibleHit = instance_find(enemy, j);
-                    if(possibleHit.x &lt; x + (sprite_width * 2) &amp;&amp; possibleHit.x &gt; x) {
+                    if(possibleHit == collision_rectangle(x + sprite_width, y, x + (sprite_width * 2), y + sprite_height, possibleHit, false, true)) {
                         global.enemyHitId[num] = possibleHit;
                         global.enemyHitType[num] = "earth";
                         num++;
@@ -1058,7 +1050,7 @@ if(!dead) {
                 sprite_index = punchLeftWater_spr;
                 for (j = 0; j &lt; instance_number(enemy); j++) {
                     possibleHit = instance_find(enemy, j);
-                    if(possibleHit.x &gt; x - (sprite_width * 2) &amp;&amp; possibleHit.x &lt; x) {
+                    if(possibleHit == collision_rectangle(x - waterwhipLeft_spr.sprite_width, y, x, y + sprite_height, possibleHit, false, true)) {
                         global.enemyHitId[num] = possibleHit;
                         global.enemyHitType[num] = "water";
                         num++;
@@ -1068,7 +1060,7 @@ if(!dead) {
                 sprite_index = punchRightWater_spr;
                 for (j = 0; j &lt; instance_number(enemy); j++) {
                     possibleHit = instance_find(enemy, j);
-                    if(possibleHit.x &lt; x + (sprite_width * 2) &amp;&amp; possibleHit.x &gt; x) {
+                    if(possibleHit == collision_rectangle(x + sprite_width, y, x + sprite_width + waterwhipRight_spr.sprite_width, y + sprite_height, possibleHit, false, true)) {
                         global.enemyHitId[num] = possibleHit;
                         global.enemyHitType[num] = "water";
                         num++;

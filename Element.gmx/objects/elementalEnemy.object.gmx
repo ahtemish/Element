@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>enemy</parentName>
-  <maskName>playerMask_spr</maskName>
+  <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -45,6 +45,7 @@ fireAbility = false;
 waterAbility = false;
 initial = true;
 hitByFireball = false;
+enemyType = noone;
 
 randomize();
 alarm[0] = irandom(room_speed);
@@ -98,6 +99,11 @@ punch = false;
             <string>/// Stop punch
 
 if (!dead) {
+    if(enemyType == "dog") {
+        with(thisDogFire) instance_destroy();
+        thisDogFire = noone;
+    }
+    
     alarm[3] = room_speed * (16/30);
     if(hitByWater &amp;&amp; !waterAbility) {
         alarm[3] *= 3;
@@ -160,6 +166,7 @@ if(abs(Player.x - x) &gt; minimumDistance + sprite_width) {
     walkTimer =  room_speed / 2;
     walking = true;
     walkDirection = irandom(1);
+    image_index = 0;
 }
 </string>
           </argument>
@@ -241,6 +248,9 @@ if (!dead) {
 }
     
 if(instanceHealth &lt;= 0) {
+    if(enemyType == "dog") {
+        with(thisDogFire) instance_destroy();
+    }
     dead = true;
     instance_change(elementalEnemyDead, true);
 }
@@ -269,69 +279,108 @@ if(instanceHealth &lt;= 0) {
             <string>/// Set correct values for element
 
 if(initial) {
-    if (airAbility) {
+    if(enemyType == "dog") {
+        fireAbility = true;
+        minimumDistance = 8;
+        detectionDistance = 300;
+        punchSpeed = (8/30);
+        damage = 1;
+        instanceHealth = 9;
+        walkSpeed = 60 / room_speed;
+        runMult = 3;
+        standLeft = dogStandLeft_spr;
+        walkLeft = dogWalkLeft_spr;
+        punchLeft = dogPunchLeft_spr;
+        dieLeft = dogDieLeft_spr;
+        standRight = dogStandRight_spr;
+        walkRight = dogWalkRight_spr;
+        punchRight = dogPunchRight_spr;
+        dieRight = dogDieRight_spr;
+        image_speed = 4 / room_speed;
+        thisDogFire = noone;
+    } else if (airAbility) {
         minimumDistance = 3;
+        detectionDistance = 150;
         punchSpeed = (4/30);
         damage = 0.5;
         instanceHealth = 6;
         walkSpeed = 120 / room_speed;
+        runMult = 2;
         standLeft = airEnemyStandLeft_spr;
+        walkLeft = airEnemyStandLeft_spr;
         punchLeft = airEnemyPunchLeft_spr;
         dieLeft = airEnemyDieLeft_spr;
         standRight = airEnemyStandRight_spr;
+        walkRight = airEnemyStandRight_spr;
         punchRight = airEnemyPunchRight_spr;
         dieRight = airEnemyDieRight_spr;
     } else if (earthAbility) {
         minimumDistance = 8;
+        detectionDistance = 150;
         punchSpeed = (16/30);
         damage = 2;
         instanceHealth = 24;
         walkSpeed = 30 / room_speed;
+        runMult = 2;
         standLeft = earthEnemyStandLeft_spr;
+        walkLeft = earthEnemyStandLeft_spr;
         punchLeft = earthEnemyPunchLeft_spr;
         dieLeft = earthEnemyDieLeft_spr;
         standRight = earthEnemyStandRight_spr;
+        walkRight = earthEnemyStandRight_spr;
         punchRight = earthEnemyPunchRight_spr;
         dieRight = earthEnemyDieRight_spr;
     } else if (waterAbility) {
         minimumDistance = 6;
+        detectionDistance = 150;
         punchSpeed = (8/30);
         damage = 1;
         instanceHealth = 16;
         walkSpeed = 60 / room_speed;
+        runMult = 2;
         standLeft = waterEnemyStandLeft_spr;
+        walkLeft = waterEnemyStandLeft_spr;
         punchLeft = waterEnemyPunchLeft_spr;
         dieLeft = waterEnemyDieLeft_spr;
         standRight = waterEnemyStandRight_spr;
+        walkRight = waterEnemyStandRight_spr;
         punchRight = waterEnemyPunchRight_spr;
         dieRight = waterEnemyDieRight_spr;
     } else if (fireAbility) {
         minimumDistance = 300;
+        detectionDistance = 450;
         punchSpeed = (8/30);
         damage = 1.25;
         instanceHealth = 10;
         walkSpeed = 45 / room_speed;
+        runMult = 2;
         standLeft = fireEnemyStandLeft_spr;
+        walkLeft = fireEnemyStandLeft_spr;
         punchLeft = fireEnemyPunchLeft_spr;
         dieLeft = fireEnemyDieLeft_spr;
         standRight = fireEnemyStandRight_spr;
+        walkRight = fireEnemyStandRight_spr;
         punchRight = fireEnemyPunchRight_spr;
         dieRight = fireEnemyDieRight_spr;
     } else {    
         minimumDistance = 6;
+        detectionDistance = 150;
         punchSpeed = (8/30);
         damage = 1;
         instanceHealth = 12;
         walkSpeed = 60 / room_speed;
+        runMult = 2;
         standLeft = defaultEnemyStandLeft_spr;
+        walkLeft = defaultEnemyStandLeft_spr;
         punchLeft = defaultEnemyPunchLeft_spr;
         dieLeft = defaultEnemyDieLeft_spr;
         standRight = defaultEnemyStandRight_spr;
+        walkRight = defaultEnemyStandRight_spr;
         punchRight = defaultEnemyPunchRight_spr;
         dieRight = defaultEnemyDieRight_spr;
     }
     sprite_index = standLeft;
-    runSpeed = walkSpeed * 2;
+    runSpeed = walkSpeed * runMult;
     initial = false;
 }
 </string>
@@ -372,8 +421,7 @@ if(!dead) {
             run /= 2;
             walk /= 2;
         }
-        if (distance_to_object(Player) &lt; 150 || hitByFireball 
-            || (fireAbility &amp;&amp; distance_to_object(Player) &lt; 450)) {
+        if (distance_to_object(Player) &lt; detectionDistance &amp;&amp; !collision_line(x, y, Player.x, Player.y, terrain, false, true)) {
             if (Player.x &lt; x) {
                 left = true;
                 right = false;
@@ -382,25 +430,8 @@ if(!dead) {
                 right = true;
             }
             if(!punch) {
-                if((abs(Player.x - x) &gt; minimumDistance + sprite_width)) {
-                    if(left) {
-                        if(abs(Player.x - x) &gt; run) {
-                            sprite_index = standLeft;
-                            if (place_free(x - run,y)
-                                || place_meeting(x - run, y, enemy)) {
-                                x -= run;
-                            }
-                        }
-                    } else {
-                        if (abs(Player.x - x) &gt; run) {
-                            sprite_index = standRight;
-                            if (place_free(x + run, y) 
-                                || place_meeting(x + run, y, enemy)) {
-                                x += run;
-                            }
-                        }
-                    }
-                } else if (abs(Player.y - y) &lt; sprite_height) {
+                if ((collision_rectangle(x - minimumDistance, y, x, y + sprite_height, Player, false, true))
+                    || (collision_rectangle(x + sprite_width, y, x + sprite_width + minimumDistance, y + sprite_height, Player, false, true))) {
                     alarm[2] = room_speed * punchSpeed;
                     effectiveDamage = damage;
                     if(Player.earthAbility &amp;&amp; !earthAbility) {
@@ -408,31 +439,66 @@ if(!dead) {
                     }
                     if (airAbility) {
                         if (Player.fireAbility || Player.earthAbility) {
-                            Player.health -= effectiveDamage/2;
-                        } else {
-                            Player.health -= effectiveDamage;
+                            effectiveDamage /= 2;
                         }
                     } else if (waterAbility) {
-                        if(Player.fireAbility || Player.earthAbility) {
-                            Player.health -= effectiveDamage*2;
-                        } else {
-                            Player.health -= effectiveDamage;
+                        if (Player.fireAbility || Player.earthAbility) {
+                            effectiveDamage *= 2;
                         }
                     } else if (fireAbility) {
-                        if(left) {
-                            enFireball = instance_create(x - 5, y + 8, fireball);
-                        } else {
-                            enFireball = instance_create(x + sprite_width + 5, y + 8, fireball);
+                        if (Player.waterAbility || Player.earthAbility) {
+                            effectiveDamage /= 2;
+                        } else if (Player.airAbility) {
+                            effectiveDamage *= 2;
                         }
-                        enFireball.firedBy = id;
-                    } else {
-                        Player.health -= effectiveDamage;
                     }
+                    if(enemyType == "dog") {
+                        yOffset = 2;
+                        if(!place_free(x, y)) {
+                            yOffset -= 10;
+                        }
+                        if (left) {
+                            thisDogFire = instance_create(x - 12, y + yOffset, dogFire);
+                            thisDogFire.owner = id;
+                        } else {
+                            thisDogFire = instance_create(x + sprite_width - 4, y + yOffset, dogFire);
+                            thisDogFire.owner = id;
+                        }
+                    }
+                    Player.health -= effectiveDamage;
                     punch = true;
-                    if(left) {
+                    if (left) {
                         sprite_index = punchLeft;
                     } else {
                         sprite_index = punchRight;
+                    }
+                } else if (collision_rectangle(x - minimumDistance, y - sprite_height, x + sprite_width + minimumDistance, y, Player, false, true) == noone) {
+                    if(left) {
+                        if(abs(Player.x - x) &gt; run) {
+                            if (place_free(x - run,y)
+                                || place_meeting(x - run, y, enemy)) {
+                                sprite_index = walkLeft;
+                                x -= run;
+                            } else {
+                                sprite_index = standLeft;
+                            }
+                        }
+                    } else {
+                        if (abs(Player.x - x) &gt; run) {
+                            if (place_free(x + run, y) 
+                                || place_meeting(x + run, y, enemy)) {
+                                sprite_index = walkRight;
+                                x += run;
+                            } else {
+                                sprite_index = standRight;
+                            }
+                        }
+                    }
+                } else {
+                    if (left) {
+                        sprite_index = standLeft;
+                    } else {
+                        sprite_index = standRight;
                     }
                 }
             }
@@ -440,6 +506,11 @@ if(!dead) {
             if(walkTimer &gt; 0) {
                 walkTimer--;
             } else {
+                if(left) {
+                    sprite_index = standLeft;
+                } else {
+                    sprite_index = standRight;
+                }
                 walking = false;
                 alarm[0] = irandom(room_speed);
             }
@@ -448,19 +519,21 @@ if(!dead) {
                 if(walkDirection == 0) {
                     left = true;
                     right = false;
-                    sprite_index = standLeft;
                     if (place_free(x - walk, y) || place_meeting(x - walk, y, enemy)) {
+                        sprite_index = walkLeft;
                         x -= walk;
                     } else {
+                        sprite_index = standLeft;
                         x -= distance_to_object(instance_place(x - walk, y, all)) - 1;
                     }
                 } else {
                     left = false;
                     right = true;
-                    sprite_index = standRight;
                     if (place_free(x + walk, y) || place_meeting(x + walk, y, enemy)) {
+                        sprite_index = walkRight;
                         x += walk;
                     } else {
+                        sprite_index = standRight;
                         x += distance_to_object(instance_place(x + walk, y, all)) - 1;
                     }
                 }
