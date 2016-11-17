@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>enemy</parentName>
+  <parentName>hittableEnemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -27,28 +27,67 @@
             <kind>1</kind>
             <string>/// Initial values
 
+initial = true;
+enemyType = noone;
+
 walking = false;
 walkTimer = 0;
 fall = 0;
 fallMax = 600 / room_speed;
 fallMult = 30 / room_speed;
+
 left = true;
 right = false;
+
 dead = false;
-hitByEarth = false;
+flung = false;
+flungBy = noone;
 hitByWater = false;
+attack = false;
+inWater = false;
+
 reverse = false;
-punch = false;
+
 airAbility = false;
 earthAbility = false;
 fireAbility = false;
 waterAbility = false;
-initial = true;
+
 hitByFireball = false;
-enemyType = noone;
+minimumYDistance = 0;
+
+charge = false;
+chargeCooldown = false;
 
 randomize();
 alarm[0] = irandom(room_speed);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Special attack cooldown
+
+if (enemyType = "boar") {
+    chargeCooldown = false;
+}
 </string>
           </argument>
         </arguments>
@@ -71,9 +110,9 @@ alarm[0] = irandom(room_speed);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Can punch again
+            <string>///Can attack again
 
-punch = false;
+attack = false;
 </string>
           </argument>
         </arguments>
@@ -96,7 +135,7 @@ punch = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Stop punch
+            <string>/// End attack
 
 if (!dead) {
     if(enemyType == "dog") {
@@ -106,7 +145,7 @@ if (!dead) {
     
     alarm[3] = room_speed * (16/30);
     if(hitByWater &amp;&amp; !waterAbility) {
-        alarm[3] *= 3;
+        alarm[3] *= 2;
     }
     if(left) {
         sprite_index = standLeft;
@@ -206,7 +245,8 @@ if (!dead) {
                 }
             } else if (global.enemyHitType[num] == "earth") {
                 playerDamage = 6;
-                hitByEarth = true;
+                flung = true;
+                flungBy = Player.id;
                 hitByFireball = false;
             }  else if (global.enemyHitType[num] == "water") {
                 playerDamage = 4;
@@ -231,10 +271,12 @@ if (!dead) {
     if(place_meeting(x, y, fireball)) {
         conFireball = instance_place(x, y, fireball);
         if(conFireball.firedBy = Player) {
-            if(airAbility) {
+            if (airAbility) {
                 instanceHealth -= 6;
-            } else if(earthAbility) {
+            } else if (earthAbility) {
                 instanceHealth -= 1.05;
+            } else if (waterAbility) {
+                instanceHealth -= 2;
             } else {
                 instanceHealth -= 3;
             }
@@ -276,111 +318,80 @@ if(instanceHealth &lt;= 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Set correct values for element
+            <string>/// Set correct values for enemy based on type
 
 if(initial) {
-    if(enemyType == "dog") {
+    if (enemyType == "dog") {
         fireAbility = true;
         minimumDistance = 8;
-        detectionDistance = 300;
-        punchSpeed = (8/30);
-        damage = 1;
-        instanceHealth = 9;
+        detectionDistance = 200;
+        attackSpeed = (8/30);
+        damage = 3;
+        instanceHealth = 10;
         walkSpeed = 60 / room_speed;
         runMult = 3;
         standLeft = dogStandLeft_spr;
         walkLeft = dogWalkLeft_spr;
-        punchLeft = dogPunchLeft_spr;
+        attackLeft = dogAttackLeft_spr;
         dieLeft = dogDieLeft_spr;
         standRight = dogStandRight_spr;
         walkRight = dogWalkRight_spr;
-        punchRight = dogPunchRight_spr;
+        attackRight = dogAttackRight_spr;
         dieRight = dogDieRight_spr;
-        image_speed = 4 / room_speed;
+        walkImageSpeed = 4 / room_speed;
+        attackImageSpeed = walkImageSpeed;
         thisDogFire = noone;
-    } else if (airAbility) {
-        minimumDistance = 3;
-        detectionDistance = 150;
-        punchSpeed = (4/30);
-        damage = 0.5;
-        instanceHealth = 6;
-        walkSpeed = 120 / room_speed;
-        runMult = 2;
-        standLeft = airEnemyStandLeft_spr;
-        walkLeft = airEnemyStandLeft_spr;
-        punchLeft = airEnemyPunchLeft_spr;
-        dieLeft = airEnemyDieLeft_spr;
-        standRight = airEnemyStandRight_spr;
-        walkRight = airEnemyStandRight_spr;
-        punchRight = airEnemyPunchRight_spr;
-        dieRight = airEnemyDieRight_spr;
-    } else if (earthAbility) {
-        minimumDistance = 8;
-        detectionDistance = 150;
-        punchSpeed = (16/30);
-        damage = 2;
-        instanceHealth = 24;
+    } else if (enemyType = "boar") {
+        fireAbility = true;
+        minimumDistance = 4;
+        detectionDistance = 300;
+        attackSpeed = (16/30);
+        damage = 1;
+        instanceHealth = 8;
+        walkSpeed = 60 / room_speed;
+        runMult = 1.5;
+        standLeft = boarStandLeft_spr;
+        walkLeft = boarWalkLeft_spr;
+        attackLeft = boarAttackLeft_spr;
+        chargeLeft = boarChargeLeft_spr;
+        dieLeft = boarDieLeft_spr;
+        standRight = boarStandRight_spr;
+        walkRight = boarWalkRight_spr;
+        attackRight = boarAttackRight_spr;
+        chargeRight = boarChargeRight_spr;
+        dieRight = boarDieRight_spr;
+        walkImageSpeed = 4 / room_speed;
+        chargeMult = 5;
+        chargeSpeed = walkSpeed * chargeMult;
+        chargeImageSpeed = walkImageSpeed * chargeMult;
+        attackImageSpeed = walkImageSpeed;
+    } else if (enemyType = "bear") {
+        earthAbility = true;
+        minimumDistance = 16;
+        minimumYDistance = 48;
+        detectionDistance = 200;
+        attackSpeed = (30/30);
+        damage = 4;
+        instanceHealth = 20;
         walkSpeed = 30 / room_speed;
         runMult = 2;
-        standLeft = earthEnemyStandLeft_spr;
-        walkLeft = earthEnemyStandLeft_spr;
-        punchLeft = earthEnemyPunchLeft_spr;
-        dieLeft = earthEnemyDieLeft_spr;
-        standRight = earthEnemyStandRight_spr;
-        walkRight = earthEnemyStandRight_spr;
-        punchRight = earthEnemyPunchRight_spr;
-        dieRight = earthEnemyDieRight_spr;
-    } else if (waterAbility) {
-        minimumDistance = 6;
-        detectionDistance = 150;
-        punchSpeed = (8/30);
-        damage = 1;
-        instanceHealth = 16;
-        walkSpeed = 60 / room_speed;
-        runMult = 2;
-        standLeft = waterEnemyStandLeft_spr;
-        walkLeft = waterEnemyStandLeft_spr;
-        punchLeft = waterEnemyPunchLeft_spr;
-        dieLeft = waterEnemyDieLeft_spr;
-        standRight = waterEnemyStandRight_spr;
-        walkRight = waterEnemyStandRight_spr;
-        punchRight = waterEnemyPunchRight_spr;
-        dieRight = waterEnemyDieRight_spr;
-    } else if (fireAbility) {
-        minimumDistance = 300;
-        detectionDistance = 450;
-        punchSpeed = (8/30);
-        damage = 1.25;
-        instanceHealth = 10;
-        walkSpeed = 45 / room_speed;
-        runMult = 2;
-        standLeft = fireEnemyStandLeft_spr;
-        walkLeft = fireEnemyStandLeft_spr;
-        punchLeft = fireEnemyPunchLeft_spr;
-        dieLeft = fireEnemyDieLeft_spr;
-        standRight = fireEnemyStandRight_spr;
-        walkRight = fireEnemyStandRight_spr;
-        punchRight = fireEnemyPunchRight_spr;
-        dieRight = fireEnemyDieRight_spr;
-    } else {    
-        minimumDistance = 6;
-        detectionDistance = 150;
-        punchSpeed = (8/30);
-        damage = 1;
-        instanceHealth = 12;
-        walkSpeed = 60 / room_speed;
-        runMult = 2;
-        standLeft = defaultEnemyStandLeft_spr;
-        walkLeft = defaultEnemyStandLeft_spr;
-        punchLeft = defaultEnemyPunchLeft_spr;
-        dieLeft = defaultEnemyDieLeft_spr;
-        standRight = defaultEnemyStandRight_spr;
-        walkRight = defaultEnemyStandRight_spr;
-        punchRight = defaultEnemyPunchRight_spr;
-        dieRight = defaultEnemyDieRight_spr;
+        standLeft = bearStandLeft_spr;
+        walkLeft = bearWalkLeft_spr;
+        walkLeft2 = bearWalkLeft2_spr;
+        attackLeft = bearAttackLeft_spr;
+        dieLeft = bearDieLeft_spr;
+        standRight = bearStandRight_spr;
+        walkRight = bearWalkRight_spr;
+        walkRight2 = bearWalkRight2_spr;
+        attackRight = bearAttackRight_spr;
+        dieRight = bearDieRight_spr;
+        walkImageSpeed = 4 / room_speed;
+        attackImageSpeed = 2 / room_speed;
     }
+    
     sprite_index = standLeft;
     runSpeed = walkSpeed * runMult;
+    runImageSpeed = walkImageSpeed * runMult;
     initial = false;
 }
 </string>
@@ -407,21 +418,64 @@ if(initial) {
             <kind>1</kind>
             <string>/// Check movement
 
+if(place_meeting(x, y, water)) {
+    inWater = true;
+    fallMult = 15 / room_speed;
+    fallMax = 300 / room_speed;
+    if (waterAnimal)
+        fall = 0;
+    else  {
+        if(airAbility || fireAbility) {
+            run = runSpeed * 0.3;
+            walk = walkSpeed * 0.3;
+            if (enemyType = "boar")
+                boarCharge = chargeSpeed * 0.3;
+            if (fireAbility)
+                health -= 6 / room_speed;
+        } else
+            run = runSpeed;
+            walk = walkSpeed;
+    }
+} else {
+    run = runSpeed;
+    walk = walkSpeed;
+    if (enemyType = "boar")
+        boarCharge = chargeSpeed;
+        
+    inWater = false;
+    fallMult = 30 / room_speed;
+    fallMax = 600 / room_speed;
+}
+
+
 if(!dead) {
-    if(hitByEarth) {
-        if(!earthAbility) {
+    if(flung) {
+        if(!earthAbility)
             instance_change(elementalEnemyFlung, true);
+        else {
+            flung = false;
+            flungBy = noone;
         }
     } else {
+        flungBy = noone;
+        
         Gravity();
     
-        run = runSpeed;
-        walk = walkSpeed;
         if (hitByWater &amp;&amp; !waterAbility) {
             run /= 2;
             walk /= 2;
+            if (enemyType = "boar")
+                boarCharge /= 2;
         }
-        if (distance_to_object(Player) &lt; detectionDistance &amp;&amp; !collision_line(x, y, Player.x, Player.y, terrain, false, true)) {
+        
+        if (distance_to_object(Player) &lt; detectionDistance 
+            &amp;&amp; !collision_line(x, y, Player.x, Player.y, terrain, false, true)) {
+            
+            if (enemyType = "boar" &amp;&amp; !charge &amp;&amp; !chargeCooldown &amp;&amp; distance_to_object(Player) &gt; minimumDistance * 4) {
+                image_speed = chargeImageSpeed;
+                charge = true;
+            }
+            
             if (Player.x &lt; x) {
                 left = true;
                 right = false;
@@ -429,10 +483,16 @@ if(!dead) {
                 left = false;
                 right = true;
             }
-            if(!punch) {
-                if ((collision_rectangle(x - minimumDistance, y, x, y + sprite_height, Player, false, true))
-                    || (collision_rectangle(x + sprite_width, y, x + sprite_width + minimumDistance, y + sprite_height, Player, false, true))) {
-                    alarm[2] = room_speed * punchSpeed;
+            
+            if(!attack) {
+                if (collision_rectangle(x - minimumDistance, y + minimumYDistance,
+                    x, y + sprite_height, Player, false, true)
+                    || collision_rectangle(x + sprite_width, y + minimumYDistance, 
+                    x + sprite_width + minimumDistance, y + sprite_height, Player,
+                    false, true)) {
+                    image_index = 0;
+                     
+                    alarm[2] = room_speed * attackSpeed;
                     effectiveDamage = damage;
                     if(Player.earthAbility &amp;&amp; !earthAbility) {
                         effectiveDamage *= 0.7;
@@ -446,8 +506,10 @@ if(!dead) {
                             effectiveDamage *= 2;
                         }
                     } else if (fireAbility) {
-                        if (Player.waterAbility || Player.earthAbility) {
+                        if (Player.earthAbility) {
                             effectiveDamage /= 2;
+                        } else if (Player.waterAbility){
+                            effectiveDamage /= 1.5;
                         } else if (Player.airAbility) {
                             effectiveDamage *= 2;
                         }
@@ -464,35 +526,76 @@ if(!dead) {
                             thisDogFire = instance_create(x + sprite_width - 4, y + yOffset, dogFire);
                             thisDogFire.owner = id;
                         }
+                    } else if (enemyType = "boar") {
+                        if (charge) {
+                            effectiveDamage *= chargeMult;
+                            charge = false;
+                            chargeCooldown = true;
+                            alarm[4] = room_speed * (2);
+                            Player.flung = true;
+                            Player.flungBy = id;
+                            Player.flingInitial = true;
+                        }
+                    } else if (enemyType = "bear") {
+                        Player.flung = true;
+                        Player.flungBy = id;
+                        Player.flingInitial = true;
                     }
-                    Player.health -= effectiveDamage;
-                    punch = true;
+                    if(!Player.inv) {
+                        Player.health -= effectiveDamage;
+                        Player.inv = true;
+                        Player.alarm[7] = room_speed * (1/2);
+                    }
+                    attack = true;
+                    image_speed = attackImageSpeed;
+                    
                     if (left) {
-                        sprite_index = punchLeft;
+                        sprite_index = attackLeft;
                     } else {
-                        sprite_index = punchRight;
+                        sprite_index = attackRight;
                     }
-                } else if (collision_rectangle(x - minimumDistance, y - sprite_height, x + sprite_width + minimumDistance, y, Player, false, true) == noone) {
-                    if(left) {
-                        if(abs(Player.x - x) &gt; run) {
-                            if (place_free(x - run,y)
-                                || place_meeting(x - run, y, enemy)) {
+                } else if (collision_rectangle(x - minimumDistance, y - sprite_height,
+                                               x + sprite_width + minimumDistance, y, 
+                                               Player, false, true) == noone) {
+                    image_speed = runImageSpeed;
+                    if (left) {
+                        if (enemyType = "boar" &amp;&amp; charge)
+                            run = boarCharge;
+                        
+                        if ((place_free(x - run,y)
+                             || place_meeting(x - run, y, enemy))
+                             &amp;&amp; place_meeting(x - run - sprite_width,
+                             y + sprite_height, terrain)) {
+                            if (enemyType = "boar" &amp;&amp; charge)
+                                sprite_index = chargeLeft;
+                            else if (enemyType = "bear" 
+                                     &amp;&amp; distance_to_object(Player) &lt; minimumDistance * 3)
+                                sprite_index = walkLeft2;
+                            else
                                 sprite_index = walkLeft;
-                                x -= run;
-                            } else {
-                                sprite_index = standLeft;
-                            }
-                        }
+                                
+                            x -= run;
+                        } else
+                            sprite_index = standLeft;
                     } else {
-                        if (abs(Player.x - x) &gt; run) {
-                            if (place_free(x + run, y) 
-                                || place_meeting(x + run, y, enemy)) {
+                        if (enemyType = "boar" &amp;&amp; charge)
+                            run = boarCharge;
+                            
+                        if ((place_free(x + run, y)
+                             || place_meeting(x + run, y, enemy))
+                             &amp;&amp; place_meeting(x + run + sprite_width, 
+                             y + sprite_height, terrain)) {
+                            if (enemyType = "boar" &amp;&amp; charge)
+                                sprite_index = chargeRight;
+                            else if (enemyType = "bear" 
+                                     &amp;&amp; distance_to_object(Player) &lt; minimumDistance * 3)
+                                sprite_index = walkRight2;
+                            else
                                 sprite_index = walkRight;
-                                x += run;
-                            } else {
-                                sprite_index = standRight;
-                            }
-                        }
+                                
+                            x += run;
+                        } else
+                            sprite_index = standRight;
                     }
                 } else {
                     if (left) {
@@ -503,6 +606,7 @@ if(!dead) {
                 }
             }
         } else {
+            image_speed = walkImageSpeed;
             if(walkTimer &gt; 0) {
                 walkTimer--;
             } else {
@@ -519,22 +623,24 @@ if(!dead) {
                 if(walkDirection == 0) {
                     left = true;
                     right = false;
-                    if (place_free(x - walk, y) || place_meeting(x - walk, y, enemy)) {
+                    if ((place_free(x - walk, y) || place_meeting(x - walk, y, enemy))
+                        &amp;&amp; place_meeting(x - walk - sprite_width, y + sprite_height, terrain)) {
                         sprite_index = walkLeft;
                         x -= walk;
                     } else {
                         sprite_index = standLeft;
-                        x -= distance_to_object(instance_place(x - walk, y, all)) - 1;
                     }
                 } else {
                     left = false;
                     right = true;
-                    if (place_free(x + walk, y) || place_meeting(x + walk, y, enemy)) {
+                    if ((place_free(x + walk, y) 
+                         || place_meeting(x + walk, y, enemy))
+                         &amp;&amp; place_meeting(x + walk + sprite_width, 
+                         y + sprite_height, terrain)) {
                         sprite_index = walkRight;
                         x += walk;
                     } else {
                         sprite_index = standRight;
-                        x += distance_to_object(instance_place(x + walk, y, all)) - 1;
                     }
                 }
             }

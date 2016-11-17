@@ -6,10 +6,6 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\fireballRight_spr</sprite>
-    <sprite>sprites\fireballLeft_spr</sprite>
-    <sprite>sprites\waterwhipRight_spr</sprite>
-    <sprite>sprites\waterwhipLeft_spr</sprite>
     <sprite>sprites\boulder_spr</sprite>
     <sprites name="Player">
       <sprites name="Left">
@@ -56,6 +52,12 @@
           <sprite>sprites\dieRightFire_spr</sprite>
         </sprites>
       </sprites>
+      <sprites name="Attacks">
+        <sprite>sprites\fireballRight_spr</sprite>
+        <sprite>sprites\fireballLeft_spr</sprite>
+        <sprite>sprites\waterwhipRight_spr</sprite>
+        <sprite>sprites\waterwhipLeft_spr</sprite>
+      </sprites>
       <sprite>sprites\playerMask_spr</sprite>
     </sprites>
     <sprites name="Terrain">
@@ -100,24 +102,24 @@
       <sprites name="EarthEnemy">
         <sprites name="Left">
           <sprite>sprites\earthEnemyStandLeft_spr</sprite>
-          <sprite>sprites\earthEnemyPunchLeft_spr</sprite>
+          <sprite>sprites\earthEnemyAttackLeft_spr</sprite>
           <sprite>sprites\earthEnemyDieLeft_spr</sprite>
         </sprites>
         <sprites name="Right">
           <sprite>sprites\earthEnemyStandRight_spr</sprite>
-          <sprite>sprites\earthEnemyPunchRight_spr</sprite>
+          <sprite>sprites\earthEnemyAttackRight_spr</sprite>
           <sprite>sprites\earthEnemyDieRight_spr</sprite>
         </sprites>
       </sprites>
       <sprites name="WaterEnemy">
         <sprites name="Left">
           <sprite>sprites\waterEnemyStandLeft_spr</sprite>
-          <sprite>sprites\waterEnemyPunchLeft_spr</sprite>
+          <sprite>sprites\waterEnemyAttackLeft_spr</sprite>
           <sprite>sprites\waterEnemyDieLeft_spr</sprite>
         </sprites>
         <sprites name="Right">
           <sprite>sprites\waterEnemyStandRight_spr</sprite>
-          <sprite>sprites\waterEnemyPunchRight_spr</sprite>
+          <sprite>sprites\waterEnemyAttackRight_spr</sprite>
           <sprite>sprites\waterEnemyDieRight_spr</sprite>
         </sprites>
       </sprites>
@@ -133,24 +135,81 @@
           <sprite>sprites\fireEnemyDieRight_spr</sprite>
         </sprites>
       </sprites>
-      <sprites name="Dog">
-        <sprites name="Left">
-          <sprite>sprites\dogStandLeft_spr</sprite>
-          <sprite>sprites\dogWalkLeft_spr</sprite>
-          <sprite>sprites\dogPunchLeft_spr</sprite>
-          <sprite>sprites\dogDieLeft_spr</sprite>
-          <sprite>sprites\dogFireLeft_spr</sprite>
+      <sprites name="Forest">
+        <sprites name="Dog">
+          <sprites name="Left">
+            <sprite>sprites\dogStandLeft_spr</sprite>
+            <sprite>sprites\dogWalkLeft_spr</sprite>
+            <sprite>sprites\dogAttackLeft_spr</sprite>
+            <sprite>sprites\dogDieLeft_spr</sprite>
+            <sprite>sprites\dogFireLeft_spr</sprite>
+          </sprites>
+          <sprites name="Right">
+            <sprite>sprites\dogStandRight_spr</sprite>
+            <sprite>sprites\dogWalkRight_spr</sprite>
+            <sprite>sprites\dogAttackRight_spr</sprite>
+            <sprite>sprites\dogDieRight_spr</sprite>
+            <sprite>sprites\dogFireRight_spr</sprite>
+          </sprites>
         </sprites>
-        <sprites name="Right">
-          <sprite>sprites\dogStandRight_spr</sprite>
-          <sprite>sprites\dogWalkRight_spr</sprite>
-          <sprite>sprites\dogPunchRight_spr</sprite>
-          <sprite>sprites\dogDieRight_spr</sprite>
-          <sprite>sprites\dogFireRight_spr</sprite>
+        <sprites name="Boar">
+          <sprites name="Left">
+            <sprite>sprites\boarStandLeft_spr</sprite>
+            <sprite>sprites\boarWalkLeft_spr</sprite>
+            <sprite>sprites\boarAttackLeft_spr</sprite>
+            <sprite>sprites\boarChargeLeft_spr</sprite>
+            <sprite>sprites\boarDieLeft_spr</sprite>
+          </sprites>
+          <sprites name="Right">
+            <sprite>sprites\boarStandRight_spr</sprite>
+            <sprite>sprites\boarWalkRight_spr</sprite>
+            <sprite>sprites\boarAttackRight_spr</sprite>
+            <sprite>sprites\boarChargeRight_spr</sprite>
+            <sprite>sprites\boarDieRight_spr</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Bear">
+          <sprites name="Left">
+            <sprite>sprites\bearStandLeft_spr</sprite>
+            <sprite>sprites\bearWalkLeft_spr</sprite>
+            <sprite>sprites\bearWalkLeft2_spr</sprite>
+            <sprite>sprites\bearAttackLeft_spr</sprite>
+            <sprite>sprites\bearDieLeft_spr</sprite>
+          </sprites>
+          <sprites name="Right">
+            <sprite>sprites\bearStandRight_spr</sprite>
+            <sprite>sprites\bearWalkRight_spr</sprite>
+            <sprite>sprites\bearWalkRight2_spr</sprite>
+            <sprite>sprites\bearAttackRight_spr</sprite>
+            <sprite>sprites\bearDieRight_spr</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Piranha">
+          <sprites name="Left">
+            <sprite>sprites\piranhaIdleLeft_spr</sprite>
+            <sprite>sprites\piranhaSwimLeft_spr</sprite>
+            <sprite>sprites\piranhaAttackLeft_spr</sprite>
+            <sprite>sprites\piranhaDieLeft_spr</sprite>
+          </sprites>
+          <sprites name="Right">
+            <sprite>sprites\piranhaIdleRight_spr</sprite>
+            <sprite>sprites\piranhaSwimRight_spr</sprite>
+            <sprite>sprites\piranhaAttackRight_spr</sprite>
+            <sprite>sprites\piranhaDieRight_spr</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Turtle">
+          <sprites name="Left">
+            <sprite>sprites\turtleStandLeft_spr</sprite>
+            <sprite>sprites\turtleSwimLeft_spr</sprite>
+          </sprites>
+          <sprites name="Right">
+            <sprite>sprites\turtleStandRight_spr</sprite>
+            <sprite>sprites\turtleSwimRight_spr</sprite>
+          </sprites>
         </sprites>
       </sprites>
     </sprites>
-    <sprite>sprites\button_spr</sprite>
     <sprites name="Element GUI">
       <sprite>sprites\elementHolder_spr</sprite>
       <sprite>sprites\airElement_spr</sprite>
@@ -161,6 +220,7 @@
       <sprite>sprites\waterElementActive_spr</sprite>
       <sprite>sprites\fireElement_spr</sprite>
       <sprite>sprites\fireElementActive_spr</sprite>
+      <sprite>sprites\button_spr</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -171,6 +231,8 @@
     <script>scripts\Jump.gml</script>
     <script>scripts\run_right.gml</script>
     <script>scripts\run_left.gml</script>
+    <script>scripts\FlingEntity.gml</script>
+    <script>scripts\piranhaMovement.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\Player</object>
@@ -194,19 +256,24 @@
     </objects>
     <objects name="Enemies">
       <object>objects\enemy</object>
+      <object>objects\hittableEnemy</object>
+      <object>objects\nonhittableEnemy</object>
       <object>objects\elementalEnemy</object>
       <object>objects\elementalEnemyDead</object>
       <object>objects\elementalEnemyFlung</object>
+      <object>objects\piranha</object>
+      <object>objects\piranhaDead</object>
+      <object>objects\turtle</object>
     </objects>
     <object>objects\fireball</object>
     <object>objects\boulder</object>
     <object>objects\notPlayer</object>
     <object>objects\notPlayerSolids</object>
     <object>objects\viewScreen</object>
-    <object>objects\button</object>
     <object>objects\mouseFollow</object>
-    <object>objects\elements</object>
     <object>objects\dogFire</object>
+    <object>objects\button</object>
+    <object>objects\PlayerFlung</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\prototypeLevel</room>

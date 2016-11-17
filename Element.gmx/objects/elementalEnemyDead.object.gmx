@@ -31,7 +31,6 @@ if(left) {
     sprite_index = dieLeft;
 } else {
     sprite_index = dieRight;
-    x -= 21;
 }
 image_index = 0;
 image_speed = 3 / room_speed;
