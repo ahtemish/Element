@@ -52,10 +52,16 @@ owner = noone;
             <kind>1</kind>
             <string>/// Set correct sprite
 
-if(owner.left) {
-    sprite_index = dogFireLeft_spr;
+if (owner.left) {
+    if (owner.enemyType = "dog")
+        sprite_index = dogFireLeft_spr;
+    else if (owner.enemyType = "wolf")
+        sprite_index = wolfWaterLeft_spr;
 } else {
-    sprite_index = dogFireRight_spr;
+    if (owner.enemyType = "dog")
+        sprite_index = dogFireRight_spr;
+    else if (owner.enemyType = "wolf")
+        sprite_index = wolfWaterRight_spr;
 }
 </string>
           </argument>

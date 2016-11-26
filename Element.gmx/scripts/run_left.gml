@@ -1,8 +1,8 @@
 /// run_left(speed)
 
-var effectiveSpeed = argument0;
+var effectiveSpeed = argument[0];
 
-if(!boulderMove) {
+if (!boulderMove) {
     if (place_free(x - effectiveSpeed,y)) {
         x -= effectiveSpeed;
         ladder = false;
@@ -14,19 +14,16 @@ if(!boulderMove) {
             alarm[0] = room_speed / 3;
         }
         runLeft = false;
+    } else if (place_meeting(x - effectiveSpeed, y + sprite_height - 4, terrainSlope)) {
+        x -= effectiveSpeed;
+        y -= effectiveSpeed;
     } else {
-        if(place_meeting(x - effectiveSpeed, y, terrain)) {
-            if(earthAbility) {
-                climbThis = instance_place(x - effectiveSpeed, y, terrain);
-                x = climbThis.x + climbThis.sprite_width;
-                y -= 90 / room_speed;
-                ladder = true;
-                runLeft = false;
-            } else if (waterAbility && 
-                       place_free(x - effectiveSpeed, y - sprite_height)) {
-                x = instance_place(x - effectiveSpeed, y, terrain).x;
-                y -= sprite_height;
-            }
+        if (place_meeting(x - effectiveSpeed, y, terrain) && earthAbility) {
+            climbThis = instance_place(x - effectiveSpeed, y, terrain);
+            x = climbThis.x + climbThis.sprite_width;
+            y -= 90 / room_speed;
+            ladder = true;
+            runLeft = false;
         } else {
             x -= distance_to_object(instance_place(x - effectiveSpeed, y, notPlayerSolids)) - 1;
             ladder = false;

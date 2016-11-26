@@ -30,6 +30,8 @@
 initial = true;
 enemyType = noone;
 
+gameStarted = false;
+
 walking = false;
 walkTimer = 0;
 fall = 0;
@@ -45,8 +47,7 @@ flungBy = noone;
 hitByWater = false;
 attack = false;
 inWater = false;
-
-reverse = false;
+inv = false;
 
 airAbility = false;
 earthAbility = false;
@@ -55,12 +56,56 @@ waterAbility = false;
 
 hitByFireball = false;
 minimumYDistance = 0;
+minimumDistance = 4;
+detectionDistance = 50;
 
 charge = false;
 chargeCooldown = false;
 
+attackSpeed = (10/30);
+damage = 1;
+instanceHealth = 5;
+walkSpeed = 60 / room_speed;
+runMult = 2;
+standLeft = defaultEnemyStandLeft_spr;
+walkLeft = defaultEnemyStandLeft_spr;
+attackLeft = defaultEnemyAttackLeft_spr;
+dieLeft = defaultEnemyDieLeft_spr;
+standRight = defaultEnemyStandRight_spr;
+walkRight = defaultEnemyStandRight_spr;
+attackRight = defaultEnemyAttackRight_spr;
+dieRight = defaultEnemyDieRight_spr;
+walkImageSpeed = 4 / room_speed;
+attackImageSpeed = walkImageSpeed;
+
 randomize();
 alarm[0] = irandom(room_speed);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Goat jump
+
+height = 7;
+jump = true;
 </string>
           </argument>
         </arguments>
@@ -83,9 +128,9 @@ alarm[0] = irandom(room_speed);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Special attack cooldown
+            <string>/// Boar charge cooldown
 
-if (enemyType = "boar") {
+if (enemyType = "boar" || enemyType = "goat") {
     chargeCooldown = false;
 }
 </string>
@@ -138,7 +183,7 @@ attack = false;
             <string>/// End attack
 
 if (!dead) {
-    if(enemyType == "dog") {
+    if(enemyType == "dog" || enemyType = "wolf") {
         with(thisDogFire) instance_destroy();
         thisDogFire = noone;
     }
@@ -202,11 +247,13 @@ hitByWater = false;
             <string>/// Start move
 
 if(abs(Player.x - x) &gt; minimumDistance + sprite_width) {
-    walkTimer =  room_speed / 2;
+    walkTimer =  room_speed;
     walking = true;
     walkDirection = irandom(1);
     image_index = 0;
 }
+
+alarm[5] = irandom(6);
 </string>
           </argument>
         </arguments>
@@ -233,7 +280,8 @@ if(abs(Player.x - x) &gt; minimumDistance + sprite_width) {
 
 if (!dead) {
     for(num = 0; num &lt; 5; num++) {
-        if (global.enemyHitId[num] == id) {
+        if (global.enemyHitId[num] == id &amp;&amp; !inv) {
+            inv = true;
             if (global.enemyHitType[num] == "air") {
                 playerDamage = 2;
                 hitByFireball = false;
@@ -290,9 +338,11 @@ if (!dead) {
 }
     
 if(instanceHealth &lt;= 0) {
-    if(enemyType == "dog") {
+    if(enemyType == "dog" || enemyType = "wolf") {
         with(thisDogFire) instance_destroy();
     }
+    Player.enemiesKilled[Player.numEnemiesKilled] = id;
+    Player.numEnemiesKilled++;
     dead = true;
     instance_change(elementalEnemyDead, true);
 }
@@ -321,15 +371,25 @@ if(instanceHealth &lt;= 0) {
             <string>/// Set correct values for enemy based on type
 
 if(initial) {
+
+        found = false;
+        for(i = 0; i &lt; array_length_1d(global.enemies); i++) {
+            if (global.enemies[i] = id)
+                found = true;
+        }
+        if (!found)
+            instance_destroy();
+    
+
     if (enemyType == "dog") {
         fireAbility = true;
         minimumDistance = 8;
         detectionDistance = 200;
         attackSpeed = (8/30);
         damage = 3;
-        instanceHealth = 10;
+        initialHealth = 10;
         walkSpeed = 60 / room_speed;
-        runMult = 3;
+        runMult = 2;
         standLeft = dogStandLeft_spr;
         walkLeft = dogWalkLeft_spr;
         attackLeft = dogAttackLeft_spr;
@@ -347,7 +407,7 @@ if(initial) {
         detectionDistance = 300;
         attackSpeed = (16/30);
         damage = 1;
-        instanceHealth = 8;
+        initialHealth = 8;
         walkSpeed = 60 / room_speed;
         runMult = 1.5;
         standLeft = boarStandLeft_spr;
@@ -372,23 +432,68 @@ if(initial) {
         detectionDistance = 200;
         attackSpeed = (30/30);
         damage = 4;
-        instanceHealth = 20;
+        initialHealth = 20;
         walkSpeed = 30 / room_speed;
         runMult = 2;
         standLeft = bearStandLeft_spr;
-        walkLeft = bearWalkLeft_spr;
-        walkLeft2 = bearWalkLeft2_spr;
+        walkLeft = bearWalkLeft2_spr;
         attackLeft = bearAttackLeft_spr;
         dieLeft = bearDieLeft_spr;
         standRight = bearStandRight_spr;
-        walkRight = bearWalkRight_spr;
-        walkRight2 = bearWalkRight2_spr;
+        walkRight = bearWalkRight2_spr;
         attackRight = bearAttackRight_spr;
         dieRight = bearDieRight_spr;
         walkImageSpeed = 4 / room_speed;
         attackImageSpeed = 2 / room_speed;
+    } else if (enemyType == "wolf") {
+        waterAbility = true;
+        minimumDistance = 12;
+        detectionDistance = 200;
+        attackSpeed = (4/30);
+        damage = 3;
+        initialHealth = 15;
+        walkSpeed = 75 / room_speed;
+        runMult = 2;
+        standLeft = wolfStandLeft_spr;
+        walkLeft = wolfWalkLeft_spr;
+        attackLeft = wolfAttackLeft_spr;
+        dieLeft = wolfDieLeft_spr;
+        standRight = wolfStandRight_spr;
+        walkRight = wolfWalkRight_spr;
+        attackRight = wolfAttackRight_spr;
+        dieRight = wolfDieRight_spr;
+        walkImageSpeed = 4 / room_speed;
+        attackImageSpeed = walkImageSpeed;
+        thisDogFire = noone;
+    } else if (enemyType = "goat") {
+        earthAbility = true;
+        minimumDistance = 4;
+        detectionDistance = 300;
+        attackSpeed = (20/30);
+        damage = 4;
+        initialHealth = 12;
+        walkSpeed = 45 / room_speed;
+        runMult = 1.5;
+        standLeft = boarStandLeft_spr;
+        walkLeft = boarWalkLeft_spr;
+        attackLeft = boarAttackLeft_spr;
+        chargeLeft = boarChargeLeft_spr;
+        dieLeft = boarDieLeft_spr;
+        standRight = boarStandRight_spr;
+        walkRight = boarWalkRight_spr;
+        attackRight = boarAttackRight_spr;
+        chargeRight = boarChargeRight_spr;
+        dieRight = boarDieRight_spr;
+        walkImageSpeed = 4 / room_speed;
+        chargeMult = 6;
+        chargeSpeed = walkSpeed * chargeMult;
+        chargeImageSpeed = walkImageSpeed * chargeMult;
+        attackImageSpeed = walkImageSpeed;
+        jump = false;
+        height = 0;
     }
     
+    instanceHealth = initialHealth;
     sprite_index = standLeft;
     runSpeed = walkSpeed * runMult;
     runImageSpeed = walkImageSpeed * runMult;
@@ -418,28 +523,24 @@ if(initial) {
             <kind>1</kind>
             <string>/// Check movement
 
-if(place_meeting(x, y, water)) {
+if (place_meeting(x, y, water)) {
     inWater = true;
     fallMult = 15 / room_speed;
     fallMax = 300 / room_speed;
-    if (waterAnimal)
-        fall = 0;
-    else  {
-        if(airAbility || fireAbility) {
-            run = runSpeed * 0.3;
-            walk = walkSpeed * 0.3;
-            if (enemyType = "boar")
-                boarCharge = chargeSpeed * 0.3;
-            if (fireAbility)
-                health -= 6 / room_speed;
-        } else
-            run = runSpeed;
-            walk = walkSpeed;
-    }
+    if (airAbility || fireAbility) {
+        run = runSpeed * 0.3;
+        walk = walkSpeed * 0.3;
+        if (enemyType = "boar" || enemyType = "goat")
+            boarCharge = chargeSpeed * 0.3;
+        if (fireAbility)
+            health -= 6 / room_speed;
+    } else
+    run = runSpeed;
+    walk = walkSpeed;
 } else {
     run = runSpeed;
     walk = walkSpeed;
-    if (enemyType = "boar")
+    if (enemyType = "boar" || enemyType = "goat")
         boarCharge = chargeSpeed;
         
     inWater = false;
@@ -459,29 +560,50 @@ if(!dead) {
     } else {
         flungBy = noone;
         
-        Gravity();
+        if (enemyType = "goat") {
+            if (!charge &amp;&amp; jump)
+                if (height == 0)
+                    jump = false;
+                else {
+                    if (place_free(x, y - height)) {
+                        y -= height;
+                        if (height == 15 &amp;&amp; room_speed == 60)
+                            height -= 5;
+                        else
+                            height -= 30 / room_speed;
+                    } else {
+                        y = (instance_nearest(x, y - height, other)) + ground.sprite_height;
+                        height = 0;
+                    }            
+                }
+            else
+                Gravity();
+        } else
+            Gravity();
     
         if (hitByWater &amp;&amp; !waterAbility) {
             run /= 2;
             walk /= 2;
-            if (enemyType = "boar")
+            if (enemyType = "boar" || enemyType = "goat")
                 boarCharge /= 2;
         }
         
         if (distance_to_object(Player) &lt; detectionDistance 
             &amp;&amp; !collision_line(x, y, Player.x, Player.y, terrain, false, true)) {
             
-            if (enemyType = "boar" &amp;&amp; !charge &amp;&amp; !chargeCooldown &amp;&amp; distance_to_object(Player) &gt; minimumDistance * 4) {
+            if ((enemyType = "boar" || enemyType = "goat") &amp;&amp; !charge &amp;&amp; !chargeCooldown &amp;&amp; distance_to_object(Player) &gt; minimumDistance * 4) {
                 image_speed = chargeImageSpeed;
                 charge = true;
             }
             
-            if (Player.x &lt; x) {
-                left = true;
-                right = false;
-            } else {
-                left = false;
-                right = true;
+            if ((enemyType != "boar" &amp;&amp; enemyType != "goat") || ((enemyType = "boar" || enemyType = "goat") &amp;&amp; !charge)) {
+                if (Player.x &lt; x) {
+                    left = true;
+                    right = false;
+                } else {
+                    left = false;
+                    right = true;
+                }
             }
             
             if(!attack) {
@@ -490,6 +612,7 @@ if(!dead) {
                     || collision_rectangle(x + sprite_width, y + minimumYDistance, 
                     x + sprite_width + minimumDistance, y + sprite_height, Player,
                     false, true)) {
+                    
                     image_index = 0;
                      
                     alarm[2] = room_speed * attackSpeed;
@@ -514,7 +637,7 @@ if(!dead) {
                             effectiveDamage *= 2;
                         }
                     }
-                    if(enemyType == "dog") {
+                    if(enemyType == "dog" || enemyType == "wolf") {
                         yOffset = 2;
                         if(!place_free(x, y)) {
                             yOffset -= 10;
@@ -529,6 +652,16 @@ if(!dead) {
                     } else if (enemyType = "boar") {
                         if (charge) {
                             effectiveDamage *= chargeMult;
+                            charge = false;
+                            chargeCooldown = true;
+                            alarm[4] = room_speed * (2);
+                            Player.flung = true;
+                            Player.flungBy = id;
+                            Player.flingInitial = true;
+                        }
+                    } else if (enemyType = "goat") {
+                        if (charge) {
+                            effectiveDamage *= 2;
                             charge = false;
                             chargeCooldown = true;
                             alarm[4] = room_speed * (2);
@@ -559,37 +692,31 @@ if(!dead) {
                                                Player, false, true) == noone) {
                     image_speed = runImageSpeed;
                     if (left) {
-                        if (enemyType = "boar" &amp;&amp; charge)
+                        if ((enemyType = "boar" || enemyType = "goat") &amp;&amp; charge)
                             run = boarCharge;
                         
                         if ((place_free(x - run,y)
                              || place_meeting(x - run, y, enemy))
                              &amp;&amp; place_meeting(x - run - sprite_width,
-                             y + sprite_height, terrain)) {
-                            if (enemyType = "boar" &amp;&amp; charge)
+                             y + 64, terrain)) {
+                            if ((enemyType = "boar" || enemyType = "goat") &amp;&amp; charge)
                                 sprite_index = chargeLeft;
-                            else if (enemyType = "bear" 
-                                     &amp;&amp; distance_to_object(Player) &lt; minimumDistance * 3)
-                                sprite_index = walkLeft2;
                             else
                                 sprite_index = walkLeft;
                                 
                             x -= run;
-                        } else
+                        } else 
                             sprite_index = standLeft;
                     } else {
-                        if (enemyType = "boar" &amp;&amp; charge)
+                        if ((enemyType = "boar" || enemyType = "goat") &amp;&amp; charge)
                             run = boarCharge;
                             
                         if ((place_free(x + run, y)
                              || place_meeting(x + run, y, enemy))
                              &amp;&amp; place_meeting(x + run + sprite_width, 
-                             y + sprite_height, terrain)) {
-                            if (enemyType = "boar" &amp;&amp; charge)
+                             y + 64, terrain)) {
+                            if ((enemyType = "boar" || enemyType = "goat") &amp;&amp; charge)
                                 sprite_index = chargeRight;
-                            else if (enemyType = "bear" 
-                                     &amp;&amp; distance_to_object(Player) &lt; minimumDistance * 3)
-                                sprite_index = walkRight2;
                             else
                                 sprite_index = walkRight;
                                 
@@ -606,6 +733,9 @@ if(!dead) {
                 }
             }
         } else {
+            if (enemyType = "boar" || enemyType = "goat")
+                charge = false;
+            
             image_speed = walkImageSpeed;
             if(walkTimer &gt; 0) {
                 walkTimer--;
@@ -647,7 +777,6 @@ if(!dead) {
         }
     }
 }
-
 </string>
           </argument>
         </arguments>
@@ -656,24 +785,41 @@ if(!dead) {
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>601</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>draw_self();
-draw_set_halign(fa_center);
-//draw_text(x + sprite_width/2, y - sprite_height/2, instanceHealth);
-</string>
+            <kind>9</kind>
+            <script>drawHealth</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>

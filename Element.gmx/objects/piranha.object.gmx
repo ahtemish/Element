@@ -30,6 +30,9 @@
 initialX = x;
 initialY = y;
 
+initial = true;
+gameStarted = false;
+
 left = true;
 right = false;
 
@@ -49,7 +52,8 @@ detectionDistance = 200;
 
 attackSpeed = (4/30);
 damage = 1;
-instanceHealth = 6;
+initialHealth = 6;
+instanceHealth = initialHealth;
 
 standLeft = piranhaIdleLeft_spr;
 walkLeft = piranhaSwimLeft_spr;
@@ -150,7 +154,8 @@ if (!dead) {
 
 if (!dead) {
     for(num = 0; num &lt; 5; num++) {
-        if (global.enemyHitId[num] == id) {
+        if (global.enemyHitId[num] == id &amp;&amp; !inv) {
+            inv = true;
             if (global.enemyHitType[num] == "air") {
                 playerDamage = 2;
                 hitByFireball = false;
@@ -182,6 +187,42 @@ if (!dead) {
 if(instanceHealth &lt;= 0) {
     dead = true;
     instance_change(piranhaDead, true);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Check if this should exist
+
+if (initial) {
+        found = false;
+        for(i = 0; i &lt; array_length_1d(global.enemies); i++) {
+            if (global.enemies[i] = id)
+                found = true;
+        }
+        if (!found)
+            instance_destroy();
+    
+    
+    initial = false;
 }
 </string>
           </argument>
@@ -271,6 +312,48 @@ if (!dead) {
     }
 }
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>drawHealth</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>

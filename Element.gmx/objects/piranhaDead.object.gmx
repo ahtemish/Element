@@ -35,6 +35,15 @@ if(left) {
 image_index = 0;
 image_speed = 3 / room_speed;
 alarm[0] = room_speed;
+
+if (Player.airAbility)
+    Player.hasKilledWaterWithAir = true;
+else if (Player.waterAbility)
+    Player.hasKilledWaterWithWater = true;
+else if (Player.earthAbility)
+    Player.hasKilledWaterWithEarth = true;
+else
+    Player.hasKilledWaterWithFire = true;
 </string>
           </argument>
         </arguments>

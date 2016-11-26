@@ -1,7 +1,7 @@
 #define FlingEntity
 /// FlingEntity(object);
 
-if(flingHeight >= 6 && goingDown) {
+if (flingHeight >= 6 && goingDown) {
     flung = false;
     if (argument[0] = Player)
         instance_change(Player, false);
@@ -66,7 +66,7 @@ if(flingHeight >= 6 && goingDown) {
             }
         }
     }
-    if(goingDown) {
+    if (goingDown) {
         flingHeight += 30 / flingX / room_speed;
     } else {
         flingHeight -= 30 / flingX / room_speed;
@@ -78,16 +78,18 @@ if(flingHeight >= 6 && goingDown) {
 
 flingHeight = 120 / room_speed + (irandom_range(1, 4) / 4);
 if (argument[0] = Player)
-    if (flungBy.enemyType = "boar")
+    if (flungBy.enemyType = "boar" || flungBy.enemyType = "goat")
         flingHeight = 120 / room_speed + (irandom_range(2, 4));
     else if (flungBy.enemyType = "bear")
-        flingHeight = 120 / room_speed + (irandom_range(1, 2));
+        flingHeight = 120 / room_speed + (irandom_range(1, 2) / 2);
+    else if (flungBy.enemyType = "gecko")
+        flingHeight = 120 / room_speed + (irandom_range(2, 3));
 goingDown = false;
 flingY = .75;
 flingX = 3;
 enemyRight = flungBy.right;
 
-if(left) {
+if (left) {
     sprite_index = standLeft;
 } else {
     sprite_index = standRight;
@@ -97,7 +99,7 @@ if(left) {
 /// FlingOnEnemy()
 
 
-if(flingHeight <= 2) {
+if (flingHeight <= 2) {
     flung = false;
     if (left) {
         sprite_index = standLeft;
@@ -105,7 +107,7 @@ if(flingHeight <= 2) {
         sprite_index = standRight;
     }
 }
-if(!place_meeting(x, y - flingHeight * flingY, terrain))
+if (!place_meeting(x, y - flingHeight * flingY, terrain))
     y -= flingHeight * 0.75 * flingY;
 else {
     flung = false;
@@ -145,7 +147,7 @@ flingHeight -= 30 / flingX / room_speed;
 /// FlingInitialOnEnemy()
 
 flung = true;
-flingHeight = 120 / room_speed + (irandom_range(1, 4) / 6);
+flingHeight = 120 / room_speed + (irandom_range(1, 4) / 3);
 goingDown = false;
 flingY = .75;
 flingX = 3;

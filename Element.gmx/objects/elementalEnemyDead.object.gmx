@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>/// Death animation
 
+initial = false;
+
 if(left) {
     sprite_index = dieLeft;
 } else {
@@ -35,6 +37,43 @@ if(left) {
 image_index = 0;
 image_speed = 3 / room_speed;
 alarm[1] = room_speed;
+
+if (waterAbility)
+    if (Player.airAbility)
+        Player.hasKilledWaterWithAir = true;
+    else if (Player.waterAbility)
+        Player.hasKilledWaterWithWater = true;
+    else if (Player.earthAbility)
+        Player.hasKilledWaterWithEarth = true;
+    else
+        Player.hasKilledWaterWithFire = true;
+else if (airAbility)
+    if (Player.airAbility)
+        Player.hasKilledAirWithAir = true;
+    else if (Player.waterAbility)
+        Player.hasKilledAirWithWater = true;
+    else if (Player.earthAbility)
+        Player.hasKilledAirWithEarth = true;
+    else
+        Player.hasKilledAirWithFire = true;
+else if (earthAbility)
+    if (Player.airAbility)
+        Player.hasKilledEarthWithAir = true;
+    else if (Player.waterAbility)
+        Player.hasKilledEarthWithWater = true;
+    else if (Player.earthAbility)
+        Player.hasKilledEarthWithEarth = true;
+    else
+        Player.hasKilledEarthWithFire = true;
+else
+    if (Player.airAbility)
+        Player.hasKilledFireWithAir = true;
+    else if (Player.waterAbility)
+        Player.hasKilledFireWithWater = true;
+    else if (Player.earthAbility)
+        Player.hasKilledFireWithEarth = true;
+    else
+        Player.hasKilledFireWithFire = true;
 </string>
           </argument>
         </arguments>

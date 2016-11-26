@@ -29,6 +29,7 @@
 
 firedBy = noone;
 initial = true;
+damage = 0;
 </string>
           </argument>
         </arguments>
