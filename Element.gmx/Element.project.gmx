@@ -437,7 +437,7 @@
     </objects>
     <object>objects\deadAirElemental</object>
     <object>objects\deadEarthElemental</object>
-    <object>objects\object72</object>
+    <object>objects\deadFireElemental</object>
     <objects name="Terrain">
       <objects name="Forest">
         <objects name="Ground">
@@ -523,6 +523,9 @@
       <object>objects\forestBG</object>
     </objects>
   </objects>
+  <timelines name="timelines">
+    <timeline>timelines\timeline0</timeline>
+  </timelines>
   <rooms name="rooms">
     <rooms name="Forest">
       <room>rooms\Forest1</room>
