@@ -2176,6 +2176,7 @@
     <instance objName="manager" x="6528" y="192" name="inst_C7DE4008" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="SaveStation" x="6080" y="448" name="inst_379B1294" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="SaveStation" x="3200" y="384" name="inst_582CC49E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="forestBG" x="-64" y="-32" name="inst_D8AE85E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

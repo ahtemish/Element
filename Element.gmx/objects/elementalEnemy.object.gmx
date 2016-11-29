@@ -714,6 +714,7 @@ if(!dead) {
                         Player.flingInitial = true;
                     }
                     if(!Player.inv) {
+                        audio_play_sound(snd_playerDamaged, 10, false);
                         Player.health -= effectiveDamage;
                         Player.inv = true;
                         Player.alarm[7] = room_speed * (1/2);

@@ -4,7 +4,34 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_forestBG</sound>
+    <sound>sound\snd_checkpoint</sound>
+    <sound>sound\snd_geckoTongue</sound>
+    <sound>sound\snd_hardWaterHit</sound>
+    <sound>sound\snd_playerDamaged</sound>
+    <sound>sound\snd_playerDeath</sound>
+    <sounds name="Movement">
+      <sounds name="Jumps">
+        <sound>sound\snd_longJump</sound>
+        <sound>sound\snd_shortJump</sound>
+      </sounds>
+      <sound>sound\snd_dash</sound>
+      <sound>sound\snd_normalJump</sound>
+      <sound>sound\snd_swimming</sound>
+    </sounds>
+    <sounds name="Attacks">
+      <sound>sound\snd_fireAttack</sound>
+      <sound>sound\snd_earthAttack</sound>
+      <sound>sound\snd_waterAttack</sound>
+      <sound>sound\snd_airAttack</sound>
+      <sound>sound\snd_fireball</sound>
+      <sound>sound\snd_geckoAirswipe</sound>
+      <sound>sound\snd_normalHit</sound>
+      <sound>sound\snd_hardHit</sound>
+      <sound>sound\snd_weakHit</sound>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\boulder_spr</sprite>
     <sprites name="Player">
@@ -454,7 +481,6 @@
       <object>objects\geckoDead</object>
       <object>objects\geckoTongue</object>
       <object>objects\manager</object>
-      <object>objects\Avatar</object>
       <object>objects\bird</object>
       <object>objects\birdDead</object>
       <object>objects\insect</object>
@@ -468,6 +494,7 @@
       <object>objects\viewScreen</object>
       <object>objects\mouseFollow</object>
       <object>objects\button</object>
+      <object>objects\forestBG</object>
     </objects>
   </objects>
   <rooms name="rooms">

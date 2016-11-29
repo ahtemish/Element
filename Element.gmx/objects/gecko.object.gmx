@@ -612,9 +612,11 @@ if(!dead) {
                         Player.flungBy = id;
                         Player.flingInitial = true;
                     }
-                    if (airAbility)
+                    if (airAbility) {
+                        audio_play_sound(snd_playerDamaged, 10, false);
                         Player.health -= effectiveDamage;
-                    else if(!Player.inv) {
+                    } else if(!Player.inv) {
+                        audio_play_sound(snd_playerDamaged, 10, false);
                         Player.health -= effectiveDamage;
                         Player.inv = true;
                         Player.alarm[7] = room_speed * (1/2);

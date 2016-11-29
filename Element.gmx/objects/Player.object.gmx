@@ -350,6 +350,8 @@ if (place_meeting(x, y, fireball)) {
 }
 
 if(health &lt;= 0) {
+    if (dead = false)
+        audio_play_sound(snd_playerDeath, 10, false);
     dead = true;
     instance_create(x, y, mouseFollow);
 }
@@ -682,10 +684,13 @@ if(!dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; !hitByTongue) {
             fall = 0;
             if(airAbility) {
                 jumpHeight = 11;
+                audio_play_sound(snd_longJump, 10, false);
             } else if(earthAbility) {
                 jumpHeight = 6;
+                audio_play_sound(snd_shortJump, 10, false);
             } else {
                 jumpHeight = 9;
+                audio_play_sound(snd_normalJump, 10, false);
             }
             if(inWater) {
                 jumpHeight /= 2;
@@ -1038,16 +1043,20 @@ if(!dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; attackCount = 0) {
         if(airAbility) {
             alarm[3] = room_speed * (4/30);
             airAttack();
+            audio_play_sound(snd_airAttack, 10, false);
         } else if(earthAbility) {
             alarm[3] = room_speed * (12/30);
             earthAttack();
+            audio_play_sound(snd_earthAttack, 10, false);
         } else if(waterAbility) {
             alarm[3] = room_speed * (8/30);
             instance_create(x, y, waterwhip);
             waterAttack();
+            audio_play_sound(snd_waterAttack, 10, false);
         } else {
             alarm[3] = room_speed * (8/30);
             fireAttack();
+            audio_play_sound(snd_fireAttack, 10, false);
         }
     }
 } else if (onVine &amp;&amp; swing.path_position &gt; 0.5) {
@@ -1080,6 +1089,7 @@ if(!dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; attackCount = 0) {
 if (airAbility &amp;&amp; !dash &amp;&amp; !dashCooldown &amp;&amp; !flung &amp;&amp; !dead) {
     alarm[6] = room_speed * (3/30);
     dash = true;
+    audio_play_sound(snd_dash, 10, false);
 }
 </string>
           </argument>
