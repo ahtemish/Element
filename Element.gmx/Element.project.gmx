@@ -114,6 +114,8 @@
           <sprite>sprites\mountainDirt_spr</sprite>
           <sprite>sprites\mountainLedgeLeft_spr</sprite>
           <sprite>sprites\mountainLedgeRight_spr</sprite>
+          <sprite>sprites\mountainSlopeRight_spr</sprite>
+          <sprite>sprites\mountainSlopeLeft_spr</sprite>
         </sprites>
       </sprites>
       <sprites name="Water">
@@ -455,6 +457,7 @@
         <object>objects\ArenaBlocks</object>
       </objects>
       <objects name="Mountain">
+        <object>objects\mountainDirt</object>
         <object>objects\mountainSurfaceTop</object>
         <object>objects\mountainSurfaceLeft</object>
         <object>objects\mountainSurfaceRight</object>
@@ -462,17 +465,32 @@
         <object>objects\mountainSurfaceTopLeft</object>
         <object>objects\mountainLedgeLeft</object>
         <object>objects\mountainLedgeRight</object>
-        <object>objects\mountainDirt</object>
+        <object>objects\mountainSlopRight</object>
+        <object>objects\mountainSlopeLeft</object>
       </objects>
       <objects name="Cavern">
+        <object>objects\cavernDirt</object>
         <object>objects\cavernSurfaceTop</object>
         <object>objects\cavernSurfaceLeft</object>
         <object>objects\cavernSurfaceRight</object>
         <object>objects\cavernSurfaceTopRight</object>
-        <object>objects\cavernSurfaceTopLEft</object>
+        <object>objects\cavernSurfaceTopLeft</object>
         <object>objects\cavernLedgeLeft</object>
         <object>objects\cavernLedgeRight</object>
-        <object>objects\cavernDirt</object>
+        <object>objects\cavernSlopeRight</object>
+        <object>objects\cavernSlopeLeft</object>
+      </objects>
+      <objects name="Deep">
+        <object>objects\deepDirt</object>
+        <object>objects\deepSurfaceTop</object>
+        <object>objects\deepSurfaceLeft</object>
+        <object>objects\deepSurfaceRight</object>
+        <object>objects\deepSurfaceTopRight</object>
+        <object>objects\deepSurfaceTopLeft</object>
+        <object>objects\deepLedgeLeft</object>
+        <object>objects\deepLedgeRight</object>
+        <object>objects\deepSlopeRight</object>
+        <object>objects\deepSlopeLeft</object>
       </objects>
       <objects name="Water">
         <object>objects\waterTop</object>

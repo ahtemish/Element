@@ -1074,6 +1074,10 @@
     <instance objName="elementalEnemy" x="3808" y="416" name="inst_27515F16" locked="0" code="enemyType = &quot;goat&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="waterSpout" x="1280" y="192" name="inst_9A48CC0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="SaveStation" x="1952" y="224" name="inst_25971509" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mountainSlopRight" x="1312" y="256" name="inst_C028F226" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mountainSlopRight" x="3008" y="640" name="inst_CDC77F91" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mountainSlopeLeft" x="2976" y="640" name="inst_331C88B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mountainSlopeLeft" x="1280" y="256" name="inst_D4DDC3EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
