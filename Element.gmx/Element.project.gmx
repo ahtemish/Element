@@ -95,14 +95,26 @@
     </sprites>
     <sprites name="Terrain">
       <sprites name="Ground">
-        <sprite>sprites\ground_spr</sprite>
-        <sprite>sprites\groundSideRight_spr</sprite>
-        <sprite>sprites\groundSideLeft_spr</sprite>
-        <sprite>sprites\groundCornerTopRight_spr</sprite>
-        <sprite>sprites\groundCornerTopLeft_spr</sprite>
-        <sprite>sprites\groundDirt_spr</sprite>
-        <sprite>sprites\groundSlopeRight_spr</sprite>
-        <sprite>sprites\groundSlopLeft_spr</sprite>
+        <sprites name="Forest">
+          <sprite>sprites\ground_spr</sprite>
+          <sprite>sprites\groundSideRight_spr</sprite>
+          <sprite>sprites\groundSideLeft_spr</sprite>
+          <sprite>sprites\groundCornerTopRight_spr</sprite>
+          <sprite>sprites\groundCornerTopLeft_spr</sprite>
+          <sprite>sprites\groundDirt_spr</sprite>
+          <sprite>sprites\groundSlopeRight_spr</sprite>
+          <sprite>sprites\groundSlopLeft_spr</sprite>
+        </sprites>
+        <sprites name="Mountain">
+          <sprite>sprites\mountainSurfaceTop_spr</sprite>
+          <sprite>sprites\mountainSurfaceLeft_spr</sprite>
+          <sprite>sprites\mountainSurfaceRight_spr</sprite>
+          <sprite>sprites\mountainSurfaceTopRight_spr</sprite>
+          <sprite>sprites\mountainSurfaceTopLeft_spr</sprite>
+          <sprite>sprites\mountainDirt_spr</sprite>
+          <sprite>sprites\mountainLedgeLeft_spr</sprite>
+          <sprite>sprites\mountainLedgeRight_spr</sprite>
+        </sprites>
       </sprites>
       <sprites name="Water">
         <sprite>sprites\waterTop_spr</sprite>
@@ -424,16 +436,33 @@
       </objects>
     </objects>
     <object>objects\deadAirElemental</object>
+    <object>objects\deadEarthElemental</object>
+    <object>objects\object72</object>
     <objects name="Terrain">
-      <objects name="Ground">
-        <object>objects\ground</object>
-        <object>objects\groundSideRight</object>
-        <object>objects\groundSideLeft</object>
-        <object>objects\groundCornerTopRight</object>
-        <object>objects\groundCornerTopLeft</object>
-        <object>objects\groundDirt</object>
-        <object>objects\groundSlopeRight</object>
-        <object>objects\groundSlopeLeft</object>
+      <objects name="Forest">
+        <objects name="Ground">
+          <object>objects\ground</object>
+          <object>objects\groundSideRight</object>
+          <object>objects\groundSideLeft</object>
+          <object>objects\groundCornerTopRight</object>
+          <object>objects\groundCornerTopLeft</object>
+          <object>objects\groundDirt</object>
+          <object>objects\groundSlopeRight</object>
+          <object>objects\groundSlopeLeft</object>
+        </objects>
+        <object>objects\ArenaSideLeft</object>
+        <object>objects\ArenaSideRight</object>
+        <object>objects\ArenaBlocks</object>
+      </objects>
+      <objects name="Mountain">
+        <object>objects\mountainSurfaceTop</object>
+        <object>objects\mountainSurfaceLeft</object>
+        <object>objects\mountainSurfaceRight</object>
+        <object>objects\mountainSurfaceTopRight</object>
+        <object>objects\mountainSurfaceTopLeft</object>
+        <object>objects\mountainLedgeLeft</object>
+        <object>objects\mountainLedgeRight</object>
+        <object>objects\mountainDirt</object>
       </objects>
       <objects name="Water">
         <object>objects\waterTop</object>
@@ -462,9 +491,6 @@
       <object>objects\terrain</object>
       <object>objects\terrainSlope</object>
       <object>objects\backGroundTerrain</object>
-      <object>objects\ArenaBlocks</object>
-      <object>objects\ArenaSideLeft</object>
-      <object>objects\ArenaSideRight</object>
     </objects>
     <objects name="Enemies">
       <object>objects\enemy</object>
@@ -499,8 +525,13 @@
   </objects>
   <rooms name="rooms">
     <rooms name="Forest">
-      <room>rooms\Level1</room>
-      <room>rooms\Level2</room>
+      <room>rooms\Forest1</room>
+      <room>rooms\Forest2</room>
+      <room>rooms\Forest3</room>
+    </rooms>
+    <rooms name="Mountain">
+      <room>rooms\Mountain1</room>
+      <room>rooms\Mountain2</room>
     </rooms>
     <room>rooms\prototypeLevel</room>
   </rooms>

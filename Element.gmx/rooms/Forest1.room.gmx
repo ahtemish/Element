@@ -10,9 +10,7 @@
   <persistent>0</persistent>
   <colour>8453888</colour>
   <showcolour>-1</showcolour>
-  <code>transition_kind = 1;
-nextRoom = Level2;
-Player.health -= 10;</code>
+  <code>Player.health -= 10;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -3900,7 +3898,7 @@ Player.health -= 10;</code>
     <instance objName="SaveStation" x="416" y="256" name="inst_9984DD57" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="signPost" x="416" y="256" name="inst_929BEC20" locked="0" code="signText = &quot;    Attack me!&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="waterSpout" x="320" y="224" name="inst_72FFF818" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="forestBG" x="-32" y="-32" name="inst_73BC22DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="forestBG" x="96" y="64" name="inst_7AECAD07" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

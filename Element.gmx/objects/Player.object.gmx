@@ -446,8 +446,12 @@ if (airAbility) {
             <kind>1</kind>
             <string>///  Do gravity
 
-if (x &gt;= room_width)
+if (x &gt;= room_width) {
+    audio_stop_sound(forestBG);
     GoToNextLevel();
+}
+if (y &gt; room_height)
+    health = 0;
 
 if(place_meeting(x, y, water)) {
     inWater = true;
@@ -570,6 +574,43 @@ if (!place_meeting(x, y + sprite_height, terrain))
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="deadEarthElemental">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hasEarth = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>203</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
+        <codestring></codestring>
+        <whoName>other</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="4" ename="deadAirElemental">
@@ -1195,9 +1236,9 @@ airAbility = false;
 earthAbility = false;
 fireAbility = false;
 hasWater = true;
-hasAir = true;
-hasEarth = true;
-hasFire = true;
+hasAir = false;
+hasEarth = false;
+hasFire = false;
 hasKilledAirWithWater = false;
 hasKilledWaterWithWater = false;
 hasKilledEarthWithWater = false;

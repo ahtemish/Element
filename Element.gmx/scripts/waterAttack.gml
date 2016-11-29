@@ -4,7 +4,7 @@ for (j = 0; j < instance_number(enemy); j++) {
     possibleHit = instance_find(enemy, j);
                 
     if (left) {
-        if (possibleHit == collision_rectangle(x - waterwhipLeft_spr.sprite_width, y,
+        if (possibleHit == collision_rectangle(x - 44, y,
                                                x, y + sprite_height, possibleHit, false,
                                                true)) {
             global.enemyHitId[num] = possibleHit;
@@ -12,7 +12,7 @@ for (j = 0; j < instance_number(enemy); j++) {
             num++;
         }
         
-        save = collision_rectangle(x - waterwhipLeft_spr.sprite_width, y,
+        save = collision_rectangle(x - 44, y,
                                    x, y + sprite_height, SaveStation, false,
                                    true)
         if (save != noone) {
@@ -22,7 +22,7 @@ for (j = 0; j < instance_number(enemy); j++) {
         }
     } else {
         if (possibleHit == collision_rectangle(x + sprite_width, y, 
-                                               x + sprite_width + waterwhipRight_spr.sprite_width, 
+                                               x + sprite_width + 44, 
                                                y + sprite_height, possibleHit, false, true)) {
             global.enemyHitId[num] = possibleHit;
             global.enemyHitType[num] = "water";
@@ -30,7 +30,7 @@ for (j = 0; j < instance_number(enemy); j++) {
         }
         
         save = collision_rectangle(x + sprite_width, y, 
-                                   x + sprite_width + waterwhipRight_spr.sprite_width, 
+                                   x + sprite_width + 44, 
                                    y + sprite_height, SaveStation, false, true)
         if (save != noone) {
             SaveRoom();

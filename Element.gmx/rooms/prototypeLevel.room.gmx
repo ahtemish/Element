@@ -1768,7 +1768,6 @@
     <instance objName="groundSlopeLeft" x="3072" y="512" name="inst_A85708B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundSlopeRight" x="3104" y="512" name="inst_A2FD2C70" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="waterSpout" x="3072" y="448" name="inst_B9F15050" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="832" y="512" name="inst_C5317BF6" locked="0" code="enemyType = &quot;goat&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundDirt" x="480" y="736" name="inst_6622C07E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundDirt" x="512" y="736" name="inst_E86A396B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundDirt" x="544" y="736" name="inst_8643C1BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1873,7 +1872,15 @@
     <instance objName="ground" x="864" y="544" name="inst_8EFE99AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ground" x="896" y="544" name="inst_22AA8BF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundCornerTopRight" x="928" y="544" name="inst_0C7F7A84" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="bird" x="320" y="448" name="inst_8492339C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="insect" x="768" y="448" name="inst_974E480F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="insect" x="800" y="448" name="inst_EF658618" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="insect" x="864" y="448" name="inst_E6277E21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="insect" x="864" y="480" name="inst_0CA154ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="insect" x="768" y="480" name="inst_2419D83A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="insect" x="800" y="512" name="inst_DD2D383C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="insect" x="832" y="448" name="inst_0E2F17C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="insect" x="832" y="512" name="inst_B4E1A375" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="insect" x="864" y="512" name="inst_C7747665" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

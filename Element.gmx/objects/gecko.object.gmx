@@ -484,12 +484,7 @@ run = runSpeed;
 walk = walkSpeed;
 
 if(!dead) {
-    /*if (hitByWater &amp;&amp; !waterAbility) {
-        run /= 2;
-        walk /= 2;
-    }*/
-        
-    if (Player.x &gt; 6400) {
+    if (Player.x &gt; 336) {
         if (Player.x &lt; x) {
             left = true;
             right = false;
@@ -558,7 +553,7 @@ if(!dead) {
                         sprite_index = attackRight;
                 }
             } else {
-                if (Player.x &lt; 7296 || attackType &lt; 3) {
+                if (Player.x &lt; 1152 || attackType &lt; 3) {
                     image_index = 0;
                 
                     destinationX = Player.x;
@@ -571,7 +566,8 @@ if(!dead) {
                         sprite_index = tongueAttackLeft;
                     else
                         sprite_index = tongueAttackRight;
-                } else if (collision_rectangle(x - minimumDistance, y,
+                } else if (!instance_exists(geckoTongue)) {
+                    if (collision_rectangle(x - minimumDistance, y,
                                                x, y + sprite_height, Player, false, true)
                                                || collision_rectangle(x + sprite_width, y, 
                                                x + sprite_width + minimumDistance, y + sprite_height, Player,
@@ -660,6 +656,7 @@ if(!dead) {
                         sprite_index = standRight;
                     }
                 }
+            }
             }
         }
     }

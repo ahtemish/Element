@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// Boss Arena
 
-if (Player.x &gt; 6366 &amp;&amp; instance_exists(gecko))
+if (Player.x &gt; 320 &amp;&amp; instance_exists(gecko))
     instance_activate_object(ArenaBlocks);
 else
     instance_deactivate_object(ArenaBlocks);

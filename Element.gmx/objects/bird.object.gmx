@@ -354,8 +354,8 @@ if(!dead) {
             
         if(!attack) {
             if (abs(Player.x - x) &lt; minimumDistance 
-                &amp;&amp; collision_rectangle(x - minimumDistance, y + ground.sprite_height * 3,
-                x + minimumDistance, y + sprite_height + ground.sprite_height * 3,
+                &amp;&amp; collision_rectangle(x - minimumDistance, y + mountainDirt.sprite_height * 3,
+                x + minimumDistance, y + sprite_height + mountainDirt.sprite_height * 3,
                 Player, false, true) &amp;&amp; !attackCooldown) {
                 image_index = 0;
                  
@@ -429,9 +429,9 @@ if(!dead) {
 }
 
 if (!attack) {
-    if (collision_line(x, y, x, y + ground.sprite_height * 3, terrain, false, true))
+    if (collision_line(x, y, x, y + mountainDirt.sprite_height * 3, terrain, false, true))
         y -= 2;
-    else if (!place_meeting(x, y + ground.sprite_height * 3, terrain))
+    else if (!place_meeting(x, y + mountainDirt.sprite_height * 3, terrain))
         y += 2;
 }
 
