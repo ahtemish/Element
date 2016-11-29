@@ -464,6 +464,16 @@
         <object>objects\mountainLedgeRight</object>
         <object>objects\mountainDirt</object>
       </objects>
+      <objects name="Cavern">
+        <object>objects\cavernSurfaceTop</object>
+        <object>objects\cavernSurfaceLeft</object>
+        <object>objects\cavernSurfaceRight</object>
+        <object>objects\cavernSurfaceTopRight</object>
+        <object>objects\cavernSurfaceTopLEft</object>
+        <object>objects\cavernLedgeLeft</object>
+        <object>objects\cavernLedgeRight</object>
+        <object>objects\cavernDirt</object>
+      </objects>
       <objects name="Water">
         <object>objects\waterTop</object>
         <object>objects\water</object>
@@ -524,7 +534,7 @@
     </objects>
   </objects>
   <timelines name="timelines">
-    <timeline>timelines\timeline0</timeline>
+    <timeline>timelines\Forest1Start</timeline>
   </timelines>
   <rooms name="rooms">
     <rooms name="Forest">
