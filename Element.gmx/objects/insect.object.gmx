@@ -39,20 +39,19 @@ right = false;
 dead = false;
 attack = false;
 inWater = false;
+move = false;
+inv = false;
 
-airAbility = false;
-earthAbility = false;
-fireAbility = false;
 waterAbility = true;
 
 hitByFireball = false;
 
-minimumDistance = 1;
-detectionDistance = 200;
+minimumDistance = 10;
+detectionDistance = 150;
 
 attackSpeed = (4/30);
-damage = 1;
-initialHealth = 6;
+damage = 0.3;
+initialHealth = 5;
 instanceHealth = initialHealth;
 
 standLeft = piranhaIdleLeft_spr;
@@ -66,36 +65,11 @@ dieRight = piranhaDieRight_spr;
 walkImageSpeed = 4 / room_speed;
 sprite_index = standLeft;
 
-walkSpeed = 90 / room_speed;
-runMult = 3;
+walkSpeed = 35 / room_speed;
+runMult = 4;
 runSpeed = walkSpeed * runMult;
 runImageSpeed = walkImageSpeed * runMult;
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="3">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Can attack again
-
-attack = false;
 </string>
           </argument>
         </arguments>
@@ -120,14 +94,32 @@ attack = false;
             <kind>1</kind>
             <string>/// End attack
 
-if (!dead) {
-    alarm[3] = room_speed * (4/30);
-    
-    if(left)
-        sprite_index = standLeft;
-    else
-        sprite_index = standRight;
-}
+attack = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Move again
+
+move = false;
 </string>
           </argument>
         </arguments>
@@ -186,7 +178,7 @@ if (!dead) {
     
 if(instanceHealth &lt;= 0) {
     dead = true;
-    instance_change(piranhaDead, true);
+    instance_change(insectDead, true);
 }
 </string>
           </argument>
@@ -248,16 +240,17 @@ if (initial) {
             <kind>1</kind>
             <string>/// Check movement
 
-if(place_meeting(x, y, water))
-    inWater = true;
-else
-    inWater = false;
 
 run = runSpeed;
 walk = walkSpeed;
 
+middleX = Player.x + (Player.sprite_width / 2);
+middleY = Player.y + (Player.sprite_height / 2);
+
 if (!dead) {
-    if (Player.inWater &amp;&amp; inWater &amp;&amp; !collision_line(x, y, Player.x, Player.y, terrain, true, true)) {
+    if (distance_to_object(Player) &lt; detectionDistance 
+        &amp;&amp; !collision_line(x, y, Player.x, Player.y, terrain, false, true)) {
+    
         image_speed = runImageSpeed;
         if (Player.x &lt; x) {
             left = true;
@@ -267,13 +260,16 @@ if (!dead) {
             right = true;
         }
         
-        if(!attack) {
-            if (collision_rectangle(x - (sprite_width / 2) - minimumDistance,
-                y - (sprite_height / 2) - minimumDistance, 
-                x + (sprite_width / 2) + minimumDistance, 
-                y + (sprite_height / 2) + minimumDistance, Player, false, true)) 
-                {
-                
+        if(distance_to_object(Player) &lt; minimumDistance) {
+            if (!move) {
+                alarm[1] = room_speed * (5/30);
+                xPoint = middleX - minimumDistance + irandom(Player.sprite_width + (minimumDistance * 2));
+                yPoint = middleY - minimumDistance + irandom(Player.sprite_height + minimumDistance);
+                move = true;
+            } else {
+                piranhaMovement(xPoint, yPoint, run);
+            }
+            if (!attack &amp;&amp; place_meeting(x, y, Player)) {
                 alarm[2] = room_speed * attackSpeed;
                 effectiveDamage = damage;
                 if(Player.earthAbility)
@@ -281,33 +277,14 @@ if (!dead) {
                 if (Player.fireAbility || Player.earthAbility)
                     effectiveDamage *= 2;
                     
-                if(!Player.inv) {
-                    Player.health -= effectiveDamage;
-                    Player.inv = true;
-                    Player.alarm[7] = room_speed * (1/4);
-                }
+                Player.health -= effectiveDamage;
                 attack = true;
-                image_speed = walkImageSpeed;
-                    
-                if (left)
-                    sprite_index = attackLeft;
-                else
-                    sprite_index = attackRight;
-                    
-            } else if (inWater) {
-                middleX = Player.x + Player.sprite_width / 2;
-                middleY = Player.y + Player.sprite_height / 2;
-                
-                piranhaMovement(middleX, middleY, run);
-                    
-            } else {
-                if (left)
-                    sprite_index = standLeft;
-                else
-                    sprite_index = standRight;
             }
+        } else {
+            piranhaMovement(middleX, middleY, run);
         }
     } else {
+        image_speed = walkImageSpeed;
         piranhaMovement(initialX, initialY, walk);
     }
 }

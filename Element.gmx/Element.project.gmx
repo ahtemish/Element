@@ -354,6 +354,11 @@
   <paths name="paths">
     <path>paths\PlayerSwingRight</path>
     <path>paths\PlayerSwingLeft</path>
+    <path>paths\birdSwoopRight</path>
+    <path>paths\birdSwoopLeft</path>
+    <path>paths\wyrmSwoopRight</path>
+    <path>paths\wyrmSwoopLeft</path>
+    <path>paths\birdIdle</path>
   </paths>
   <scripts name="scripts">
     <scripts name="Entity">
@@ -450,6 +455,12 @@
       <object>objects\geckoTongue</object>
       <object>objects\manager</object>
       <object>objects\Avatar</object>
+      <object>objects\bird</object>
+      <object>objects\birdDead</object>
+      <object>objects\insect</object>
+      <object>objects\insectDead</object>
+      <object>objects\wyrm</object>
+      <object>objects\wyrmDead</object>
     </objects>
     <objects name="General">
       <object>objects\notPlayer</object>

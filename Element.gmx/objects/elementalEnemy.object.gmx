@@ -491,6 +491,45 @@ if(initial) {
         attackImageSpeed = walkImageSpeed;
         jump = false;
         height = 0;
+    } else if (enemyType = "snake") {
+        fireAbility = true;
+        minimumDistance = 4;
+        detectionDistance = 250;
+        attackSpeed = (3/30);
+        damage = 1;
+        initialHealth = 2;
+        walkSpeed = 60 / room_speed;
+        runMult = 2;
+        standLeft = turtleStandLeft_spr;
+        walkLeft = turtleSwimLeft_spr;
+        attackLeft = turtleStandLeft_spr;
+        dieLeft = turtleStandLeft_spr;
+        standRight = turtleStandRight_spr;
+        walkRight = turtleSwimRight_spr;
+        attackRight = turtleStandRight_spr;
+        dieRight = turtleStandRight_spr;
+        walkImageSpeed = 4 / room_speed;
+        attackImageSpeed = 2 / room_speed;
+    } else if (enemyType = "golem") {
+        earthAbility = true;
+        minimumDistance = 16;
+        minimumYDistance = 48;
+        detectionDistance = 200;
+        attackSpeed = (30/30);
+        damage = 6;
+        initialHealth = 30;
+        walkSpeed = 30 / room_speed;
+        runMult = 2;
+        standLeft = bearStandLeft_spr;
+        walkLeft = bearWalkLeft2_spr;
+        attackLeft = bearAttackLeft_spr;
+        dieLeft = bearDieLeft_spr;
+        standRight = bearStandRight_spr;
+        walkRight = bearWalkRight2_spr;
+        attackRight = bearAttackRight_spr;
+        dieRight = bearDieRight_spr;
+        walkImageSpeed = 4 / room_speed;
+        attackImageSpeed = 2 / room_speed;
     }
     
     instanceHealth = initialHealth;
@@ -669,7 +708,7 @@ if(!dead) {
                             Player.flungBy = id;
                             Player.flingInitial = true;
                         }
-                    } else if (enemyType = "bear") {
+                    } else if (enemyType = "bear" || enemyType = "golem") {
                         Player.flung = true;
                         Player.flungBy = id;
                         Player.flingInitial = true;
@@ -689,7 +728,7 @@ if(!dead) {
                     }
                 } else if (collision_rectangle(x - minimumDistance, y - sprite_height,
                                                x + sprite_width + minimumDistance, y, 
-                                               Player, false, true) == noone) {
+                                               Player, false, true) = noone) {
                     image_speed = runImageSpeed;
                     if (left) {
                         if ((enemyType = "boar" || enemyType = "goat") &amp;&amp; charge)
