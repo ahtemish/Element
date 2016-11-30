@@ -589,6 +589,10 @@
       <room>rooms\Mountain2</room>
     </rooms>
     <room>rooms\prototypeLevel</room>
+    <rooms name="Cavern">
+      <room>rooms\Cavern1</room>
+      <room>rooms\Cavern2</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
