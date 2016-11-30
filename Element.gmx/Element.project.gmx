@@ -38,6 +38,7 @@
       <sprites name="Water">
         <sprites name="Left">
           <sprite>sprites\standLeftWater_spr</sprite>
+          <sprite>sprites\walkLeftWater_spr</sprite>
           <sprite>sprites\punchLeftWater_spr</sprite>
           <sprite>sprites\dieLeftWater_spr</sprite>
           <sprite>sprites\onVineLeft_spr</sprite>

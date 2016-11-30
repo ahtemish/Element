@@ -20,6 +20,7 @@
   <width>12</width>
   <height>40</height>
   <frames>
-    <frame index="0">images\standLeftWater_spr_0.png</frame>
+    <frame index="0">images\walkLeftWater_spr_0.png</frame>
+    <frame index="1">images\walkLeftWater_spr_1.png</frame>
   </frames>
 </sprite>
