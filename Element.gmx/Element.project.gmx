@@ -106,16 +106,40 @@
           <sprite>sprites\groundSlopLeft_spr</sprite>
         </sprites>
         <sprites name="Mountain">
+          <sprite>sprites\mountainDirt_spr</sprite>
           <sprite>sprites\mountainSurfaceTop_spr</sprite>
           <sprite>sprites\mountainSurfaceLeft_spr</sprite>
           <sprite>sprites\mountainSurfaceRight_spr</sprite>
           <sprite>sprites\mountainSurfaceTopRight_spr</sprite>
           <sprite>sprites\mountainSurfaceTopLeft_spr</sprite>
-          <sprite>sprites\mountainDirt_spr</sprite>
           <sprite>sprites\mountainLedgeLeft_spr</sprite>
           <sprite>sprites\mountainLedgeRight_spr</sprite>
           <sprite>sprites\mountainSlopeRight_spr</sprite>
           <sprite>sprites\mountainSlopeLeft_spr</sprite>
+        </sprites>
+        <sprites name="Cavern">
+          <sprite>sprites\cavernDirt_spr</sprite>
+          <sprite>sprites\cavernSurfaceTop_spr</sprite>
+          <sprite>sprites\cavernSurfaceLeft_spr</sprite>
+          <sprite>sprites\cavernSurfaceRight_spr</sprite>
+          <sprite>sprites\cavernSurfaceTopRight_spr</sprite>
+          <sprite>sprites\cavernSurfaceTopLeft_spr</sprite>
+          <sprite>sprites\cavernLedgeLeft_spr</sprite>
+          <sprite>sprites\cavernLedgeRight_spr</sprite>
+          <sprite>sprites\cavernSlopeRight_spr</sprite>
+          <sprite>sprites\cavernSlopeLeft_spr</sprite>
+        </sprites>
+        <sprites name="Deep">
+          <sprite>sprites\deepDirt_spr</sprite>
+          <sprite>sprites\deepSurfaceTop_spr</sprite>
+          <sprite>sprites\deepSurfaceLeft_spr</sprite>
+          <sprite>sprites\deepSurfaceRight_spr</sprite>
+          <sprite>sprites\deepSurfaceTopRight_spr</sprite>
+          <sprite>sprites\deepSurfaceTopLeft_spr</sprite>
+          <sprite>sprites\deepLedgeLeft_spr</sprite>
+          <sprite>sprites\deepLedgeRight_spr</sprite>
+          <sprite>sprites\deepSlopeRight_spr</sprite>
+          <sprite>sprites\deepSlopeLeft_spr</sprite>
         </sprites>
       </sprites>
       <sprites name="Water">
