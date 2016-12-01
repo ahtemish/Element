@@ -799,6 +799,7 @@
     <instance objName="insect" x="2432" y="384" name="inst_A72F7064" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="insect" x="2400" y="416" name="inst_8E3903AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="insect" x="2464" y="416" name="inst_7262DAE6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernBG" x="96" y="256" name="inst_71ECE4A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

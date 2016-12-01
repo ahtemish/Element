@@ -83,8 +83,8 @@
     <instance objName="mountainSurfaceTop" x="960" y="544" name="inst_898EB735" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceTop" x="992" y="544" name="inst_ECB35831" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceTop" x="1024" y="544" name="inst_8A317716" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="mountainSurfaceTop" x="992" y="448" name="inst_BA5AE4BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="mountainSurfaceTop" x="1088" y="448" name="inst_268A831A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mountainSurfaceTop" x="992" y="432" name="inst_BA5AE4BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mountainSurfaceTop" x="1088" y="432" name="inst_268A831A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceTop" x="1056" y="544" name="inst_1E92F67F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceTop" x="1088" y="544" name="inst_CC194BAA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceTop" x="1120" y="544" name="inst_F9BD0D67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -177,7 +177,7 @@
     <instance objName="mountainSurfaceTop" x="3392" y="640" name="inst_1B79EF4F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceTop" x="3424" y="640" name="inst_6791EA4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainLedgeLeft" x="1632" y="256" name="inst_D6B8B594" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="mountainDirt" x="992" y="480" name="inst_458D9274" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mountainDirt" x="992" y="448" name="inst_458D9274" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainDirt" x="736" y="384" name="inst_8BC95F13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainDirt" x="704" y="384" name="inst_779FC22C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainDirt" x="768" y="384" name="inst_D3D2F8B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1039,28 +1039,27 @@
     <instance objName="mountainDirt" x="2816" y="384" name="inst_E0B8B01F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainDirt" x="2848" y="384" name="inst_BC35737C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceTopLeft" x="1088" y="256" name="inst_43E7BFFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="mountainSurfaceTopLeft" x="960" y="448" name="inst_DAB5EEED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mountainSurfaceTopLeft" x="960" y="432" name="inst_DAB5EEED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceTopLeft" x="672" y="352" name="inst_97EFCCC4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="mountainSurfaceTopRight" x="1120" y="448" name="inst_CC91E7B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mountainSurfaceTopRight" x="1120" y="432" name="inst_CC91E7B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceTopRight" x="1376" y="256" name="inst_4F2817BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceTopRight" x="864" y="352" name="inst_D2343B28" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="mountainSurfaceTop" x="1056" y="448" name="inst_61A5D6C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="mountainSurfaceTop" x="1024" y="448" name="inst_9F83516C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mountainSurfaceTop" x="1056" y="432" name="inst_61A5D6C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mountainSurfaceTop" x="1024" y="432" name="inst_9F83516C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceTop" x="832" y="352" name="inst_1ADFD17A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceTop" x="800" y="352" name="inst_66299C52" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceTop" x="1312" y="261" name="inst_557D2983" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceTop" x="1280" y="261" name="inst_94024B88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceLeft" x="672" y="384" name="inst_66EFCF72" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="mountainSurfaceLeft" x="960" y="480" name="inst_ED6E9418" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceLeft" x="1088" y="288" name="inst_6DA79D76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceRight" x="864" y="384" name="inst_0239B5F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="mountainSurfaceRight" x="1120" y="480" name="inst_665D60F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mountainSurfaceRight" x="1120" y="448" name="inst_665D60F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceRight" x="1376" y="288" name="inst_0E6BBD4C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainDirt" x="800" y="384" name="inst_7898A2E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainDirt" x="832" y="384" name="inst_D67C1B80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="mountainDirt" x="1024" y="480" name="inst_6593EBC9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="mountainDirt" x="1056" y="480" name="inst_350519E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="mountainDirt" x="1088" y="480" name="inst_9B808F0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mountainDirt" x="1024" y="448" name="inst_6593EBC9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mountainDirt" x="1056" y="448" name="inst_350519E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mountainDirt" x="1088" y="448" name="inst_9B808F0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainDirt" x="1280" y="288" name="inst_98ED1CF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainDirt" x="1312" y="288" name="inst_A0FF4E02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainDirt" x="1344" y="288" name="inst_00A2FF12" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1079,6 +1078,7 @@
     <instance objName="mountainSlopeLeft" x="2976" y="640" name="inst_331C88B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSlopeLeft" x="1280" y="256" name="inst_D4DDC3EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainBG" x="96" y="160" name="inst_08BE6F3E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mountainSurfaceLeft" x="960" y="448" name="inst_C0A2F8F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

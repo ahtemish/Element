@@ -82,8 +82,12 @@ if (argument[0] = Player)
         flingHeight = 120 / room_speed + (irandom_range(2, 4));
     else if (flungBy.enemyType = "bear" || flungBy.enemyType = "golem")
         flingHeight = 120 / room_speed + (irandom_range(1, 2) / 2);
-    else if (flungBy.enemyType = "gecko")
-        flingHeight = 120 / room_speed + (irandom_range(2, 3));
+    else if (flungBy.enemyType = "gecko") {
+        if (flungBy.earthAbility)
+            flingHeight = 120 / room_speed + (irandom_range(2, 3));
+        else
+            flingHeight = 60 / room_speed + (irandom_range(2, 3));
+    }
 goingDown = false;
 flingY = .75;
 flingX = 3;

@@ -31,6 +31,7 @@ enemyType = "gecko";
 
 initial = true;
 gameStarted = false;
+inv = false;
 
 walking = false;
 walkTimer = 0;
@@ -553,7 +554,7 @@ if(!dead) {
                         sprite_index = attackRight;
                 }
             } else {
-                if (Player.x &lt; 1152 || attackType &lt; 3) {
+                if (Player.x &lt; 1152 || attackType &lt; 3 &amp;&amp; Player.x &lt; x) {
                     image_index = 0;
                 
                     destinationX = Player.x;
@@ -603,11 +604,10 @@ if(!dead) {
                         else if (Player.airAbility)
                             effectiveDamage *= 2;
                 
-                    if (earthAbility) {
-                        Player.flung = true;
-                        Player.flungBy = id;
-                        Player.flingInitial = true;
-                    }
+                    Player.flung = true;
+                    Player.flungBy = id;
+                    Player.flingInitial = true;
+                        
                     if (airAbility) {
                         audio_play_sound(snd_playerDamaged, 10, false);
                         Player.health -= effectiveDamage;
