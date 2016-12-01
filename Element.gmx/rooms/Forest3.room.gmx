@@ -577,7 +577,7 @@
     <instance objName="treeTop" x="1760" y="256" name="inst_B25E0750" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="treeTop" x="2016" y="352" name="inst_CD2D2542" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="treeTop" x="160" y="352" name="inst_A3BCB9A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="manager" x="160" y="64" name="inst_3949C8B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="manager" x="448" y="256" name="inst_3949C8B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="vine" x="928" y="416" name="inst_1AA4849A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="vine" x="1024" y="416" name="inst_654BDE78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="vine" x="1120" y="416" name="inst_C4A30D58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

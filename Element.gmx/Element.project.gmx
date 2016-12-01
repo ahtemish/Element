@@ -6,9 +6,6 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\snd_forestBG</sound>
-    <sound>sound\snd_mountainBG</sound>
-    <sound>sound\snd_cavernBG</sound>
-    <sound>sound\snd_deepBG</sound>
     <sound>sound\snd_checkpoint</sound>
     <sound>sound\snd_geckoTongue</sound>
     <sound>sound\snd_hardWaterHit</sound>
@@ -627,37 +624,26 @@
       <object>objects\backGroundTerrain</object>
     </objects>
     <objects name="Enemies">
-      <objects name="General">
-        <object>objects\enemy</object>
-        <object>objects\hittableEnemy</object>
-        <object>objects\nonhittableEnemy</object>
-        <object>objects\elementalEnemy</object>
-        <object>objects\elementalEnemyDead</object>
-        <object>objects\elementalEnemyFlung</object>
-      </objects>
-      <objects name="Forest">
-        <object>objects\dogFire</object>
-        <object>objects\piranha</object>
-        <object>objects\piranhaDead</object>
-        <object>objects\turtle</object>
-        <object>objects\gecko</object>
-        <object>objects\geckoDead</object>
-        <object>objects\geckoTongue</object>
-        <object>objects\manager</object>
-      </objects>
-      <objects name="Mountain">
-        <object>objects\bird</object>
-        <object>objects\birdDead</object>
-        <object>objects\ElviraFire</object>
-      </objects>
-      <objects name="Cavern">
-        <object>objects\insect</object>
-        <object>objects\insectDead</object>
-      </objects>
-      <objects name="Deep">
-        <object>objects\wyrm</object>
-        <object>objects\wyrmDead</object>
-      </objects>
+      <object>objects\enemy</object>
+      <object>objects\hittableEnemy</object>
+      <object>objects\nonhittableEnemy</object>
+      <object>objects\elementalEnemy</object>
+      <object>objects\elementalEnemyDead</object>
+      <object>objects\elementalEnemyFlung</object>
+      <object>objects\dogFire</object>
+      <object>objects\piranha</object>
+      <object>objects\piranhaDead</object>
+      <object>objects\turtle</object>
+      <object>objects\gecko</object>
+      <object>objects\geckoDead</object>
+      <object>objects\geckoTongue</object>
+      <object>objects\manager</object>
+      <object>objects\bird</object>
+      <object>objects\birdDead</object>
+      <object>objects\insect</object>
+      <object>objects\insectDead</object>
+      <object>objects\wyrm</object>
+      <object>objects\wyrmDead</object>
     </objects>
     <objects name="General">
       <object>objects\notPlayer</object>
@@ -666,9 +652,6 @@
       <object>objects\mouseFollow</object>
       <object>objects\button</object>
       <object>objects\forestBG</object>
-      <object>objects\mountainBG</object>
-      <object>objects\cavernBG</object>
-      <object>objects\deepBG</object>
     </objects>
     <object>objects\cutsceneManager</object>
   </objects>

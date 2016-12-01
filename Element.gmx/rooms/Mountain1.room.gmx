@@ -1128,7 +1128,6 @@
     <instance objName="mountainSlopeLeft" x="3968" y="256" name="inst_E4274412" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceTopRight" x="192" y="544" name="inst_225FCA56" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="waterTop" x="224" y="544" name="inst_620A1A00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="mountainBG" x="96" y="256" name="inst_E7ACF098" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

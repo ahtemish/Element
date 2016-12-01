@@ -61,7 +61,6 @@ onVine = false;
 initialVine = false;
 hitByTongue = false;
 attackCount = 0;
-num = 0;
 
 for(i = 0; i &lt; 6; i++) {
     global.enemyHit[i] = false;
@@ -334,10 +333,8 @@ if (place_meeting(x, y, fireball)) {
 }
 
 if(health &lt;= 0) {
-    if (dead = false) {
-        audio_stop_all();
+    if (dead = false)
         audio_play_sound(snd_playerDeath, 10, false);
-    }
     dead = true;
     instance_create(x, y, mouseFollow);
 }
@@ -408,9 +405,6 @@ if (airAbility) {
     punchRight = attackRightFire_spr;
     dieRight = dieRightFire_spr;
 }
-
-if (!instance_exists(cutsceneManager))
-    cutscene = false;
 </string>
           </argument>
         </arguments>
@@ -436,7 +430,7 @@ if (!instance_exists(cutsceneManager))
             <string>///  Do gravity
 
 if (x &gt;= room_width) {
-    audio_stop_all();
+    audio_stop_sound(forestBG);
     GoToNextLevel();
 }
 if (y &gt; room_height)
@@ -1112,38 +1106,36 @@ if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; ha
             <kind>1</kind>
             <string>/// Attack
 
-if(!cutscene &amp;&amp; !punch &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; attackCount = 0) {
-    if(airAbility) {
-        if (!dash &amp;&amp; !dashCooldown) {
-            alarm[3] = room_speed * (3/30);
-            dash = true;
-            startX = x;
-            solid = false;
-            with (enemy) solid = false;
-            audio_play_sound(snd_dash, 10, false);
-        }
-    } else {
+if(!cutscene &amp;&amp; !punch &amp;&amp; !dash &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; attackCount = 0) {
         attackCount++;
         num = 0;
         punch = true;
         image_speed = 16 / room_speed;
         
-        if(earthAbility) {
+        if(airAbility) {
+            if (!dashCooldown) {
+                alarm[3] = room_speed * (3/30);
+                dash = true;
+                startX = x;
+                solid = false;
+                with (enemy) solid = false;
+                audio_play_sound(snd_dash, 10, false);
+            }
+        } else if(earthAbility) {
             alarm[3] = room_speed * (12/30);
             earthAttack();
             audio_play_sound(snd_earthAttack, 10, false);
-       } else if(waterAbility) {
+        } else if(waterAbility) {
             alarm[3] = room_speed * (8/30);
             instance_create(x, y, waterwhip);
             waterAttack();
             audio_play_sound(snd_waterAttack, 10, false);
-       } else {
+        } else {
             alarm[3] = room_speed * (8/30);
             shootFireball = true;
             fireAttack();
             audio_play_sound(snd_fireAttack, 10, false);
         }
-    }
 } else if (onVine &amp;&amp; swing.path_position &gt; 0.5) {
     waterAttack();
     audio_play_sound(snd_waterAttack, 10, false);
