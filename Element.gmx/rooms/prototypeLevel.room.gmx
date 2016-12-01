@@ -1875,7 +1875,7 @@
     <instance objName="deadEarthElemental" x="160" y="576" name="inst_1AC6820E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deadFireElemental" x="256" y="544" name="inst_FC63AF5B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainDirt" x="0" y="0" name="inst_BBBDC7E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="992" y="672" name="inst_70AF5706" locked="0" code="enemyType = &quot;goat&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="832" y="512" name="inst_88F334E5" locked="0" code="enemyType = &quot;snake&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

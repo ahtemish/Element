@@ -438,12 +438,46 @@
         </sprites>
       </sprites>
       <sprites name="Cavern">
-        <sprites name="Golem"/>
-        <sprites name="Insect"/>
+        <sprites name="Golem">
+          <sprites name="Left">
+            <sprite>sprites\golemStandLeft_spr</sprite>
+            <sprite>sprites\golemWalkLeft_spr</sprite>
+            <sprite>sprites\golemAttackLeft_spr</sprite>
+            <sprite>sprites\golemDieLeft_spr</sprite>
+          </sprites>
+          <sprites name="Right">
+            <sprite>sprites\golemStandRight_spr</sprite>
+            <sprite>sprites\golemWalkRight_spr</sprite>
+            <sprite>sprites\golemAttackRight_spr</sprite>
+            <sprite>sprites\golemDieRight_spr</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Insect">
+          <sprites name="Left">
+            <sprite>sprites\insectLeft_spr</sprite>
+            <sprite>sprites\insectDieLeft_spr</sprite>
+          </sprites>
+          <sprites name="Right">
+            <sprite>sprites\insectRight_spr</sprite>
+            <sprite>sprites\insectDieRight_spr</sprite>
+          </sprites>
+        </sprites>
       </sprites>
       <sprites name="Deep">
-        <sprites name="Snake"/>
-        <sprites name="Wyrm"/>
+        <sprites name="Snake">
+          <sprites name="Left">
+            <sprite>sprites\snakeIdleLeft_spr</sprite>
+            <sprite>sprites\snakeMoveLeft_spr</sprite>
+            <sprite>sprites\snakeAttackLeft_spr</sprite>
+            <sprite>sprites\snakeDieLeft_spr</sprite>
+          </sprites>
+          <sprites name="Right">
+            <sprite>sprites\snakeIdleRight_spr</sprite>
+            <sprite>sprites\snakeMoveRight_spr</sprite>
+            <sprite>sprites\snakeAttackRight_spr</sprite>
+            <sprite>sprites\snakeDieRight_spr</sprite>
+          </sprites>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Element GUI">
