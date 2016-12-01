@@ -180,7 +180,12 @@ else
     
 if (airAbility) {
     solid = true;
-    with (enemy) solid = true;
+    with (enemy) if (enemyType != "piranha" 
+                     &amp;&amp; enemyType != "bird" 
+                     &amp;&amp; enemyType != "wyrm" 
+                     &amp;&amp; enemyType != "insect")
+        solid = true;
+        
     alarm[5] = room_speed * (15/30);
     dashCooldown = true;
     dash = false;

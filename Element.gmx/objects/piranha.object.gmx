@@ -30,6 +30,8 @@
 initialX = x;
 initialY = y;
 
+enemyType = "piranha";
+
 initial = true;
 gameStarted = false;
 

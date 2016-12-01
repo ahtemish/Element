@@ -30,6 +30,8 @@
 initialX = x;
 initialY = y;
 
+enemyType = "insect";
+
 initial = true;
 gameStarted = false;
 
