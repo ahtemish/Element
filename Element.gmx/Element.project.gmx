@@ -689,6 +689,11 @@
       <room>rooms\Cavern2</room>
     </rooms>
     <room>rooms\prototypeLevel</room>
+    <rooms name="DeepEarth">
+      <room>rooms\DeepEarth1</room>
+      <room>rooms\DeepEarth2</room>
+      <room>rooms\DeepEarth3</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
