@@ -1669,7 +1669,6 @@
     <instance objName="signPost" x="896" y="512" name="inst_83A57A78" locked="0" code="signText = &quot;Each element has a different effect for movement and attacks, try it out!&quot;;&#xA;offset = 1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="signPost" x="2528" y="544" name="inst_EEB48113" locked="0" code="signText = &quot;You can sprint by double tapping a movement key!&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="elementalEnemy" x="1600" y="288" name="inst_0956E280" locked="0" code="enemyType = &quot;dog&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="1120" y="384" name="inst_5A7FDA0F" locked="0" code="enemyType = &quot;bear&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="piranha" x="2304" y="640" name="inst_410E1311" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="piranha" x="2176" y="672" name="inst_A83350EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="piranha" x="2432" y="672" name="inst_699BD7F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1872,15 +1871,11 @@
     <instance objName="ground" x="864" y="544" name="inst_8EFE99AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ground" x="896" y="544" name="inst_22AA8BF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundCornerTopRight" x="928" y="544" name="inst_0C7F7A84" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="insect" x="768" y="448" name="inst_974E480F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="insect" x="800" y="448" name="inst_EF658618" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="insect" x="864" y="448" name="inst_E6277E21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="insect" x="864" y="480" name="inst_0CA154ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="insect" x="768" y="480" name="inst_2419D83A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="insect" x="800" y="512" name="inst_DD2D383C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="insect" x="832" y="448" name="inst_0E2F17C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="insect" x="832" y="512" name="inst_B4E1A375" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="insect" x="864" y="512" name="inst_C7747665" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deadAirElemental" x="128" y="576" name="inst_96B045EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deadEarthElemental" x="160" y="576" name="inst_1AC6820E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deadFireElemental" x="256" y="544" name="inst_FC63AF5B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="mountainDirt" x="0" y="0" name="inst_BBBDC7E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="992" y="672" name="inst_70AF5706" locked="0" code="enemyType = &quot;goat&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

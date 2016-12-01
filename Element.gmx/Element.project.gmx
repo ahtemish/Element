@@ -39,13 +39,14 @@
         <sprites name="Left">
           <sprite>sprites\standLeftWater_spr</sprite>
           <sprite>sprites\walkLeftWater_spr</sprite>
-          <sprite>sprites\punchLeftWater_spr</sprite>
+          <sprite>sprites\attackLeftWater_spr</sprite>
           <sprite>sprites\dieLeftWater_spr</sprite>
           <sprite>sprites\onVineLeft_spr</sprite>
         </sprites>
         <sprites name="Right">
           <sprite>sprites\standRightWater_spr</sprite>
-          <sprite>sprites\punchRightWater_spr</sprite>
+          <sprite>sprites\walkRightWater_spr</sprite>
+          <sprite>sprites\attackRightWater_spr</sprite>
           <sprite>sprites\dieRightWater_spr</sprite>
           <sprite>sprites\onVineRight_spr</sprite>
         </sprites>
@@ -53,36 +54,42 @@
       <sprites name="Air">
         <sprites name="Left">
           <sprite>sprites\standLeftAir_spr</sprite>
-          <sprite>sprites\punchLeftAir_spr</sprite>
+          <sprite>sprites\walkLeftAir_spr</sprite>
+          <sprite>sprites\attackLeftAir_spr</sprite>
           <sprite>sprites\dieLeftAir_spr</sprite>
         </sprites>
         <sprites name="Right">
           <sprite>sprites\standRightAir_spr</sprite>
-          <sprite>sprites\punchRightAir_spr</sprite>
+          <sprite>sprites\walkRightAir_spr</sprite>
+          <sprite>sprites\attackRightAir_spr</sprite>
           <sprite>sprites\dieRightAir_spr</sprite>
         </sprites>
       </sprites>
       <sprites name="Earth">
         <sprites name="Left">
           <sprite>sprites\standLeftEarth_spr</sprite>
-          <sprite>sprites\punchLeftEarth_spr</sprite>
+          <sprite>sprites\walkLeftEarth_spr</sprite>
+          <sprite>sprites\attackLeftEarth_spr</sprite>
           <sprite>sprites\dieLeftEarth_spr</sprite>
         </sprites>
         <sprites name="Right">
           <sprite>sprites\standRightEarth_spr</sprite>
-          <sprite>sprites\punchRightEarth_spr</sprite>
+          <sprite>sprites\walkRightEarth_spr</sprite>
+          <sprite>sprites\attackRightEarth_spr</sprite>
           <sprite>sprites\dieRightEarth_spr</sprite>
         </sprites>
       </sprites>
       <sprites name="Fire">
         <sprites name="Left">
           <sprite>sprites\standLeftFire_spr</sprite>
-          <sprite>sprites\punchLeftFire_spr</sprite>
+          <sprite>sprites\walkLeftFire_spr</sprite>
+          <sprite>sprites\attackLeftFire_spr</sprite>
           <sprite>sprites\dieLeftFire_spr</sprite>
         </sprites>
         <sprites name="Right">
           <sprite>sprites\standRightFire_spr</sprite>
-          <sprite>sprites\punchRightFire_spr</sprite>
+          <sprite>sprites\walkRightFire_spr</sprite>
+          <sprite>sprites\attackRightFire_spr</sprite>
           <sprite>sprites\dieRightFire_spr</sprite>
         </sprites>
       </sprites>
@@ -401,6 +408,42 @@
             <sprite>sprites\wolfWaterRight_spr</sprite>
           </sprites>
         </sprites>
+        <sprites name="Goat">
+          <sprites name="Left">
+            <sprite>sprites\goatStandLeft_spr</sprite>
+            <sprite>sprites\goatWalkLeft_spr</sprite>
+            <sprite>sprites\goatAttackLeft_spr</sprite>
+            <sprite>sprites\goatChargeLeft_spr</sprite>
+            <sprite>sprites\goatDieLeft_spr</sprite>
+          </sprites>
+          <sprites name="Right">
+            <sprite>sprites\goatStandRight_spr</sprite>
+            <sprite>sprites\goatWalkRight_spr</sprite>
+            <sprite>sprites\goatAttackRight_spr</sprite>
+            <sprite>sprites\goatChargeRight_spr</sprite>
+            <sprite>sprites\goatDieRight_spr</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Bird">
+          <sprites name="Left">
+            <sprite>sprites\birdFlapLeft_spr</sprite>
+            <sprite>sprites\birdAttackLeft_spr</sprite>
+            <sprite>sprites\birdDieLeft_spr</sprite>
+          </sprites>
+          <sprites name="Right">
+            <sprite>sprites\birdFlapRight_spr</sprite>
+            <sprite>sprites\birdAttackRight_spr</sprite>
+            <sprite>sprites\birdDieRight_spr</sprite>
+          </sprites>
+        </sprites>
+      </sprites>
+      <sprites name="Cavern">
+        <sprites name="Golem"/>
+        <sprites name="Insect"/>
+      </sprites>
+      <sprites name="Deep">
+        <sprites name="Snake"/>
+        <sprites name="Wyrm"/>
       </sprites>
     </sprites>
     <sprites name="Element GUI">
@@ -580,6 +623,7 @@
     <timeline>timelines\Forest1Start</timeline>
   </timelines>
   <rooms name="rooms">
+    <room>rooms\prototypeLevel</room>
     <rooms name="Forest">
       <room>rooms\Forest1</room>
       <room>rooms\Forest2</room>
@@ -589,7 +633,6 @@
       <room>rooms\Mountain1</room>
       <room>rooms\Mountain2</room>
     </rooms>
-    <room>rooms\prototypeLevel</room>
     <rooms name="Cavern">
       <room>rooms\Cavern1</room>
       <room>rooms\Cavern2</room>
