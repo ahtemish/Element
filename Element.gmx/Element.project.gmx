@@ -675,10 +675,10 @@
     <timeline>timelines\Forest1Start</timeline>
   </timelines>
   <rooms name="rooms">
-    <room>rooms\Forest3</room>
     <rooms name="Forest">
       <room>rooms\Forest1</room>
       <room>rooms\Forest2</room>
+      <room>rooms\Forest3</room>
     </rooms>
     <rooms name="Mountain">
       <room>rooms\Mountain1</room>

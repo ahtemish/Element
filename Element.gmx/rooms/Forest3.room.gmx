@@ -584,8 +584,6 @@
     <instance objName="groundSlopeRight" x="448" y="544" name="inst_D2D87067" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundSlopeLeft" x="416" y="544" name="inst_14F4A65E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="forestBG" x="128" y="64" name="inst_60D488C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Player" x="32" y="448" name="inst_5765DA27" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deadAirElemental" x="192" y="512" name="inst_20F9D1D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
