@@ -650,7 +650,7 @@ if(!dead) {
                     x, y + sprite_height, Player, false, true)
                     || collision_rectangle(x + sprite_width, y + minimumYDistance, 
                     x + sprite_width + minimumDistance, y + sprite_height, Player,
-                    false, true)) {
+                    false, true) &amp;&amp; !Player.dash) {
                     
                     image_index = 0;
                      

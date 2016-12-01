@@ -99,38 +99,6 @@ inv = false;
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="6">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Dash cooldown
-
-alarm[5] = room_speed * (15/30);
-dashCooldown = true;
-dash = false;
-
-if (left)
-    sprite_index = standLeftAir_spr;
-else
-    sprite_index = standRightAir_spr;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="2" enumb="5">
       <action>
         <libid>1</libid>
@@ -204,10 +172,19 @@ drawWhip = false;
 
 with (enemy) inv = false;
 
-if(left) 
+if (left) 
     sprite_index = standLeft;
 else
     sprite_index = standRight;
+    
+if (airAbility) {
+    solid = true;
+    with (enemy) solid = true;
+    alarm[5] = room_speed * (15/30);
+    dashCooldown = true;
+    dash = false;
+    airAttack();
+}
 </string>
           </argument>
         </arguments>
@@ -310,9 +287,7 @@ if (dash) {
     CollisionCheckingDash();
 } else {
     CollisionChecking();
-}
-
-possibleBounce = instance_place(x, y + sprite_width, hittableEnemy);
+    possibleBounce = instance_place(x, y + sprite_width, hittableEnemy);
 if (possibleBounce != noone) {
     if (!possibleBounce.dead) {
         flung = true;
@@ -324,6 +299,9 @@ if (possibleBounce != noone) {
         alarm[7] = room_speed * (1/2);
     }
 }
+}
+
+
 
 if (place_meeting(x, y, fireball)) {
     conFireball = instance_place(x, y, fireball);
@@ -716,7 +694,7 @@ if (!place_meeting(x, y + sprite_height, terrain))
             <kind>1</kind>
             <string>/// Swim up
 
-if(!dead &amp;&amp; !flung) {
+if(!cutscene &amp;&amp; !dead &amp;&amp; !flung) {
     if (inWater &amp;&amp; waterAbility) {
         if (!place_empty(x, y - 14)) {
             if (place_free(x, y - movement)) {
@@ -762,7 +740,7 @@ if(!dead &amp;&amp; !flung) {
             <kind>1</kind>
             <string>/// Jump
 
-if(!dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; !hitByTongue) {
+if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; !hitByTongue) {
     if(place_empty(x, y - 16) &amp;&amp; waterAbility &amp;&amp; inWater) {
             waterJump = 9;
     }
@@ -810,7 +788,7 @@ if(!dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; !hitByTongue) {
             <kind>1</kind>
             <string>/// Swim down
 
-if(!dead &amp;&amp; !flung) {
+if(!cutscene &amp;&amp; !dead &amp;&amp; !flung) {
     if(inWater &amp;&amp; waterAbility) {
         if(place_free(x, y + movement)) {
             y += movement;
@@ -842,8 +820,8 @@ if(!dead &amp;&amp; !flung) {
           <argument>
             <kind>1</kind>
             <string>/// Show element chart
-
-drawElementChart = true;
+if (!cutscene)
+    drawElementChart = true;
 </string>
           </argument>
         </arguments>
@@ -868,7 +846,7 @@ drawElementChart = true;
             <kind>1</kind>
             <string>/// Move right
 
-if(!dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; !hitByTongue &amp;&amp; !punch) {
+if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; !hitByTongue &amp;&amp; !punch) {
     right = true;
     left = false;
     image_speed = 8 / room_speed;
@@ -928,7 +906,7 @@ if(!dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; !hitByTongue &amp;&amp;
             <kind>1</kind>
             <string>/// Move left
 
-if(!dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; !hitByTongue &amp;&amp; !punch) {
+if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; !hitByTongue &amp;&amp; !punch) {
     right = false;
     left = true;
     image_speed = 8 / room_speed;
@@ -988,7 +966,7 @@ if(!dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; !hitByTongue &amp;&amp;
             <kind>1</kind>
             <string>/// Activate Fire
 
-if(!dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasFire) {
+if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasFire) {
     airAbility = false;
     earthAbility = false;
     waterAbility = false;
@@ -1023,7 +1001,7 @@ if(!dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasFire) {
             <kind>1</kind>
             <string>/// Activate Earth
 
-if(!dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasEarth) {
+if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasEarth) {
     airAbility = false;
     earthAbility = true;
     waterAbility = false;
@@ -1058,7 +1036,7 @@ if(!dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasEarth) {
             <kind>1</kind>
             <string>/// Activate Water
 
-if(!dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasWater) {
+if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasWater) {
     airAbility = false;
     earthAbility = false;
     waterAbility = true;
@@ -1093,7 +1071,7 @@ if(!dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasWater) {
             <kind>1</kind>
             <string>/// Activate air
 
-if(!dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasAir) {
+if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasAir) {
     airAbility = true;
     earthAbility = false;
     waterAbility = false;
@@ -1128,17 +1106,21 @@ if(!dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasAir) {
             <kind>1</kind>
             <string>/// Attack
 
-if(!dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; attackCount = 0) {
-    if(!punch) {
+if(!cutscene &amp;&amp; !punch &amp;&amp; !dash &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; attackCount = 0) {
         attackCount++;
         num = 0;
         punch = true;
         image_speed = 16 / room_speed;
         
         if(airAbility) {
-            alarm[3] = room_speed * (4/30);
-            airAttack();
-            audio_play_sound(snd_airAttack, 10, false);
+            if (!dashCooldown) {
+                alarm[3] = room_speed * (3/30);
+                dash = true;
+                startX = x;
+                solid = false;
+                with (enemy) solid = false;
+                audio_play_sound(snd_dash, 10, false);
+            }
         } else if(earthAbility) {
             alarm[3] = room_speed * (12/30);
             earthAttack();
@@ -1154,38 +1136,9 @@ if(!dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; attackCount = 0) {
             fireAttack();
             audio_play_sound(snd_fireAttack, 10, false);
         }
-    }
 } else if (onVine &amp;&amp; swing.path_position &gt; 0.5) {
     waterAttack();
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="16">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Dash
-
-if (airAbility &amp;&amp; !dash &amp;&amp; !dashCooldown &amp;&amp; !flung &amp;&amp; !dead) {
-    alarm[6] = room_speed * (3/30);
-    dash = true;
-    audio_play_sound(snd_dash, 10, false);
+    audio_play_sound(snd_waterAttack, 10, false);
 }
 </string>
           </argument>
@@ -1211,9 +1164,9 @@ if (airAbility &amp;&amp; !dash &amp;&amp; !dashCooldown &amp;&amp; !flung &amp;
             <kind>1</kind>
             <string>/// Reset from last checkpoint
 
-if (initial)
+if (initial) {
     initial = false;
-else {
+} else {
     dead = false;
     health = global.roomStartHealth;
     x = global.roomStartX;
@@ -1260,8 +1213,10 @@ else
     
 global.lastRoom = room;
 
-if (roomCount = 0)
+if (roomCount = 0) {
     SaveRoom();
+    cutscene = true;
+}
 </string>
           </argument>
         </arguments>

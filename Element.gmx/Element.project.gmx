@@ -529,6 +529,7 @@
     </scripts>
     <script>scripts\Checkpoint.gml</script>
     <script>scripts\GoToNextLevel.gml</script>
+    <script>scripts\doCutscene.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Player">
@@ -652,12 +653,12 @@
       <object>objects\button</object>
       <object>objects\forestBG</object>
     </objects>
+    <object>objects\cutsceneManager</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\Forest1Start</timeline>
   </timelines>
   <rooms name="rooms">
-    <room>rooms\prototypeLevel</room>
     <rooms name="Forest">
       <room>rooms\Forest1</room>
       <room>rooms\Forest2</room>
@@ -671,6 +672,7 @@
       <room>rooms\Cavern1</room>
       <room>rooms\Cavern2</room>
     </rooms>
+    <room>rooms\prototypeLevel</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
