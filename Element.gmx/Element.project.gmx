@@ -464,6 +464,20 @@
             <sprite>sprites\insectDieRight_spr</sprite>
           </sprites>
         </sprites>
+        <sprites name="Dragon">
+          <sprites name="Left">
+            <sprite>sprites\dragonStandLeft</sprite>
+            <sprite>sprites\dragonBreatheLeft</sprite>
+            <sprite>sprites\dragonFireballLeft</sprite>
+            <sprite>sprites\dragonStunLeft</sprite>
+          </sprites>
+          <sprites name="Right">
+            <sprite>sprites\dragonStandRight</sprite>
+            <sprite>sprites\dragonBreatheRight</sprite>
+            <sprite>sprites\dragonStunRight</sprite>
+            <sprite>sprites\dragonFireballRight</sprite>
+          </sprites>
+        </sprites>
       </sprites>
       <sprites name="Deep">
         <sprites name="Snake">
