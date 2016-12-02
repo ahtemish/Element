@@ -1279,6 +1279,11 @@
     <instance objName="elementalEnemy" x="2336" y="704" name="inst_D134DE59" locked="0" code="enemyType = &quot;snake&quot;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="elementalEnemy" x="2112" y="704" name="inst_D4FD033E" locked="0" code="enemyType = &quot;snake&quot;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="SaveStation" x="3936" y="128" name="inst_E97D27CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Player" x="64" y="480" name="inst_580D7A2B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deadAirElemental" x="128" y="480" name="inst_36D2B193" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deadEarthElemental" x="160" y="480" name="inst_5D02B6BE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deadFireElemental" x="192" y="480" name="inst_A96173C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepBG" x="128" y="352" name="inst_E93443AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -1043,10 +1043,6 @@
     <instance objName="deepDirt" x="704" y="608" name="inst_6DF1C567" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepDirt" x="736" y="608" name="inst_E2772BB0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepDirt" x="768" y="608" name="inst_9CE218D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Player" x="32" y="608" name="inst_BBAE7AA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deadAirElemental" x="64" y="640" name="inst_44F9D39B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deadEarthElemental" x="96" y="640" name="inst_7D05363A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deadFireElemental" x="128" y="640" name="inst_F92E9F09" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepDirt" x="352" y="128" name="inst_CD822C39" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepDirt" x="384" y="128" name="inst_3927B8B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepDirt" x="416" y="128" name="inst_7043CEDB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1392,6 +1388,7 @@
     <instance objName="deepSurfaceTop" x="3968" y="160" name="inst_A54B50E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepSurfaceRight" x="96" y="352" name="inst_DB14E4D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepSurfaceLeft" x="64" y="352" name="inst_4E422274" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepBG" x="64" y="480" name="inst_62477F2D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
