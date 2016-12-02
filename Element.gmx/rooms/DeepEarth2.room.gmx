@@ -6,7 +6,7 @@
   <vsnap>32</vsnap>
   <hsnap>32</hsnap>
   <isometric>0</isometric>
-  <speed>30</speed>
+  <speed>60</speed>
   <persistent>0</persistent>
   <colour>64</colour>
   <showcolour>-1</showcolour>
@@ -165,13 +165,8 @@
     <instance objName="deepDirt" x="384" y="64" name="inst_CE4CBB93" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepDirt" x="352" y="64" name="inst_BBB1AA6F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepDirt" x="320" y="64" name="inst_EDAB8B17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepSurfaceLeft" x="288" y="32" name="inst_EFC3AB95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepSurfaceLeft" x="288" y="64" name="inst_0A00B98D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepSurfaceRight" x="512" y="32" name="inst_185530EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepSurfaceRight" x="512" y="64" name="inst_04445B53" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="vine" x="339" y="128" name="inst_FEAD64D4" locked="0" code="" scaleX="3.14285707473755" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="vine" x="416" y="128" name="inst_CBA72089" locked="0" code="" scaleX="2.25" scaleY="1.91250002384186" colour="4294967295" rotation="0"/>
-    <instance objName="vine" x="512" y="128" name="inst_6C18E966" locked="0" code="" scaleX="5.125" scaleY="1.89999997615814" colour="4294967295" rotation="0"/>
     <instance objName="deepDirt" x="576" y="320" name="inst_0B7E2179" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepDirt" x="576" y="352" name="inst_53C31E82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepDirt" x="608" y="352" name="inst_7109D2D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -190,7 +185,6 @@
     <instance objName="deepDirt" x="768" y="352" name="inst_B9C93ED6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepDirt" x="768" y="320" name="inst_4862BFC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepDirt" x="800" y="352" name="inst_703651C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="boulder" x="1088" y="416" name="inst_9E1117A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepDirt" x="1344" y="736" name="inst_6D968CF2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepDirt" x="1376" y="736" name="inst_36C49F9F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepDirt" x="1408" y="736" name="inst_871F2C97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -770,76 +764,13 @@
     <instance objName="elementalEnemy" x="672" y="544" name="inst_74E14B52" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="elementalEnemy" x="1408" y="576" name="inst_81469716" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="elementalEnemy" x="1888" y="576" name="inst_734BC588" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="960" y="576" name="inst_C21D3C47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="960" y="608" name="inst_C657D3B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="960" y="544" name="inst_8C498DF4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="960" y="512" name="inst_46078FCA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="960" y="480" name="inst_62172629" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="1344" y="608" name="inst_74B82947" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="1344" y="640" name="inst_94E4FA08" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepLedgeLeft" x="960" y="448" name="inst_EFEF72E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="640" name="inst_54E0D0A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="544" name="inst_9E63E883" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="512" name="inst_AB11F895" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="480" name="inst_C0ACC56E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="448" name="inst_5612EFFC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="608" name="inst_C9CB0C63" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="576" name="inst_68F391BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="416" name="inst_BE333DBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="384" name="inst_E2938C62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="320" name="inst_D14A5335" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepLedgeLeft" x="2880" y="352" name="inst_9EB7C6F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="288" name="inst_BC1B5151" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="256" name="inst_6D183285" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="224" name="inst_2F393487" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="192" name="inst_D271679D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="160" name="inst_01A92393" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="128" name="inst_187CD50C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="96" name="inst_3F9F0B2D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="32" name="inst_994887DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="64" name="inst_411D5341" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="2880" y="0" name="inst_D8BC39C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepLedgeLeft" x="3424" y="416" name="inst_223983BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3424" y="384" name="inst_CBB3CC6C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3424" y="352" name="inst_B5A5F47E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3424" y="320" name="inst_9F54BE88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3424" y="256" name="inst_C2EF5BD0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3424" y="224" name="inst_0DAB0E0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3424" y="288" name="inst_D69D4F5C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3424" y="192" name="inst_D59F9306" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3424" y="160" name="inst_66CE2097" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3424" y="128" name="inst_ABDE015E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3424" y="96" name="inst_0102593D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3424" y="64" name="inst_F0CE3FA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3424" y="32" name="inst_FAFCB43B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3424" y="0" name="inst_85B94079" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3904" y="704" name="inst_636F11FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3904" y="672" name="inst_5E666559" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3904" y="640" name="inst_915CA16D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepLedgeLeft" x="3904" y="608" name="inst_B0FB5E9D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3904" y="576" name="inst_2C8A2A45" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3904" y="544" name="inst_EC8E2421" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3904" y="512" name="inst_B1FEB450" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepLedgeLeft" x="3904" y="480" name="inst_6ACA9534" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3904" y="448" name="inst_726B70E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3904" y="416" name="inst_D0045C46" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3904" y="384" name="inst_C54CAA46" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3904" y="352" name="inst_1A54D7F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepLedgeLeft" x="3904" y="320" name="inst_F1011292" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3904" y="288" name="inst_5733146A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeLeft" x="3904" y="256" name="inst_5F486F14" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeRight" x="3616" y="0" name="inst_F494DE00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeRight" x="3616" y="32" name="inst_E6C76A51" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeRight" x="3616" y="64" name="inst_AA01D6E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeRight" x="3616" y="96" name="inst_B63EA633" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeRight" x="3616" y="192" name="inst_AA8376E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeRight" x="3616" y="160" name="inst_476DD2C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeRight" x="3616" y="128" name="inst_83DB9E03" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeRight" x="3616" y="256" name="inst_CB7BA566" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepLedgeRight" x="3616" y="224" name="inst_88355574" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeRight" x="3616" y="288" name="inst_C0ABAC4D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeRight" x="3616" y="384" name="inst_D1ED10FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deepLedgeRight" x="3616" y="352" name="inst_77407A77" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepLedgeRight" x="3616" y="416" name="inst_6CF258D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepDirt" x="960" y="672" name="inst_6BEA19BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepDirt" x="928" y="672" name="inst_E50F5A42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -868,6 +799,139 @@
     <instance objName="elementalEnemy" x="544" y="704" name="inst_9DEDA06D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="SaveStation" x="1568" y="704" name="inst_67E92C8C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="SaveStation" x="3328" y="512" name="inst_B04DA3A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepLedgeLeft" x="544" y="320" name="inst_7516258B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="288" y="32" name="inst_71F104FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="288" y="64" name="inst_D26ED6E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="288" y="192" name="inst_C1150C93" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="288" y="160" name="inst_4377BF7E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="288" y="128" name="inst_61726B0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="288" y="96" name="inst_A89574D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="512" y="192" name="inst_48C81500" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="512" y="160" name="inst_49C7DF19" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="512" y="128" name="inst_E04500F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="512" y="96" name="inst_ECFB1DEE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="320" y="192" name="inst_6FAE7D71" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="352" y="192" name="inst_6509874A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="384" y="192" name="inst_50FA162D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="416" y="192" name="inst_78225212" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="448" y="192" name="inst_7FA60FA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="480" y="192" name="inst_67F7DBFD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="480" y="160" name="inst_CC8D9EBC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="448" y="160" name="inst_6A20EA7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="416" y="160" name="inst_C1C42E5B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="384" y="160" name="inst_2263777E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="352" y="160" name="inst_A3C88992" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="320" y="160" name="inst_15490A95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="320" y="128" name="inst_7CF5F541" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="352" y="128" name="inst_CC632646" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="384" y="128" name="inst_8CF3C4CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="416" y="128" name="inst_5F15B17C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="448" y="128" name="inst_CC79851C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="480" y="128" name="inst_785DF107" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="448" y="96" name="inst_AC10E61F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="480" y="96" name="inst_BFAB2153" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="416" y="96" name="inst_154836C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="384" y="96" name="inst_AC262DC8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="352" y="96" name="inst_996EB063" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="320" y="96" name="inst_B94443DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="vine" x="320" y="224" name="inst_9464141B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="vine" x="384" y="224" name="inst_E415AA9F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="vine" x="448" y="224" name="inst_FD8BA42F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="vine" x="512" y="224" name="inst_CC2C04EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="1216" y="160" name="inst_4E56C1FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="1216" y="128" name="inst_1D71347B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="1216" y="96" name="inst_1D05E0AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="1216" y="64" name="inst_D0E9512C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="1216" y="0" name="inst_B42112C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="1216" y="192" name="inst_0DD46193" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="1216" y="32" name="inst_8E9B6B4D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="1216" y="224" name="inst_C973E50A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="1216" y="288" name="inst_3AD0F111" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="1216" y="256" name="inst_CFD32158" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="1216" y="320" name="inst_413A0FF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="1216" y="352" name="inst_B44A908D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="1216" y="384" name="inst_2BEB48E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="1216" y="448" name="inst_57E884E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="1216" y="416" name="inst_19BEEA78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="1216" y="480" name="inst_6A2F55E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="1216" y="544" name="inst_CA8BD477" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceLeft" x="1216" y="512" name="inst_C209E34E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="1280" y="544" name="inst_4ACDBCAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="1280" y="512" name="inst_EE3B78A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="1280" y="480" name="inst_4CF5D81C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="1280" y="448" name="inst_84E84F38" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="1280" y="416" name="inst_F842A22D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="1280" y="384" name="inst_BC8B9156" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="1280" y="320" name="inst_004FF97D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="1280" y="352" name="inst_261B61E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="1280" y="288" name="inst_60B8BBC0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="1280" y="256" name="inst_CF5B9680" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="1280" y="224" name="inst_70D7C7D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="1280" y="192" name="inst_3213584F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="1280" y="160" name="inst_1593F6AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="1280" y="96" name="inst_2F88053E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="1280" y="128" name="inst_C19DADF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="1280" y="64" name="inst_7F6F2A2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="1280" y="32" name="inst_9956D7E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepSurfaceRight" x="1280" y="0" name="inst_E17FB600" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="1248" y="0" name="inst_9EABCE69" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="1248" y="32" name="inst_A43B32A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="1248" y="64" name="inst_321744D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="1248" y="96" name="inst_8144A5A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="1248" y="128" name="inst_318C18A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="1248" y="160" name="inst_78F78353" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="1248" y="192" name="inst_AF954B81" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="1248" y="224" name="inst_060AFDA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="1248" y="288" name="inst_251F303C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="1248" y="256" name="inst_6D242EDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="1248" y="320" name="inst_A2EE1F29" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="1248" y="352" name="inst_986E5944" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="1248" y="384" name="inst_2639524E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="1248" y="416" name="inst_04F06494" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="1248" y="448" name="inst_4E4F0B3B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="1248" y="480" name="inst_5829FC1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="1248" y="512" name="inst_8DBA439C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepDirt" x="1248" y="544" name="inst_71E05EDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="water" x="1088" y="704" name="inst_0C987645" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="water" x="1120" y="704" name="inst_F20B0A97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="water" x="1152" y="704" name="inst_30CF8372" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="water" x="1184" y="704" name="inst_F011183E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="water" x="1216" y="704" name="inst_C8377F4F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="water" x="1248" y="704" name="inst_E9667173" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="water" x="1280" y="704" name="inst_0015E13D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="water" x="1312" y="704" name="inst_706C341F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="water" x="1344" y="704" name="inst_5B2B95FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="waterTop" x="1088" y="672" name="inst_B8F679BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="waterTop" x="1120" y="672" name="inst_728FA897" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="waterTop" x="1152" y="672" name="inst_54728633" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="waterTop" x="1184" y="672" name="inst_55C51255" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="waterTop" x="1216" y="672" name="inst_8B39C36A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="waterTop" x="1248" y="672" name="inst_0CFDABD1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="waterTop" x="1280" y="672" name="inst_9C7A4410" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="waterTop" x="1312" y="672" name="inst_59EC5CC9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="waterTop" x="1344" y="672" name="inst_7CF1CD7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="1120" y="704" name="inst_04FCBF74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="1184" y="704" name="inst_AA5EE386" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="1248" y="736" name="inst_01D41932" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="1312" y="704" name="inst_C0B5CCE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="1248" y="704" name="inst_D80E41FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="1152" y="704" name="inst_F71C24B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="1280" y="704" name="inst_E3A0F0FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="1216" y="736" name="inst_F52DF047" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="1984" y="672" name="inst_58FBB750" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="2080" y="704" name="inst_B00C72D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="2144" y="672" name="inst_32ABEAFB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="2240" y="704" name="inst_82B107CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="2336" y="704" name="inst_CD2B3A76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="2464" y="704" name="inst_1967C746" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="2496" y="672" name="inst_619EE6A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="2496" y="704" name="inst_C6D70BC0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="2528" y="704" name="inst_57E4822D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="2432" y="672" name="inst_0C0E7896" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="2464" y="672" name="inst_9F09553A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="2432" y="736" name="inst_573BA4C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="2528" y="672" name="inst_2B98C6E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepLedgeRight" x="3104" y="448" name="inst_82BC73C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
