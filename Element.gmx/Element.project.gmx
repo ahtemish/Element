@@ -754,8 +754,8 @@
     </rooms>
     <rooms name="DeepEarth">
       <room>rooms\DeepEarth1</room>
-      <room>rooms\DeepEarth3</room>
       <room>rooms\DeepEarth4</room>
+      <room>rooms\DeepEarth3</room>
     </rooms>
     <room>rooms\prototypeLevel</room>
     <room>rooms\winRoom</room>
