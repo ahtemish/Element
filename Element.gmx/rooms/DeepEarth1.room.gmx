@@ -1275,10 +1275,6 @@
     <instance objName="deepLedgeRight" x="1152" y="448" name="inst_ABD25FCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepLedgeRight" x="832" y="448" name="inst_2B58CCAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepLedgeRight" x="1344" y="448" name="inst_FAB098A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Player" x="32" y="480" name="inst_173D4787" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deadAirElemental" x="96" y="480" name="inst_070D4B85" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deadEarthElemental" x="128" y="480" name="inst_E76DDB8C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deadFireElemental" x="160" y="480" name="inst_E35AA020" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="elementalEnemy" x="2208" y="704" name="inst_941385A3" locked="0" code="enemyType = &quot;snake&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="elementalEnemy" x="2336" y="704" name="inst_D134DE59" locked="0" code="enemyType = &quot;snake&quot;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="elementalEnemy" x="2112" y="704" name="inst_D4FD033E" locked="0" code="enemyType = &quot;snake&quot;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
