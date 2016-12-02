@@ -1289,6 +1289,9 @@ health = initialHealth;
 numEnemiesKilled = 0;
 initial = true;
 
+global.ElviraGetsWater = false;
+global.ElviraFirstDefeated = false;
+
 EndOfRoom();
 
 global.roomCount = 0;
