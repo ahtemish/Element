@@ -774,6 +774,7 @@
     <instance objName="deepSurfaceTop" x="3616" y="384" name="inst_CAB0A56E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepSurfaceTop" x="3648" y="384" name="inst_EFC892FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepDirt" x="3648" y="416" name="inst_77D31772" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deepBG" x="64" y="192" name="inst_DB43A309" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

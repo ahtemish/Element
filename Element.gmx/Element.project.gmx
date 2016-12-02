@@ -485,6 +485,7 @@
             <sprite>sprites\dragonBreatheLeft_spr</sprite>
             <sprite>sprites\dragonStunLeft</sprite>
             <sprite>sprites\dragonFireballLeft_spr</sprite>
+            <sprite>sprites\dragonFireballLanded_spr</sprite>
           </sprites>
           <sprites name="Right">
             <sprite>sprites\dragonStandRight_spr</sprite>
@@ -621,6 +622,8 @@
         <object>objects\cavernLedgeRight</object>
         <object>objects\cavernSlopeRight</object>
         <object>objects\cavernSlopeLeft</object>
+        <object>objects\dragonArenaLeft</object>
+        <object>objects\dragonArenaRight</object>
       </objects>
       <objects name="Deep">
         <object>objects\deepDirt</object>
@@ -694,6 +697,9 @@
       <objects name="Cavern">
         <object>objects\insect</object>
         <object>objects\insectDead</object>
+        <object>objects\Dragon</object>
+        <object>objects\dragonFireball</object>
+        <object>objects\dragonManager</object>
       </objects>
       <objects name="Deep">
         <object>objects\wyrm</object>
