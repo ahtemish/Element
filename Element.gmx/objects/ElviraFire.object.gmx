@@ -557,92 +557,41 @@ if(initial) {
             <kind>1</kind>
             <string>/// Check movement
 
-if (place_meeting(x, y, water)) {
-    inWater = true;
-    fallMult = 15 / room_speed;
-    fallMax = 300 / room_speed;
-    if (airAbility || fireAbility) {
-        run = runSpeed * 0.3;
-        walk = walkSpeed * 0.3;
-        if (enemyType = "boar" || enemyType = "goat")
-            boarCharge = chargeSpeed * 0.3;
-        if (fireAbility)
-            health -= 6 / room_speed;
-    } else
-    run = runSpeed;
-    walk = walkSpeed;
-} else {
-    run = runSpeed;
-    walk = walkSpeed;
-    if (enemyType = "boar" || enemyType = "goat")
-        boarCharge = chargeSpeed;
-        
-    inWater = false;
-    fallMult = 30 / room_speed;
-    fallMax = 600 / room_speed;
-}
-
+run = runSpeed;
+walk = walkSpeed;
 
 if(!dead) {
-    if(flung) {
-        if(!earthAbility)
-            instance_change(elementalEnemyFlung, true);
-        else {
-            flung = false;
-            flungBy = noone;
-        }
-    } else {
+    if(flung)
+        instance_change(elementalEnemyFlung, true);
+    else {
         flungBy = noone;
         
-        if (enemyType = "goat") {
-            if (!charge &amp;&amp; jump)
-                if (height == 0)
-                    jump = false;
-                else {
-                    if (place_free(x, y - height)) {
-                        y -= height;
-                        if (height == 15 &amp;&amp; room_speed == 60)
-                            height -= 5;
-                        else
-                            height -= 30 / room_speed;
-                    } else {
-                        y = (instance_nearest(x, y - height, other)) + ground.sprite_height;
-                        height = 0;
-                    }            
-                }
-            else
-                Gravity();
-        } else
-            Gravity();
+        Gravity();
     
         if (hitByWater &amp;&amp; !waterAbility) {
             run /= 2;
             walk /= 2;
-            if (enemyType = "boar" || enemyType = "goat")
-                boarCharge /= 2;
         }
         
-        if (distance_to_object(Player) &lt; detectionDistance 
-            &amp;&amp; !collision_line(x, y, Player.x, Player.y, terrain, false, true)) {
-            
-            if ((enemyType = "boar" || enemyType = "goat") &amp;&amp; !charge &amp;&amp; !chargeCooldown &amp;&amp; distance_to_object(Player) &gt; minimumDistance * 4) {
-                image_speed = chargeImageSpeed;
-                charge = true;
-            }
-            
-            if ((enemyType != "boar" &amp;&amp; enemyType != "goat") || ((enemyType = "boar" || enemyType = "goat") &amp;&amp; !charge)) {
-                if (Player.x &lt; x) {
-                    left = true;
-                    right = false;
-                } else {
-                    left = false;
-                    right = true;
-                }
+        if (Player.x &gt; arenaStart) {
+            if (Player.x &lt; x) {
+                left = true;
+                right = false;
+            } else {
+                left = false;
+                right = true;
             }
             
             if(!attack) {
-                if (collision_rectangle(x - minimumDistance, y + minimumYDistance,
-                    x, y + sprite_height, Player, false, true)
+                
+                if (fireAbility) {
+                    
+                } else {
+                    
+                }
+            
+                if (collision_rectangle(x - minimumDistance, y, x, y + sprite_height,
+                                        Player, false, true)
                     || collision_rectangle(x + sprite_width, y + minimumYDistance, 
                     x + sprite_width + minimumDistance, y + sprite_height, Player,
                     false, true) &amp;&amp; !Player.dash) {
@@ -762,48 +711,6 @@ if(!dead) {
                 } else {
                     if (left) {
                         sprite_index = standLeft;
-                    } else {
-                        sprite_index = standRight;
-                    }
-                }
-            }
-        } else {
-            if (enemyType = "boar" || enemyType = "goat")
-                charge = false;
-            
-            image_speed = walkImageSpeed;
-            if(walkTimer &gt; 0) {
-                walkTimer--;
-            } else {
-                if(left) {
-                    sprite_index = standLeft;
-                } else {
-                    sprite_index = standRight;
-                }
-                walking = false;
-                alarm[0] = irandom(room_speed);
-            }
-        
-            if(walking) {
-                if(walkDirection == 0) {
-                    left = true;
-                    right = false;
-                    if ((place_free(x - walk, y) || place_meeting(x - walk, y, enemy))
-                        &amp;&amp; place_meeting(x - walk - sprite_width, y + sprite_height, terrain)) {
-                        sprite_index = walkLeft;
-                        x -= walk;
-                    } else {
-                        sprite_index = standLeft;
-                    }
-                } else {
-                    left = false;
-                    right = true;
-                    if ((place_free(x + walk, y) 
-                         || place_meeting(x + walk, y, enemy))
-                         &amp;&amp; place_meeting(x + walk + sprite_width, 
-                         y + sprite_height, terrain)) {
-                        sprite_index = walkRight;
-                        x += walk;
                     } else {
                         sprite_index = standRight;
                     }
