@@ -706,11 +706,6 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\Mountain3</room>
-    <rooms name="DeepEarth">
-      <room>rooms\DeepEarth1</room>
-      <room>rooms\DeepEarth2</room>
-      <room>rooms\DeepEarth3</room>
-    </rooms>
     <rooms name="Forest">
       <room>rooms\Forest1</room>
       <room>rooms\Forest2</room>
@@ -724,6 +719,11 @@
       <room>rooms\Cavern1</room>
       <room>rooms\Cavern2</room>
       <room>rooms\Cavern3</room>
+    </rooms>
+    <rooms name="DeepEarth">
+      <room>rooms\DeepEarth1</room>
+      <room>rooms\DeepEarth2</room>
+      <room>rooms\DeepEarth3</room>
     </rooms>
     <room>rooms\prototypeLevel</room>
   </rooms>
