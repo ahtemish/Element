@@ -721,8 +721,8 @@
       <room>rooms\Cavern3</room>
     </rooms>
     <rooms name="DeepEarth">
-      <room>rooms\DeepEarth1</room>
       <room>rooms\DeepEarth2</room>
+      <room>rooms\DeepEarth1</room>
       <room>rooms\DeepEarth3</room>
     </rooms>
     <room>rooms\prototypeLevel</room>
