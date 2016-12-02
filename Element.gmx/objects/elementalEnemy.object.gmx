@@ -78,6 +78,8 @@ dieRight = defaultEnemyDieRight_spr;
 walkImageSpeed = 4 / room_speed;
 attackImageSpeed = walkImageSpeed;
 
+initialHealth = 0;
+
 randomize();
 alarm[0] = irandom(room_speed);
 </string>

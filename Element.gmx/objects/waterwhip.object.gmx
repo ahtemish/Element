@@ -82,10 +82,10 @@ if (place_meeting(x, y, vine)) {
         
         if(left) {
             sprite_index = onVineLeft_spr;
-            swing = path_start(PlayerSwingLeft, 6, path_action_stop, false);
+            swing = path_start(PlayerSwingLeft, 3, path_action_stop, false);
         } else {
             sprite_index = onVineRight_spr;
-            swing = path_start(PlayerSwingRight, 6, path_action_stop, false);
+            swing = path_start(PlayerSwingRight, 3, path_action_stop, false);
         }
     }
 }
