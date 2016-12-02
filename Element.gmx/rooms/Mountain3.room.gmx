@@ -83,7 +83,11 @@
     <instance objName="mountainDirt" x="928" y="704" name="inst_364EE8DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainDirt" x="960" y="704" name="inst_16ECE3B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainDirt" x="992" y="704" name="inst_49D5FD64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ElviraFire" x="896" y="672" name="inst_73356FA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="ElviraFire" x="896" y="640" name="inst_73356FA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Player" x="32" y="672" name="inst_D96246D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deadAirElemental" x="64" y="672" name="inst_3F0BCA6C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deadEarthElemental" x="96" y="672" name="inst_557CF143" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deadFireElemental" x="128" y="672" name="inst_64775DE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
