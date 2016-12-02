@@ -339,6 +339,7 @@
     <instance objName="dragonArenaRight" x="288" y="0" name="inst_3DF24AA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="dragonArenaRight" x="320" y="0" name="inst_F624DE9D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cutsceneManager" x="128" y="64" name="inst_23795AB5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="bossMusic" x="128" y="128" name="inst_81D823F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>global.dragonDefeated = false;
+initial = true;
 </string>
           </argument>
         </arguments>
@@ -50,9 +51,14 @@
             <kind>1</kind>
             <string>/// Boss Arena
 
-if (Player.x &gt; 318 &amp;&amp; instance_exists(Dragon))
+if (Player.x &gt; 318 &amp;&amp; instance_exists(Dragon)) {
     instance_activate_object(ArenaBlocks);
-else
+    if (initial) {
+        initial = false;
+        audio_stop_all();
+        audio_play_sound(snd_bossFight, 0, true);
+    }
+} else
     instance_deactivate_object(ArenaBlocks);
 </string>
           </argument>

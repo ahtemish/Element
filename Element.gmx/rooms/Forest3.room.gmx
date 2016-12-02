@@ -583,7 +583,7 @@
     <instance objName="vine" x="1120" y="416" name="inst_C4A30D58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundSlopeRight" x="448" y="544" name="inst_D2D87067" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundSlopeLeft" x="416" y="544" name="inst_14F4A65E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="forestBG" x="128" y="64" name="inst_60D488C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="bossMusic" x="192" y="64" name="inst_0738BBC9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

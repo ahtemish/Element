@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>global.ElviraGetsWater = false;
 global.ElviraFirstDefeated = false;
+initial = true;
 </string>
           </argument>
         </arguments>
@@ -51,9 +52,14 @@ global.ElviraFirstDefeated = false;
             <kind>1</kind>
             <string>/// Boss Arena
 
-if (Player.x &gt; 158 &amp;&amp; (instance_exists(ElviraFire) || instance_exists(ElviraFinal)))
+if (Player.x &gt; 158 &amp;&amp; (instance_exists(ElviraFire) || instance_exists(ElviraFinal))) {
     instance_activate_object(ArenaBlocks);
-else
+    if (initial) {
+        initial = false;
+        audio_stop_all();
+        audio_play_sound(snd_bossFight, 0, true);
+    }
+} else
     instance_deactivate_object(ArenaBlocks);
 </string>
           </argument>

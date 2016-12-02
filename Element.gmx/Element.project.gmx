@@ -13,6 +13,8 @@
     <sound>sound\snd_hardWaterHit</sound>
     <sound>sound\snd_playerDamaged</sound>
     <sound>sound\snd_playerDeath</sound>
+    <sound>sound\snd_bossIntro</sound>
+    <sound>sound\snd_bossFight</sound>
     <sounds name="Movement">
       <sounds name="Jumps">
         <sound>sound\snd_longJump</sound>
@@ -729,6 +731,7 @@
       <object>objects\mountainBG</object>
       <object>objects\cavernBG</object>
       <object>objects\deepBG</object>
+      <object>objects\bossMusic</object>
     </objects>
     <object>objects\cutsceneManager</object>
   </objects>
@@ -736,7 +739,6 @@
     <timeline>timelines\Forest1Start</timeline>
   </timelines>
   <rooms name="rooms">
-    <room>rooms\DeepEarth2</room>
     <rooms name="Forest">
       <room>rooms\Forest1</room>
       <room>rooms\Forest2</room>
@@ -754,8 +756,9 @@
     </rooms>
     <rooms name="DeepEarth">
       <room>rooms\DeepEarth1</room>
-      <room>rooms\DeepEarth4</room>
+      <room>rooms\DeepEarth2</room>
       <room>rooms\DeepEarth3</room>
+      <room>rooms\DeepEarth4</room>
     </rooms>
     <room>rooms\prototypeLevel</room>
     <room>rooms\winRoom</room>
