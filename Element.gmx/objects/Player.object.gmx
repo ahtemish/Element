@@ -977,7 +977,7 @@ if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; !h
             <kind>1</kind>
             <string>/// Activate Fire
 
-if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasFire) {
+if(!punch &amp;&amp; !cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasFire) {
     airAbility = false;
     earthAbility = false;
     waterAbility = false;
@@ -1012,7 +1012,7 @@ if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; ha
             <kind>1</kind>
             <string>/// Activate Earth
 
-if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasEarth) {
+if(!punch &amp;&amp; !cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasEarth) {
     airAbility = false;
     earthAbility = true;
     waterAbility = false;
@@ -1047,7 +1047,7 @@ if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; ha
             <kind>1</kind>
             <string>/// Activate Water
 
-if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasWater) {
+if(!punch &amp;&amp; !cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasWater) {
     airAbility = false;
     earthAbility = false;
     waterAbility = true;
@@ -1082,7 +1082,7 @@ if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; ha
             <kind>1</kind>
             <string>/// Activate air
 
-if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasAir) {
+if(!punch &amp;&amp; !cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasAir) {
     airAbility = true;
     earthAbility = false;
     waterAbility = false;
