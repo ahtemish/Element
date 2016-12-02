@@ -113,10 +113,8 @@
     <instance objName="cavernDirt" x="544" y="704" name="inst_E96D2C24" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernDirt" x="512" y="704" name="inst_AD45672D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernDirt" x="512" y="736" name="inst_BEBAE499" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="160" y="192" name="inst_796593B3" locked="0" code="enemyType = &quot;golem&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="128" y="160" name="inst_510DB3C7" locked="0" code="enemyType = &quot;golem&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="96" y="128" name="inst_4C27DAF9" locked="0" code="enemyType = &quot;golem&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="608" y="576" name="inst_8EA3149F" locked="0" code="enemyType = &quot;golem&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="384" y="384" name="inst_510DB3C7" locked="0" code="enemyType = &quot;golem&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="640" y="608" name="inst_8EA3149F" locked="0" code="enemyType = &quot;golem&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="elementalEnemy" x="576" y="544" name="inst_0EDB922D" locked="0" code="enemyType = &quot;golem&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernSurfaceTop" x="704" y="736" name="inst_2926DFA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernSurfaceTop" x="736" y="736" name="inst_B9A0B1B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -942,7 +940,6 @@
     <instance objName="water" x="4448" y="608" name="inst_53D33418" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="water" x="4480" y="608" name="inst_52375DE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="water" x="4480" y="640" name="inst_3EB5D4D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="water" x="4448" y="640" name="inst_813C15DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="water" x="4416" y="640" name="inst_918CF826" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="water" x="4384" y="640" name="inst_1470BD6A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="water" x="4352" y="640" name="inst_8B250A92" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1043,7 +1040,6 @@
     <instance objName="insect" x="288" y="352" name="inst_2DE8574D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="insect" x="288" y="352" name="inst_4F172667" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="insect" x="320" y="352" name="inst_D40BE032" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="384" y="384" name="inst_3D6483D0" locked="0" code="enemyType = &quot;golem&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernSlopeRight" x="5248" y="448" name="inst_CC19E53C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernSlopeLeft" x="5344" y="448" name="inst_8DF6B38E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernSurfaceTop" x="5280" y="456" name="inst_56745009" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1401,6 +1397,16 @@
     <instance objName="cavernDirt" x="4704" y="480" name="inst_C6E82F60" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernDirt" x="4704" y="512" name="inst_39FB9F12" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernDirt" x="4704" y="544" name="inst_CEEEF55A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="4448" y="640" name="inst_EFC91B26" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="4640" y="672" name="inst_BD40EB93" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="4800" y="608" name="inst_F71A6770" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="4736" y="640" name="inst_9103CD0C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="4512" y="640" name="inst_2E346AD0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="4864" y="672" name="inst_E49E03C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="4896" y="608" name="inst_A1E23C0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="piranha" x="4384" y="672" name="inst_7F914995" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="water" x="4448" y="640" name="inst_C003C0DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernLedgeLeft" x="2816" y="320" name="inst_0909130D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
