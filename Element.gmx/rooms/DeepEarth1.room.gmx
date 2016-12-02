@@ -195,10 +195,10 @@
     <instance objName="wyrm" x="672" y="672" name="inst_7154CF77" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wyrm" x="736" y="704" name="inst_8D4B1CFD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wyrm" x="704" y="640" name="inst_839800AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="864" y="704" name="inst_37FE0FBF" locked="0" code="enemyType = &quot;snake&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="960" y="704" name="inst_93047A5C" locked="0" code="enemyType = &quot;snake&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="1056" y="704" name="inst_C2296443" locked="0" code="enemyType = &quot;golem&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="1120" y="704" name="inst_D50679DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="864" y="704" name="inst_37FE0FBF" locked="0" code="enemyType = &quot;snake&quot;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="960" y="704" name="inst_93047A5C" locked="0" code="enemyType = &quot;snake&quot;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="1056" y="704" name="inst_C2296443" locked="0" code="enemyType = &quot;golem&quot;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="1120" y="704" name="inst_D50679DA" locked="0" code="enemyType = &quot;snake&quot;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="elementalEnemy" x="1184" y="704" name="inst_AA78CC39" locked="0" code="enemyType = &quot;golem&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="elementalEnemy" x="1248" y="704" name="inst_F8447A1C" locked="0" code="enemyType = &quot;snake&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="elementalEnemy" x="1280" y="704" name="inst_4EADA965" locked="0" code="enemyType = &quot;snake&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -433,8 +433,8 @@
     <instance objName="deepSurfaceRight" x="2688" y="640" name="inst_84521EF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepSurfaceRight" x="2688" y="672" name="inst_AF5E02C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepSurfaceRight" x="2688" y="704" name="inst_538A6F39" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="2176" y="704" name="inst_8CBB7342" locked="0" code="enemyType = &quot;snake&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="2272" y="704" name="inst_37F997D6" locked="0" code="enemyType = &quot;snake&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="2176" y="704" name="inst_8CBB7342" locked="0" code="enemyType = &quot;snake&quot;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="2272" y="704" name="inst_37F997D6" locked="0" code="enemyType = &quot;snake&quot;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepSurfaceRight" x="2688" y="736" name="inst_117DB125" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepSurfaceTopLeft" x="2816" y="544" name="inst_3B771CA2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepSurfaceTopLeft" x="3232" y="544" name="inst_4AA162C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -586,10 +586,9 @@
     <instance objName="wyrm" x="3264" y="512" name="inst_B5FC709A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wyrm" x="3392" y="448" name="inst_9431B09B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="elementalEnemy" x="2912" y="512" name="inst_DADB2B37" locked="0" code="enemyType = &quot;golem&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="2976" y="512" name="inst_1020AA79" locked="0" code="enemyType = &quot;golem&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="3680" y="512" name="inst_92A0AF2E" locked="0" code="enemyType = &quot;snake&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="3744" y="512" name="inst_5D094EB2" locked="0" code="enemyType = &quot;snake&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="3648" y="512" name="inst_C8BC42CB" locked="0" code="enemyType = &quot;snake&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="3680" y="512" name="inst_92A0AF2E" locked="0" code="enemyType = &quot;snake&quot;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="3744" y="512" name="inst_5D094EB2" locked="0" code="enemyType = &quot;snake&quot;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="3648" y="512" name="inst_C8BC42CB" locked="0" code="enemyType = &quot;snake&quot;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepSurfaceTopLeft" x="4064" y="480" name="inst_B5622794" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepSurfaceTopLeft" x="4224" y="416" name="inst_6022E86F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepSurfaceTopRight" x="4192" y="480" name="inst_39B6F117" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1276,6 +1275,14 @@
     <instance objName="deepLedgeRight" x="1152" y="448" name="inst_ABD25FCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepLedgeRight" x="832" y="448" name="inst_2B58CCAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deepLedgeRight" x="1344" y="448" name="inst_FAB098A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Player" x="32" y="480" name="inst_173D4787" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deadAirElemental" x="96" y="480" name="inst_070D4B85" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deadEarthElemental" x="128" y="480" name="inst_E76DDB8C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deadFireElemental" x="160" y="480" name="inst_E35AA020" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="2208" y="704" name="inst_941385A3" locked="0" code="enemyType = &quot;snake&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="2336" y="704" name="inst_D134DE59" locked="0" code="enemyType = &quot;snake&quot;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="2112" y="704" name="inst_D4FD033E" locked="0" code="enemyType = &quot;snake&quot;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="SaveStation" x="3936" y="128" name="inst_E97D27CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
