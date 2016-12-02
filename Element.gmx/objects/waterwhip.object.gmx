@@ -93,12 +93,12 @@ if (place_meeting(x, y, vine)) {
 else {
     if (Player.left) {
         sprite_index = waterwhipLeft_spr;
-        x = Player.x - sprite_width / 2 - 5;
+        x = Player.x - 8;
     } else {
         sprite_index = waterwhipRight_spr;
-        x = Player.x + sprite_width / 2 + Player.sprite_width;
+        x = Player.x + 19;
     }
-    y = Player.y + sprite_height / 2;
+    y = Player.y + 12;
 }
 </string>
           </argument>
