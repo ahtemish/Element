@@ -1378,9 +1378,6 @@
     <instance objName="piranha" x="4384" y="672" name="inst_7F914995" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="water" x="4448" y="640" name="inst_C003C0DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernLedgeLeft" x="2816" y="320" name="inst_0909130D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Player" x="0" y="96" name="inst_75636A65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deadAirElemental" x="32" y="96" name="inst_61FE0505" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deadEarthElemental" x="64" y="96" name="inst_55D4FACB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernLedgeLeft" x="1120" y="544" name="inst_DEAE05D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="SaveStation" x="3168" y="288" name="inst_FBCA15F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="waterSpout" x="3008" y="256" name="inst_96A560A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
