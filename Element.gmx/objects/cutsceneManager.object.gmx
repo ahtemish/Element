@@ -246,7 +246,7 @@
                     "Lucy: WHA- WHERE DID THAT COME FROM?!? ELVIRA?!? I’M COMING FOR YOU WITCH. YOU BETTER BE PREPARED TO FACE MY WRATH.",
                     "Everone: *sigh*",
                     "");
-    } if (room = Deep4) {
+    }/* if (room = Deep4) {
         doCutscene ("Lucy: Ha! *pant* I-I finally caught up to you!",
                     "Elvira: Oh look at the little girl. Everything okay? Do you need a nap sweetie?",
                     "Lucy: Y-yes I do. BUT YOUR DEATH COMES FIRST.",
@@ -271,7 +271,7 @@
                     "Lucy: That’s more like it!",
                     "Lucy: Alright, let’s do this!",
                     "");
-    }
+    }*/
 }
 </string>
           </argument>
