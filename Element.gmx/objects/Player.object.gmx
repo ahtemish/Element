@@ -875,6 +875,8 @@ if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; !h
         }
     } else if(earthAbility) {
         effectiveSpeed = movement * 0.7;
+        if (inWater &amp;&amp; instance_find(water, 0).slowEarth)
+            effectiveSpeed /= 2;
     } else if(waterAbility) {
         effectiveSpeed = movement;
     } else {

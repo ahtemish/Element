@@ -31,6 +31,7 @@ initial = true;
 enemyType = "ElviraFire";
 
 gameStarted = false;
+phase1 = true;
 
 walking = false;
 walkTimer = 0;
@@ -84,6 +85,29 @@ alarm[0] = irandom_range(5, 10) * room_speed;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with (waterTop) instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>
@@ -102,6 +126,8 @@ alarm[0] = irandom_range(5, 10) * room_speed;
           <argument>
             <kind>1</kind>
             <string>/// End attack
+
+if (flung) alarm[2]++;
 
 if (!dead) {
     attack = false;
@@ -157,12 +183,16 @@ hitByWater = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (x &gt; 400) {
-    path_start(elviraHopToLeft, 12, path_action_stop, false);
-    sprite_index = walkLeft;
-} else {
-    path_start(elviraHopToRight, 12, path_action_stop, false);
-    sprite_index = walkRight;
+            <string>/// Hop
+
+if (Player.x &gt; 160 &amp;&amp; !Player.cutscene &amp;&amp; !flung) {
+    if (x &gt; 400) {
+        path_start(elviraHopToLeft, 12, path_action_stop, false);
+        sprite_index = walkLeft;
+    } else {
+        path_start(elviraHopToRight, 12, path_action_stop, false);
+        sprite_index = walkRight;
+    }
 }
 
 alarm[0] = irandom_range(5, 10) * room_speed;
@@ -190,7 +220,7 @@ alarm[0] = irandom_range(5, 10) * room_speed;
             <kind>1</kind>
             <string>/// Check if hit
 
-if (!dead) {
+if (!dead &amp;&amp; !Player.cutscene) {
     for(num = 0; num &lt; 5; num++) {
         if (global.enemyHitId[num] == id &amp;&amp; !inv 
             &amp;&amp; ((Player.x &lt; x &amp;&amp; !instance_exists(fireShieldLeft)) 
@@ -220,7 +250,7 @@ if (!dead) {
                 if(earthAbility) {
                     playerDamage *= 0.7;
                 }
-                if(fireAbility || earthAbility) {
+                if(fireAbility) {
                     playerDamage *= 2;
                 }
             }
@@ -252,13 +282,28 @@ if (!dead) {
 }
     
 if(instanceHealth &lt;= 0) {
-    if(enemyType == "dog" || enemyType = "wolf") {
-        with(thisDogFire) instance_destroy();
+    if (phase1) {
+        instanceHealth = 80;
+        Player.cutscene = true;
+        global.ElviraGetsWater = true;
+        cutsceneManager.textNum = 0;
+        phase1 = false;
+        Player.hasWater = false;
+        if (Player.waterAbility) {
+            Player.waterAbility = false;
+            Player.earthAbility = true;
+        }
+        
+    } else {
+        Player.enemiesKilled[Player.numEnemiesKilled] = id;
+        Player.numEnemiesKilled++;
+        dead = true;
+        Player.cutscene = true;
+        global.ElviraFirstDefeated = true;
+        cutsceneManager.textNum = 0;
+        Player.hasWater = true;
+        instance_change(elementalEnemyDead, true);
     }
-    Player.enemiesKilled[Player.numEnemiesKilled] = id;
-    Player.numEnemiesKilled++;
-    dead = true;
-    instance_change(elementalEnemyDead, true);
 }
 </string>
           </argument>
@@ -324,8 +369,10 @@ run = runSpeed;
 walk = walkSpeed;
 
 if(!dead) {
+    if (Player.cutscene) alarm[2] = 2;
+    
     if(flung)
-        instance_change(elementalEnemyFlung, true);
+        instance_change(ElviraFireFlung, true);
     else {
         flungBy = noone;
         
@@ -340,45 +387,56 @@ if(!dead) {
             if (Player.x &lt; x) {
                 left = true;
                 right = false;
-                if (y = 664) sprite_index = standLeft;
             } else {
                 left = false;
                 right = true;
-                if (y = 664) sprite_index = standRight;
             }
             
-            if(!attack &amp;&amp; y = 664) {
+            if(!attack &amp;&amp; y &gt; 660) {
                 
                 attack = true;
-                attackType = irandom(7);
+                if (phase1)
+                    attackType = irandom(7);
+                else
+                    attackType = irandom(11);
+                image_speed = attackImageSpeed;
+                if (left)
+                    sprite_index = attackLeft;
+                else
+                    sprite_index = attackRight;
                 
-                if (fireAbility) {
-                    if (attackType &lt; 4 &amp;&amp; !instance_exists(fireShieldLeft) &amp;&amp; Player.x &lt; x) {
-                        alarm[2] = room_speed/2;
-                        instance_create(x - 2, y, fireShieldLeft);
-                    } else if (attackType &lt; 4 &amp;&amp; !instance_exists(fireShieldRight) &amp;&amp; Player.x &gt; x) {
-                        alarm[2] = room_speed/2;
-                        instance_create(x + sprite_width + 2, y, fireShieldRight);
-                    } else if (attackType &lt; 6) {
-                        alarm[2] = room_speed;
-                        if (left)
-                            elFireball = instance_create(x - 16, y + 7, fireball);
-                        else
-                            elFireball = instance_create(x + sprite_width, y + 7, fireball);
-        
-                        elFireball.firedBy = enemy;
-                        elFireball.damage = 4;
-                    } else {
-                        alarm[2] = room_speed;
-                        firstPillar = irandom(4);
-                        secondPillar = irandom(4);
-                        thirdPillar = irandom_range(6, 14);
-                        fourthPillar = irandom_range(6, 14);
-                        instance_create(192 + (firstPillar * 32), y + sprite_height, lavaPillar);
-                        instance_create(192 + (secondPillar * 32), y + sprite_height, lavaPillar);
-                        instance_create(192 + (thirdPillar * 32), y + sprite_height, lavaPillar);
-                        instance_create(192 + (fourthPillar * 32), y + sprite_height, lavaPillar);
+                    
+                if (attackType &lt; 4 &amp;&amp; !instance_exists(fireShieldLeft) &amp;&amp; Player.x &lt; x) {
+                    alarm[2] = room_speed/2;
+                    instance_create(x - 2, y, fireShieldLeft);
+                } else if (attackType &lt; 4 &amp;&amp; !instance_exists(fireShieldRight) &amp;&amp; Player.x &gt; x) {
+                    alarm[2] = room_speed/2;
+                    instance_create(x + sprite_width + 2, y, fireShieldRight);
+                } else if (attackType &lt; 6) {
+                    alarm[2] = room_speed;
+                    if (left)
+                        elFireball = instance_create(x - 16, y + 7, fireball);
+                    else
+                        elFireball = instance_create(x + sprite_width, y + 7, fireball);
+                    elFireball.firedBy = enemy;
+                    elFireball.damage = 4;
+                } else if (attackType &lt; 8) {
+                    alarm[2] = room_speed;
+                    firstPillar = irandom(4);
+                    secondPillar = irandom(4);
+                    thirdPillar = irandom_range(6, 14);
+                    fourthPillar = irandom_range(6, 14);
+                    instance_create(192 + (firstPillar * 32), y + sprite_height, lavaPillar);
+                    instance_create(192 + (secondPillar * 32), y + sprite_height, lavaPillar);
+                    instance_create(192 + (thirdPillar * 32), y + sprite_height, lavaPillar);
+                    instance_create(192 + (fourthPillar * 32), y + sprite_height, lavaPillar);
+                } else {
+                    for (i = 0; i &lt; 18; i++) {
+                        instance_create(160 + (i*32), 690, waterTop);
                     }
+                    alarm[2] = room_speed;
+                    alarm[3] = room_speed * 2;
+                    with (waterTop) slowEarth = true;
                 }
             }
         }

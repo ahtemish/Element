@@ -308,7 +308,7 @@ if (!dead) {
                 if(earthAbility) {
                     playerDamage *= 0.7;
                 }
-                if(fireAbility || earthAbility) {
+                if(fireAbility) {
                     playerDamage *= 2;
                 }
             }
@@ -666,7 +666,7 @@ if(!dead) {
                             effectiveDamage /= 2;
                         }
                     } else if (waterAbility) {
-                        if (Player.fireAbility || Player.earthAbility) {
+                        if (Player.fireAbility) {
                             effectiveDamage *= 2;
                         }
                     } else if (fireAbility) {

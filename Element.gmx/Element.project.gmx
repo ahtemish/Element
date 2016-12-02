@@ -603,6 +603,12 @@
         <object>objects\mountainLedgeRight</object>
         <object>objects\mountainSlopRight</object>
         <object>objects\mountainSlopeLeft</object>
+        <object>objects\ElviraFireArenaLeft</object>
+        <object>objects\ElviraFireArenaRight</object>
+        <object>objects\ElviraFireArenaTop</object>
+        <object>objects\ElviraFireArenaDirt</object>
+        <object>objects\ElviraFireArenaTopLeft</object>
+        <object>objects\ElviraFireArenaTopRight</object>
       </objects>
       <objects name="Cavern">
         <object>objects\cavernDirt</object>
@@ -679,9 +685,11 @@
         <object>objects\bird</object>
         <object>objects\birdDead</object>
         <object>objects\ElviraFire</object>
+        <object>objects\ElviraFireFlung</object>
         <object>objects\fireShieldLeft</object>
         <object>objects\fireShieldRight</object>
         <object>objects\lavaPillar</object>
+        <object>objects\elviraManager</object>
       </objects>
       <objects name="Cavern">
         <object>objects\insect</object>

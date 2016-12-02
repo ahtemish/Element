@@ -5,6 +5,8 @@ if (flingHeight >= 6 && goingDown) {
     flung = false;
     if (argument[0] = Player)
         instance_change(Player, false);
+    else if (argument[0] = ElviraFire)
+        instance_change(ElviraFire, false);
     else
         instance_change(elementalEnemy, false);
     if (left) {
@@ -26,6 +28,8 @@ if (flingHeight >= 6 && goingDown) {
         flung = false;
         if (argument[0] = Player)
             instance_change(Player, false);
+        else if (argument[0] = ElviraFire)
+            instance_change(ElviraFire, false);
         else
             instance_change(elementalEnemy, false);
         if (left) {
@@ -42,6 +46,8 @@ if (flingHeight >= 6 && goingDown) {
             flung = false;
             if (argument[0] = Player)
                 instance_change(Player, false);
+            else if (argument[0] = ElviraFire)
+                instance_change(ElviraFire, false);
             else
                 instance_change(elementalEnemy, false);
             if (left) {
@@ -57,6 +63,8 @@ if (flingHeight >= 6 && goingDown) {
             flung = false;
             if (argument[0] = Player)
                 instance_change(Player, false);
+            else if (argument[0] = ElviraFire)
+                instance_change(ElviraFire, false);
             else
                 instance_change(elementalEnemy, false);
             if (left) {

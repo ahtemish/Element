@@ -231,7 +231,7 @@
                     "Astral: It’s a possib-",
                     "Lucy: DOWN THE RABBIT HOLE WE GO!",
                     "");
-    } if (room = DeepEarth3) {
+    } else if (room = DeepEarth3) {
         doCutscene ("Li-Shui: How much farther down do we have to go? If I have to stay down here for any longer, I’ll boil to death!",
                     "Lucy: *heave* You’re...already...dead!",
                     "Blaise: Lucy, you can slow down if you want. You’re going to, like, totally kill yourself if you keep going on like this!",
@@ -246,7 +246,7 @@
                     "Lucy: WHA- WHERE DID THAT COME FROM?!? ELVIRA?!? I’M COMING FOR YOU WITCH. YOU BETTER BE PREPARED TO FACE MY WRATH.",
                     "Everone: *sigh*",
                     "");
-    }/* if (room = Deep4) {
+    }/* else if (room = DeepEarth4) {
         doCutscene ("Lucy: Ha! *pant* I-I finally caught up to you!",
                     "Elvira: Oh look at the little girl. Everything okay? Do you need a nap sweetie?",
                     "Lucy: Y-yes I do. BUT YOUR DEATH COMES FIRST.",
@@ -255,7 +255,7 @@
                     "Elvy: How about this? You catch me first, and then I’ll fight you. *runs away*",
                     "Lucy: GET BACK HERE ELVY. I’M GOING TO THROW YOU INTO THE DIRT!",
                     "");
-    } if (room = Deep5) {
+    } else if (room = DeepEarth5) {
         doCutscene ("Lucy: Alright, I cornered her! She’s just at the end of this hall! Do you guys have anything to say before I go in there?",
                     "Li-Shui: Alright, Lucy! This is it! You can do this!",
                     "Astral: I will always stand behind you, my friend. Good luck in this fight!",
@@ -271,7 +271,44 @@
                     "Lucy: That’s more like it!",
                     "Lucy: Alright, let’s do this!",
                     "");
-    }*/
+    }*/ 
+    
+    if (global.ElviraGetsWater) {
+        doCutscene("???: *cough* You’re pretty strong for a kid.", 
+                   "Lucy: Haha, obviously. I’m a natural when it comes to the elements. I’ve been known around the forest as the “Spirit Dancer.” Nobody matches my skill when it comes to fighting.", 
+                   "Astral &amp; Li: *rolls eyes*", 
+                   "Lucy: What’s your deal? Don’t you get that this is a holy place? Leave it alone! The Spirits need to come here to connect with some kind of airplane or something.", 
+                   "???: *cough* My name… *cough*", 
+                   "Lucy: You’re gonna have to speak up. I can’t hear you over that SUCK you’re spewing out right now!", 
+                   "???: ...lvir…", 
+                   "Lucy: ~What was thaaaat?~ ", 
+                   "Lucy: I can’t hear you!", 
+                   "*Lucy walks over to Elvira while mocking her, Elvira uses this chance to get up swiftly and grab Lucy by the throat*", 
+                   "Lucy: Gah! What are yo-", 
+                   "???: HAHAHA YOU FOOL! YOUR ARROGANCE WILL BE YOUR UNDOING!", 
+                   "Li-Shui: Lucy! She’s trying to pull me away! I-I can’t resist!", 
+                   "Lucy: L-Li! Give her back you witch!", 
+                   "Elvira: My name is ELVIRA, and *I* am the strongest fighter there is!", 
+                   "");
+        
+    } else if (global.ElviraFirstDefeated) {
+        doCutscene("Lucy: Sheesh, know when to quit, Miss Elvira.", 
+                   "*Lucy walks over to Elvira and grabs a hold of her and pulls Li-Shui back*", 
+                   "Li-Shui: OH LUCY THANK GOD! IT WAS SO AWFUL OVER THERE IT WAS SO HOT AND SCARY AND I THOUGHT I WAS GOING TO BOIL TO STEAM.", 
+                   "Lucy: It’s fine Li, I got you.", 
+                   "Lucy: Now, what’s your problem, you witch? What’s the point of all this destruction?", 
+                   "Elvira: mmm...five more minutes Pappy, please…", 
+                   "Lucy: Okay! She’s completely out of it. What should we do with her guys?", 
+                   "Li-Shui: I SAY WE DROWN HER IN THICK HONEY SYRUP. LET HER DEATH BE SLOW.", 
+                   "Astral: I believe our best plan of action would be to absorb her spirit and release her with everyone else. That way she doesn’t cause anymore issues.", 
+                   "Bertha: Sit on her!", 
+                   "Lucy: Hmm…", 
+                   "Lucy: I like Astral’s plan. Let’s do that!", 
+                   "*as Lucy walks over to Elvira to absorb her, the temple starts to rumble.*", 
+                   "Lucy: Oh come on! We were so close to just being done with this crap!", 
+                   "*at the end of phase two, the screen rumbles and a flash happens. Everybody falls down into a cavern below. A dragon flashes on the screen.*", 
+                   "");
+    }
 }
 </string>
           </argument>
