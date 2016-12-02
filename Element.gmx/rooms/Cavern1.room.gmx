@@ -718,7 +718,6 @@
     <instance objName="cavernDirt" x="5312" y="320" name="inst_7092D285" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernDirt" x="5312" y="352" name="inst_5FABA90C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernDirt" x="5504" y="288" name="inst_350CD4E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="cavernDirt" x="5536" y="384" name="inst_77FF521F" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernDirt" x="5408" y="320" name="inst_3571FD57" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernDirt" x="5376" y="192" name="inst_1438B373" locked="0" code="" scaleX="2" scaleY="-1" colour="4294967295" rotation="0"/>
     <instance objName="cavernDirt" x="5504" y="160" name="inst_ED5C344F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -727,7 +726,6 @@
     <instance objName="cavernDirt" x="5600" y="320" name="inst_33CF7D64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernDirt" x="5664" y="352" name="inst_E31AE58C" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="cavernDirt" x="5568" y="288" name="inst_D1A6D2C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="cavernDirt" x="5568" y="256" name="inst_A521340C" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="cavernDirt" x="5600" y="192" name="inst_BD83B690" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="cavernDirt" x="5568" y="96" name="inst_D61CDB43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernDirt" x="5536" y="32" name="inst_00D44BAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -752,11 +750,6 @@
     <instance objName="cavernDirt" x="5408" y="288" name="inst_48E682FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernDirt" x="5472" y="320" name="inst_B86F5328" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernDirt" x="5504" y="384" name="inst_ECB37237" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="cavernDirt" x="5600" y="448" name="inst_FEB538D0" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="cavernDirt" x="5440" y="32" name="inst_E8D291FF" locked="0" code="" scaleX="8" scaleY="15" colour="4294967295" rotation="0"/>
-    <instance objName="cavernDirt" x="5376" y="512" name="inst_C4928507" locked="0" code="" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="cavernDirt" x="5408" y="448" name="inst_2BE657EA" locked="0" code="" scaleX="-3" scaleY="-14" colour="4294967295" rotation="0"/>
-    <instance objName="cavernDirt" x="5408" y="0" name="inst_5C55AC80" locked="0" code="" scaleX="10" scaleY="16" colour="4294967295" rotation="0"/>
     <instance objName="cavernDirt" x="5344" y="480" name="inst_ACD0C398" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernDirt" x="5376" y="448" name="inst_A051BBC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernDirt" x="5376" y="480" name="inst_B3B749A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -804,6 +797,179 @@
     <instance objName="cavernSurfaceLeft" x="3840" y="480" name="inst_8194524F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernSurfaceTopRight" x="3712" y="608" name="inst_560FD8E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cavernSurfaceTopLeft" x="3680" y="608" name="inst_A2CE185B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5312" y="0" name="inst_BC1B8EF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5312" y="32" name="inst_F591C980" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5312" y="64" name="inst_9F6123F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5344" y="64" name="inst_F58C95B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5344" y="96" name="inst_CDE5ABB6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5344" y="128" name="inst_610A4C8E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5344" y="160" name="inst_EDD37DDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5312" y="160" name="inst_B55640AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5312" y="192" name="inst_CFA51358" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5312" y="224" name="inst_316FCD7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5312" y="256" name="inst_901D9BD2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5312" y="288" name="inst_49CA70CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5344" y="288" name="inst_0DAAB7CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5344" y="256" name="inst_B896CF4B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5344" y="224" name="inst_017EA5AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5344" y="192" name="inst_2E662F08" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5376" y="192" name="inst_B2490960" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5408" y="192" name="inst_A6D9FFCA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5440" y="192" name="inst_07069A15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5440" y="160" name="inst_678127DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5440" y="128" name="inst_D965E4A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5408" y="128" name="inst_D50BE04B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5376" y="128" name="inst_F0DE75AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5376" y="96" name="inst_D9BE69EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5408" y="96" name="inst_0611443C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5408" y="64" name="inst_4B1E3A68" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5408" y="32" name="inst_7E6CB6F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5376" y="32" name="inst_4E8C81D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5376" y="0" name="inst_EF5B0390" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5344" y="0" name="inst_336B5E47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5408" y="0" name="inst_9D2EB4DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5440" y="0" name="inst_A0B6D470" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5472" y="0" name="inst_3EF909A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5472" y="32" name="inst_231D9EB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5440" y="32" name="inst_EEE72685" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5440" y="64" name="inst_7FBDC12E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5472" y="64" name="inst_FC729D29" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5472" y="96" name="inst_83CC0E72" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5472" y="128" name="inst_0AA37946" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5472" y="160" name="inst_131929A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5472" y="192" name="inst_9DF23E13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5472" y="224" name="inst_3FCD84F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5440" y="224" name="inst_AF94E839" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5408" y="224" name="inst_B37A6F71" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5408" y="256" name="inst_66CCD7B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5376" y="256" name="inst_821315D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5376" y="288" name="inst_C3D3CAC5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5376" y="320" name="inst_14919907" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5344" y="320" name="inst_E17303C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5344" y="352" name="inst_64D2DCFD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5376" y="352" name="inst_AA6CA180" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5376" y="384" name="inst_BDDE79BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5344" y="384" name="inst_410D83DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5344" y="416" name="inst_0E1BD16E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5376" y="416" name="inst_B70EC837" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5408" y="416" name="inst_1BB1C502" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5408" y="448" name="inst_6EBB5222" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5408" y="480" name="inst_3F8CEA52" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5408" y="512" name="inst_06B96452" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5376" y="512" name="inst_832A4658" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5408" y="384" name="inst_E60E4FDD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5408" y="352" name="inst_D97D68FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5440" y="352" name="inst_7A644B69" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5440" y="320" name="inst_0912E841" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5440" y="288" name="inst_B40FC749" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5440" y="256" name="inst_DB472660" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5472" y="256" name="inst_EEBE98EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5472" y="288" name="inst_27C9ED22" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5440" y="448" name="inst_A4DBD3BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5440" y="480" name="inst_F2C3613E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5440" y="512" name="inst_CCB9626A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5472" y="512" name="inst_2382B680" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5504" y="512" name="inst_82F537D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5536" y="512" name="inst_151E3147" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5568" y="512" name="inst_67AC27CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5568" y="480" name="inst_F3327231" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5568" y="448" name="inst_09D97794" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5568" y="416" name="inst_107846C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5536" y="416" name="inst_EF72B5A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5536" y="448" name="inst_74401FA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5504" y="448" name="inst_3EFB3437" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5504" y="480" name="inst_51EB51E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5472" y="480" name="inst_FC383A77" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5504" y="416" name="inst_1B55FC2A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5472" y="416" name="inst_35EA3A5A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5472" y="384" name="inst_7654E031" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5472" y="352" name="inst_F8731F20" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5504" y="352" name="inst_27F16F72" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5536" y="352" name="inst_14034836" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5536" y="320" name="inst_801A9005" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5504" y="320" name="inst_82DF9485" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5536" y="288" name="inst_7024A865" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5536" y="256" name="inst_275DA22D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5504" y="256" name="inst_9C6A163E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5504" y="224" name="inst_1C586042" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5536" y="224" name="inst_11B9AE88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5536" y="192" name="inst_8A950B31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5504" y="192" name="inst_E46C81B0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5536" y="160" name="inst_0FBFB79F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5536" y="128" name="inst_51DBC4FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5536" y="96" name="inst_2724C004" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5504" y="96" name="inst_B5807361" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5504" y="64" name="inst_595CE2A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5536" y="64" name="inst_0FDB93FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5504" y="0" name="inst_FDBB61EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5536" y="0" name="inst_CB126777" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5568" y="0" name="inst_03507333" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5600" y="0" name="inst_0A8A86C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5632" y="0" name="inst_F69B6F41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5664" y="0" name="inst_8A6BCA10" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5696" y="0" name="inst_3C935158" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5696" y="32" name="inst_1DEC9865" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5696" y="64" name="inst_2EC54FF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5696" y="96" name="inst_C302460D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5696" y="128" name="inst_7175FA00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5696" y="160" name="inst_D7C92EA0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5696" y="192" name="inst_168EBEEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5696" y="224" name="inst_9F60D85B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5696" y="256" name="inst_5E24DF08" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5696" y="288" name="inst_8922EABC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5696" y="320" name="inst_C8C9333F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5568" y="352" name="inst_35A0A0EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5600" y="352" name="inst_A516871A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5632" y="352" name="inst_75A75C1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5632" y="320" name="inst_BF090963" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5664" y="320" name="inst_5A3D0C02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5632" y="288" name="inst_E418931A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5632" y="256" name="inst_CAA7C99F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5664" y="256" name="inst_7975882B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5632" y="224" name="inst_44AF9C49" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5632" y="192" name="inst_1C042F0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5664" y="192" name="inst_1B90F61C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5568" y="224" name="inst_992460F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5568" y="192" name="inst_B19C6CB6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5600" y="160" name="inst_0CF82644" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5600" y="128" name="inst_D1A0D9CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5568" y="128" name="inst_E9E446F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5600" y="96" name="inst_A3055743" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5600" y="64" name="inst_588F0F40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5568" y="64" name="inst_B6DE6187" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5568" y="32" name="inst_7593C6AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5600" y="32" name="inst_D079CFF2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5632" y="32" name="inst_F006A2CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5664" y="32" name="inst_D5B7BDB6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5664" y="64" name="inst_23165C5B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5664" y="96" name="inst_6E120ABC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5664" y="128" name="inst_1895C665" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5664" y="160" name="inst_01D9ABAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5632" y="128" name="inst_0A3271E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5632" y="96" name="inst_3F2F5357" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5632" y="64" name="inst_8CA9D761" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5696" y="384" name="inst_BD5ABED3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5696" y="416" name="inst_514B3675" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5696" y="448" name="inst_132F19F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5696" y="480" name="inst_370B0222" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5696" y="512" name="inst_DBD26F8A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5664" y="512" name="inst_EF8B3EDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5632" y="512" name="inst_DE6B7A7D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5664" y="480" name="inst_B4C4CB1A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5664" y="448" name="inst_5BD65F59" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5664" y="416" name="inst_8972D1DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5632" y="416" name="inst_F8E5AF9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5600" y="416" name="inst_BA48FACE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5568" y="256" name="inst_AFD01DDD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5568" y="320" name="inst_0EB9E152" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5536" y="384" name="inst_3F2DEEA8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5568" y="384" name="inst_AA2CE707" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5600" y="384" name="inst_427C1B63" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5632" y="384" name="inst_DF38A219" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5600" y="448" name="inst_491A7F04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5600" y="480" name="inst_2F11304F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5632" y="480" name="inst_750C5C1A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cavernDirt" x="5632" y="448" name="inst_26621868" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
