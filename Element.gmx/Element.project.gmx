@@ -705,7 +705,7 @@
     <timeline>timelines\Forest1Start</timeline>
   </timelines>
   <rooms name="rooms">
-    <room>rooms\Mountain3</room>
+    <room>rooms\Cavern2</room>
     <rooms name="Forest">
       <room>rooms\Forest1</room>
       <room>rooms\Forest2</room>
@@ -714,10 +714,10 @@
     <rooms name="Mountain">
       <room>rooms\Mountain1</room>
       <room>rooms\Mountain2</room>
+      <room>rooms\Mountain3</room>
     </rooms>
     <rooms name="Cavern">
       <room>rooms\Cavern1</room>
-      <room>rooms\Cavern2</room>
       <room>rooms\Cavern3</room>
     </rooms>
     <rooms name="DeepEarth">
