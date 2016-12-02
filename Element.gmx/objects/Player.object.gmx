@@ -857,7 +857,7 @@ if (!cutscene)
             <kind>1</kind>
             <string>/// Move right
 
-if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; !hitByTongue &amp;&amp; !punch) {
+if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; !hitByTongue) {
     right = true;
     left = false;
     image_speed = 8 / room_speed;
@@ -917,7 +917,7 @@ if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; !h
             <kind>1</kind>
             <string>/// Move left
 
-if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; !hitByTongue &amp;&amp; !punch) {
+if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; !hitByTongue) {
     right = false;
     left = true;
     image_speed = 8 / room_speed;
