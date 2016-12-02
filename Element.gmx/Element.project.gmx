@@ -464,6 +464,20 @@
             <sprite>sprites\insectDieRight_spr</sprite>
           </sprites>
         </sprites>
+        <sprites name="Dragon">
+          <sprites name="Left">
+            <sprite>sprites\dragonStandLeft_spr</sprite>
+            <sprite>sprites\dragonBreatheLeft_spr</sprite>
+            <sprite>sprites\dragonStunLeft</sprite>
+            <sprite>sprites\dragonFireballLeft_spr</sprite>
+          </sprites>
+          <sprites name="Right">
+            <sprite>sprites\dragonStandRight_spr</sprite>
+            <sprite>sprites\dragonBreatheRight_spr</sprite>
+            <sprite>sprites\dragonStunRight_spr</sprite>
+            <sprite>sprites\dragonFirballRight_spr</sprite>
+          </sprites>
+        </sprites>
       </sprites>
       <sprites name="Deep">
         <sprites name="Snake">
@@ -675,7 +689,6 @@
     <timeline>timelines\Forest1Start</timeline>
   </timelines>
   <rooms name="rooms">
-    <room>rooms\prototypeLevel</room>
     <rooms name="Forest">
       <room>rooms\Forest1</room>
       <room>rooms\Forest2</room>
@@ -684,16 +697,19 @@
     <rooms name="Mountain">
       <room>rooms\Mountain1</room>
       <room>rooms\Mountain2</room>
+      <room>rooms\Mountain3</room>
     </rooms>
     <rooms name="Cavern">
       <room>rooms\Cavern1</room>
       <room>rooms\Cavern2</room>
+      <room>rooms\Cavern3</room>
     </rooms>
     <rooms name="DeepEarth">
       <room>rooms\DeepEarth1</room>
       <room>rooms\DeepEarth2</room>
       <room>rooms\DeepEarth3</room>
     </rooms>
+    <room>rooms\prototypeLevel</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

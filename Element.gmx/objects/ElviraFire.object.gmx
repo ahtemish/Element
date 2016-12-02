@@ -74,7 +74,6 @@ walkImageSpeed = 4 / room_speed;
 attackImageSpeed = walkImageSpeed;
 
 randomize();
-alarm[0] = irandom(room_speed);
 </string>
           </argument>
         </arguments>
@@ -239,16 +238,22 @@ hitByWater = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Start move
+            <string>/// Attack
 
-if(abs(Player.x - x) &gt; minimumDistance + sprite_width) {
-    walkTimer =  room_speed;
-    walking = true;
-    walkDirection = irandom(1);
-    image_index = 0;
+if (fireAbility) {
+    if (attackType &lt; 2 &amp;&amp; !instance_exists(fireShield)) {
+        
+    } else if (attackType &lt; 6) {
+        if (left)
+            elFireball = instance_create(x, y + 7, fireball);
+        else
+            elFireball = instance_create(x + sprite_width, y + 7, fireball);
+        
+        elFireball.firedBy = ElviraFire;
+    } else {
+        
+    }
 }
-
-alarm[5] = irandom(6);
 </string>
           </argument>
         </arguments>
@@ -584,11 +589,9 @@ if(!dead) {
             
             if(!attack) {
                 
-                if (fireAbility) {
-                    
-                } else {
-                    
-                }
+                attack = true;
+                alarm[0] = room_speed;
+                attackType = irandom(7);
             
                 if (collision_rectangle(x - minimumDistance, y, x, y + sprite_height,
                                         Player, false, true)
