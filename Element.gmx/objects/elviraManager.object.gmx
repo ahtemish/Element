@@ -51,7 +51,7 @@ global.ElviraFirstDefeated = false;
             <kind>1</kind>
             <string>/// Boss Arena
 
-if (Player.x &gt; 158 &amp;&amp; instance_exists(ElviraFire))
+if (Player.x &gt; 158 &amp;&amp; (instance_exists(ElviraFire) || instance_exists(ElviraFinal)))
     instance_activate_object(ArenaBlocks);
 else
     instance_deactivate_object(ArenaBlocks);

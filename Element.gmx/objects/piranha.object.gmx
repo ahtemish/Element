@@ -41,6 +41,7 @@ right = false;
 dead = false;
 attack = false;
 inWater = false;
+inv = false;
 
 airAbility = false;
 earthAbility = false;

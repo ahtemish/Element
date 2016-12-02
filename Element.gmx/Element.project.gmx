@@ -510,6 +510,10 @@
             <sprite>sprites\snakeDieRight_spr</sprite>
           </sprites>
         </sprites>
+        <sprites name="Wyrm">
+          <sprite>sprites\wyrmStandLeft_spr</sprite>
+          <sprite>sprites\wyrmStandRight_spr</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Element GUI">
@@ -636,6 +640,12 @@
         <object>objects\deepLedgeRight</object>
         <object>objects\deepSlopeRight</object>
         <object>objects\deepSlopeLeft</object>
+        <object>objects\ElviraFinalArenaLeft</object>
+        <object>objects\ElviraFinalArenaRight</object>
+        <object>objects\ElviraFinalArenaTop</object>
+        <object>objects\ElviraFinalArenaDirt</object>
+        <object>objects\ElviraFinalArenaTopLeft</object>
+        <object>objects\ElviraFinalArenaTopRight</object>
       </objects>
       <objects name="Water">
         <object>objects\waterTop</object>
@@ -698,12 +708,15 @@
         <object>objects\insect</object>
         <object>objects\insectDead</object>
         <object>objects\Dragon</object>
+        <object>objects\DragonDead</object>
         <object>objects\dragonFireball</object>
         <object>objects\dragonManager</object>
       </objects>
       <objects name="Deep">
         <object>objects\wyrm</object>
         <object>objects\wyrmDead</object>
+        <object>objects\ElviraFinal</object>
+        <object>objects\ElviraFinalFlung</object>
       </objects>
     </objects>
     <objects name="General">
@@ -742,6 +755,7 @@
       <room>rooms\DeepEarth1</room>
       <room>rooms\DeepEarth2</room>
       <room>rooms\DeepEarth3</room>
+      <room>rooms\DeepEarth4</room>
     </rooms>
     <room>rooms\prototypeLevel</room>
   </rooms>

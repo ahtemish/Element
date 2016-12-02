@@ -513,7 +513,7 @@ if(initial) {
         walkImageSpeed = 4 / room_speed;
         attackImageSpeed = 2 / room_speed;
     } else if (enemyType = "golem") {
-        earthAbility = true;
+        airAbility = true;
         minimumDistance = 16;
         minimumYDistance = 48;
         detectionDistance = 200;
@@ -739,7 +739,7 @@ if(!dead) {
                         
                         if ((place_free(x - run,y)
                              || place_meeting(x - run, y, enemy))
-                             &amp;&amp; place_meeting(x - run - sprite_width,
+                             &amp;&amp; place_meeting(x - run - 64,
                              y + 64, terrain)) {
                             if ((enemyType = "boar" || enemyType = "goat") &amp;&amp; charge)
                                 sprite_index = chargeLeft;
@@ -755,7 +755,7 @@ if(!dead) {
                             
                         if ((place_free(x + run, y)
                              || place_meeting(x + run, y, enemy))
-                             &amp;&amp; place_meeting(x + run + sprite_width, 
+                             &amp;&amp; place_meeting(x + run + 64, 
                              y + 64, terrain)) {
                             if ((enemyType = "boar" || enemyType = "goat") &amp;&amp; charge)
                                 sprite_index = chargeRight;
@@ -796,7 +796,7 @@ if(!dead) {
                     left = true;
                     right = false;
                     if ((place_free(x - walk, y) || place_meeting(x - walk, y, enemy))
-                        &amp;&amp; place_meeting(x - walk - sprite_width, y + sprite_height, terrain)) {
+                        &amp;&amp; place_meeting(x - walk - 64, y + sprite_height, terrain)) {
                         sprite_index = walkLeft;
                         x -= walk;
                     } else {
@@ -807,7 +807,7 @@ if(!dead) {
                     right = true;
                     if ((place_free(x + walk, y) 
                          || place_meeting(x + walk, y, enemy))
-                         &amp;&amp; place_meeting(x + walk + sprite_width, 
+                         &amp;&amp; place_meeting(x + walk + 64, 
                          y + sprite_height, terrain)) {
                         sprite_index = walkRight;
                         x += walk;

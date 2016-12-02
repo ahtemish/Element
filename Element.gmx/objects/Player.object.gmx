@@ -295,7 +295,7 @@ if (dash) {
 } else {
     CollisionChecking();
     possibleBounce = instance_place(x, y + sprite_width, hittableEnemy);
-if (possibleBounce != noone) {
+if (possibleBounce != noone &amp;&amp; possibleBounce.enemyType != "snake") {
     if (!possibleBounce.dead) {
         flung = true;
         FlingInitialOnEnemy();
@@ -981,7 +981,7 @@ if(!cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; !h
             <kind>1</kind>
             <string>/// Activate Fire
 
-if(!punch &amp;&amp; !cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasFire) {
+if(!punch &amp;&amp; !cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasFire &amp;&amp; !dash) {
     airAbility = false;
     earthAbility = false;
     waterAbility = false;
@@ -1016,7 +1016,7 @@ if(!punch &amp;&amp; !cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !on
             <kind>1</kind>
             <string>/// Activate Earth
 
-if(!punch &amp;&amp; !cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasEarth) {
+if(!punch &amp;&amp; !cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasEarth &amp;&amp; !dash) {
     airAbility = false;
     earthAbility = true;
     waterAbility = false;
@@ -1051,7 +1051,7 @@ if(!punch &amp;&amp; !cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !on
             <kind>1</kind>
             <string>/// Activate Water
 
-if(!punch &amp;&amp; !cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasWater) {
+if(!punch &amp;&amp; !cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasWater &amp;&amp; !dash) {
     airAbility = false;
     earthAbility = false;
     waterAbility = true;
@@ -1086,7 +1086,7 @@ if(!punch &amp;&amp; !cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !on
             <kind>1</kind>
             <string>/// Activate air
 
-if(!punch &amp;&amp; !cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasAir) {
+if(!punch &amp;&amp; !cutscene &amp;&amp; !dead &amp;&amp; !flung &amp;&amp; !onVine &amp;&amp; hasAir &amp;&amp; !dash) {
     airAbility = true;
     earthAbility = false;
     waterAbility = false;
@@ -1226,13 +1226,13 @@ if (initial) {
 }
 
 if (room = global.lastRoom)
-    roomCount++;
+    global.roomCount++;
 else
-    roomCount = 0;
+    global.roomCount = 0;
     
 global.lastRoom = room;
 
-if (roomCount = 0) {
+if (global.roomCount = 0) {
     SaveRoom();
     cutscene = true;
 }
@@ -1292,6 +1292,7 @@ initial = true;
 
 global.ElviraGetsWater = false;
 global.ElviraFirstDefeated = false;
+global.dragonDefeated = false;
 
 EndOfRoom();
 
