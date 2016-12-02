@@ -443,14 +443,15 @@
             <sprite>sprites\elviraStandLeftFire_spr</sprite>
             <sprite>sprites\elviraWalkLeftFire_spr</sprite>
             <sprite>sprites\elviraAttackLeftFire_spr</sprite>
+            <sprite>sprites\fireShieldLeft_spr</sprite>
           </sprites>
           <sprites name="Right">
             <sprite>sprites\elviraWalkRightFire_spr</sprite>
             <sprite>sprites\elviraStandRightFire_spr</sprite>
             <sprite>sprites\elviraAttackRightFire_spr</sprite>
+            <sprite>sprites\fireShieldRight_spr</sprite>
           </sprites>
-          <sprite>sprites\fireShieldLeft_spr</sprite>
-          <sprite>sprites\fireShieldRight_spr</sprite>
+          <sprite>sprites\LavaPillar_spr</sprite>
         </sprites>
       </sprites>
       <sprites name="Cavern">
@@ -532,6 +533,8 @@
     <path>paths\wyrmSwoopRight</path>
     <path>paths\wyrmSwoopLeft</path>
     <path>paths\birdIdle</path>
+    <path>paths\elviraHopToLeft</path>
+    <path>paths\elviraHopToRight</path>
   </paths>
   <scripts name="scripts">
     <scripts name="Entity">
@@ -678,6 +681,7 @@
         <object>objects\ElviraFire</object>
         <object>objects\fireShieldLeft</object>
         <object>objects\fireShieldRight</object>
+        <object>objects\lavaPillar</object>
       </objects>
       <objects name="Cavern">
         <object>objects\insect</object>
@@ -705,7 +709,6 @@
     <timeline>timelines\Forest1Start</timeline>
   </timelines>
   <rooms name="rooms">
-    <room>rooms\Mountain3</room>
     <rooms name="Forest">
       <room>rooms\Forest1</room>
       <room>rooms\Forest2</room>
@@ -714,6 +717,7 @@
     <rooms name="Mountain">
       <room>rooms\Mountain1</room>
       <room>rooms\Mountain2</room>
+      <room>rooms\Mountain3</room>
     </rooms>
     <rooms name="Cavern">
       <room>rooms\Cavern1</room>

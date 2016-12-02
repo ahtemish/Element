@@ -331,6 +331,7 @@ if (place_meeting(x, y, fireball)) {
                 effectiveDamage *= 2;
         }
         
+        audio_play_sound(snd_playerDamaged, 0, false);
         health -= effectiveDamage;
         with(conFireball) {
             instance_destroy();

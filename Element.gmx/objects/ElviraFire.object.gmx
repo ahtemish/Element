@@ -73,86 +73,12 @@ dieRight = dieRightFire_spr;
 walkImageSpeed = 4 / room_speed;
 attackImageSpeed = walkImageSpeed;
 
+sprite_index = standLeft;
+runSpeed = walkSpeed * runMult;
+runImageSpeed = walkImageSpeed * runMult;
+
 randomize();
-alarm[0] = irandom_range(15, 20);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="5">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Goat jump
-
-height = 7;
-jump = true;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Boar charge cooldown
-
-if (enemyType = "boar" || enemyType = "goat") {
-    chargeCooldown = false;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="3">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Can attack again
-
-attack = false;
+alarm[0] = irandom_range(5, 10) * room_speed;
 </string>
           </argument>
         </arguments>
@@ -214,6 +140,37 @@ hitByWater = false;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (x &gt; 400) {
+    path_start(elviraHopToLeft, 12, path_action_stop, false);
+    sprite_index = walkLeft;
+} else {
+    path_start(elviraHopToRight, 12, path_action_stop, false);
+    sprite_index = walkRight;
+}
+
+alarm[0] = irandom_range(5, 10) * room_speed;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
@@ -235,7 +192,9 @@ hitByWater = false;
 
 if (!dead) {
     for(num = 0; num &lt; 5; num++) {
-        if (global.enemyHitId[num] == id &amp;&amp; !inv) {
+        if (global.enemyHitId[num] == id &amp;&amp; !inv 
+            &amp;&amp; ((Player.x &lt; x &amp;&amp; !instance_exists(fireShieldLeft)) 
+                 ||(Player.x &gt; x &amp;&amp; !instance_exists(fireShieldRight)))) {
             inv = true;
             if (global.enemyHitType[num] == "air") {
                 playerDamage = 2;
@@ -335,162 +294,6 @@ if(initial) {
         if (!found)
             instance_destroy();
     
-
-    if (enemyType == "dog") {
-        fireAbility = true;
-        minimumDistance = 8;
-        detectionDistance = 200;
-        attackSpeed = (8/30);
-        damage = 3;
-        initialHealth = 10;
-        walkSpeed = 60 / room_speed;
-        runMult = 2;
-        standLeft = dogStandLeft_spr;
-        walkLeft = dogWalkLeft_spr;
-        attackLeft = dogAttackLeft_spr;
-        dieLeft = dogDieLeft_spr;
-        standRight = dogStandRight_spr;
-        walkRight = dogWalkRight_spr;
-        attackRight = dogAttackRight_spr;
-        dieRight = dogDieRight_spr;
-        walkImageSpeed = 4 / room_speed;
-        attackImageSpeed = walkImageSpeed;
-        thisDogFire = noone;
-    } else if (enemyType = "boar") {
-        fireAbility = true;
-        minimumDistance = 4;
-        detectionDistance = 300;
-        attackSpeed = (16/30);
-        damage = 1;
-        initialHealth = 8;
-        walkSpeed = 60 / room_speed;
-        runMult = 1.5;
-        standLeft = boarStandLeft_spr;
-        walkLeft = boarWalkLeft_spr;
-        attackLeft = boarAttackLeft_spr;
-        chargeLeft = boarChargeLeft_spr;
-        dieLeft = boarDieLeft_spr;
-        standRight = boarStandRight_spr;
-        walkRight = boarWalkRight_spr;
-        attackRight = boarAttackRight_spr;
-        chargeRight = boarChargeRight_spr;
-        dieRight = boarDieRight_spr;
-        walkImageSpeed = 4 / room_speed;
-        chargeMult = 5;
-        chargeSpeed = walkSpeed * chargeMult;
-        chargeImageSpeed = walkImageSpeed * chargeMult;
-        attackImageSpeed = walkImageSpeed;
-    } else if (enemyType = "bear") {
-        earthAbility = true;
-        minimumDistance = 16;
-        minimumYDistance = 48;
-        detectionDistance = 200;
-        attackSpeed = (30/30);
-        damage = 4;
-        initialHealth = 20;
-        walkSpeed = 30 / room_speed;
-        runMult = 2;
-        standLeft = bearStandLeft_spr;
-        walkLeft = bearWalkLeft2_spr;
-        attackLeft = bearAttackLeft_spr;
-        dieLeft = bearDieLeft_spr;
-        standRight = bearStandRight_spr;
-        walkRight = bearWalkRight2_spr;
-        attackRight = bearAttackRight_spr;
-        dieRight = bearDieRight_spr;
-        walkImageSpeed = 4 / room_speed;
-        attackImageSpeed = 2 / room_speed;
-    } else if (enemyType == "wolf") {
-        waterAbility = true;
-        minimumDistance = 12;
-        detectionDistance = 200;
-        attackSpeed = (4/30);
-        damage = 3;
-        initialHealth = 15;
-        walkSpeed = 75 / room_speed;
-        runMult = 2;
-        standLeft = wolfStandLeft_spr;
-        walkLeft = wolfWalkLeft_spr;
-        attackLeft = wolfAttackLeft_spr;
-        dieLeft = wolfDieLeft_spr;
-        standRight = wolfStandRight_spr;
-        walkRight = wolfWalkRight_spr;
-        attackRight = wolfAttackRight_spr;
-        dieRight = wolfDieRight_spr;
-        walkImageSpeed = 4 / room_speed;
-        attackImageSpeed = walkImageSpeed;
-        thisDogFire = noone;
-    } else if (enemyType = "goat") {
-        earthAbility = true;
-        minimumDistance = 4;
-        detectionDistance = 300;
-        attackSpeed = (20/30);
-        damage = 4;
-        initialHealth = 12;
-        walkSpeed = 45 / room_speed;
-        runMult = 1.5;
-        standLeft = goatStandLeft_spr;
-        walkLeft = goatWalkLeft_spr;
-        attackLeft = goatAttackLeft_spr;
-        chargeLeft = goatChargeLeft_spr;
-        dieLeft = goatDieLeft_spr;
-        standRight = goatStandRight_spr;
-        walkRight = goatWalkRight_spr;
-        attackRight = goatAttackRight_spr;
-        chargeRight = goatChargeRight_spr;
-        dieRight = goatDieRight_spr;
-        walkImageSpeed = 4 / room_speed;
-        chargeMult = 6;
-        chargeSpeed = walkSpeed * chargeMult;
-        chargeImageSpeed = walkImageSpeed * chargeMult;
-        attackImageSpeed = walkImageSpeed;
-        jump = false;
-        height = 0;
-    } else if (enemyType = "snake") {
-        fireAbility = true;
-        minimumDistance = 4;
-        detectionDistance = 250;
-        attackSpeed = (3/30);
-        damage = 1;
-        initialHealth = 2;
-        walkSpeed = 60 / room_speed;
-        runMult = 2;
-        standLeft = snakeIdleLeft_spr;
-        walkLeft = snakeMoveLeft_spr;
-        attackLeft = snakeAttackLeft_spr;
-        dieLeft = snakeDieLeft_spr;
-        standRight = snakeIdleRight_spr;
-        walkRight = snakeMoveRight_spr;
-        attackRight = snakeAttackRight_spr;
-        dieRight = snakeDieRight_spr;
-        walkImageSpeed = 4 / room_speed;
-        attackImageSpeed = 2 / room_speed;
-    } else if (enemyType = "golem") {
-        earthAbility = true;
-        minimumDistance = 16;
-        minimumYDistance = 48;
-        detectionDistance = 200;
-        attackSpeed = (30/30);
-        damage = 6;
-        initialHealth = 30;
-        walkSpeed = 30 / room_speed;
-        runMult = 2;
-        standLeft = golemStandLeft_spr;
-        walkLeft = golemWalkLeft_spr;
-        attackLeft = golemAttackLeft_spr;
-        dieLeft = golemDieLeft_spr;
-        standRight = golemStandRight_spr;
-        walkRight = golemWalkRight_spr;
-        attackRight = golemAttackRight_spr;
-        dieRight = golemDieRight_spr;
-        walkImageSpeed = 4 / room_speed;
-        attackImageSpeed = 2 / room_speed;
-    }
-    
-    instanceHealth = initialHealth;
-    sprite_index = standLeft;
-    runSpeed = walkSpeed * runMult;
-    runImageSpeed = walkImageSpeed * runMult;
     initial = false;
 }
 </string>
@@ -537,34 +340,44 @@ if(!dead) {
             if (Player.x &lt; x) {
                 left = true;
                 right = false;
+                if (y = 664) sprite_index = standLeft;
             } else {
                 left = false;
                 right = true;
+                if (y = 664) sprite_index = standRight;
             }
             
-            if(!attack) {
+            if(!attack &amp;&amp; y = 664) {
                 
                 attack = true;
                 attackType = irandom(7);
                 
                 if (fireAbility) {
-                    if (attackType &lt; 2 &amp;&amp; !instance_exists(fireShieldLeft)) {
+                    if (attackType &lt; 4 &amp;&amp; !instance_exists(fireShieldLeft) &amp;&amp; Player.x &lt; x) {
                         alarm[2] = room_speed/2;
                         instance_create(x - 2, y, fireShieldLeft);
-                    } else if (attackType &lt; 2 &amp;&amp; !instance_exists(fireShieldRight)) {
+                    } else if (attackType &lt; 4 &amp;&amp; !instance_exists(fireShieldRight) &amp;&amp; Player.x &gt; x) {
                         alarm[2] = room_speed/2;
                         instance_create(x + sprite_width + 2, y, fireShieldRight);
                     } else if (attackType &lt; 6) {
                         alarm[2] = room_speed;
                         if (left)
-                            elFireball = instance_create(x, y + 7, fireball);
+                            elFireball = instance_create(x - 16, y + 7, fireball);
                         else
                             elFireball = instance_create(x + sprite_width, y + 7, fireball);
         
-                        elFireball.firedBy = ElviraFire;
+                        elFireball.firedBy = enemy;
+                        elFireball.damage = 4;
                     } else {
                         alarm[2] = room_speed;
-        
+                        firstPillar = irandom(4);
+                        secondPillar = irandom(4);
+                        thirdPillar = irandom_range(6, 14);
+                        fourthPillar = irandom_range(6, 14);
+                        instance_create(192 + (firstPillar * 32), y + sprite_height, lavaPillar);
+                        instance_create(192 + (secondPillar * 32), y + sprite_height, lavaPillar);
+                        instance_create(192 + (thirdPillar * 32), y + sprite_height, lavaPillar);
+                        instance_create(192 + (fourthPillar * 32), y + sprite_height, lavaPillar);
                     }
                 }
             }
