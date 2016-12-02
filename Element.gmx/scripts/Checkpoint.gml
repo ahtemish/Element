@@ -69,6 +69,8 @@ for(i = 0; i < 50; i++) {
     global.spouts[i] = 0;
 }
 
+Checkpoint();
+
 global.roomStartX = 8;
 global.roomStartY = y;
 

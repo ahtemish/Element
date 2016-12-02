@@ -75,6 +75,29 @@ instance_deactivate_object(falseTrapDoor);
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="8">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>show_message("Congratulations! You've completed the Element beta!");
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="7">
       <action>
         <libid>1</libid>
@@ -371,6 +394,11 @@ if(health &lt;= 0) {
           <argument>
             <kind>1</kind>
             <string>/// Reset hit values
+
+if (room = winRoom &amp;&amp; winStart) {
+    alarm[8] = room_speed / 4;
+    winStart = false;
+}
 
 for(i = 0; i &lt; 6; i++) {
     global.enemyHit[i] = false;
@@ -1236,6 +1264,8 @@ if (global.roomCount = 0) {
     SaveRoom();
     cutscene = true;
 }
+
+winStart = true;
 </string>
           </argument>
         </arguments>
@@ -1285,6 +1315,8 @@ hasKilledWaterWithAir = false;
 hasKilledEarthWithAir = false;
 hasKilledFireWithAir = false;
     
+win = false;
+
 health = initialHealth;
     
 numEnemiesKilled = 0;
@@ -1457,6 +1489,34 @@ global.lastRoom = noone;
     draw_set_alpha(1);
     draw_set_halign(fa_center);
     draw_text(view_xport + view_wport / 2, view_yport + view_hport / 2, "Restart?");
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Win
+
+if (win) {
+    effect_create_above(ef_firework, x, y - 224, 0, c_blue);
+    effect_create_above(ef_firework, x + 64, y - 160, 0, c_aqua);
+    effect_create_above(ef_firework, x - 64, y - 160, 0, c_red);
+    effect_create_above(ef_firework, x, y - 96, 0, c_orange);
 }
 </string>
           </argument>

@@ -779,7 +779,7 @@
     <instance objName="turtle" x="1344" y="320" name="inst_448596E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="elementalEnemy" x="2400" y="192" name="inst_8F34CCBD" locked="0" code="enemyType = &quot;dog&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="elementalEnemy" x="2496" y="192" name="inst_8A4257C4" locked="0" code="enemyType = &quot;bear&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="3328" y="256" name="inst_CB3126F3" locked="0" code="enemyType = &quot;bear&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="3136" y="256" name="inst_CB3126F3" locked="0" code="enemyType = &quot;bear&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="elementalEnemy" x="992" y="256" name="inst_5AFCA3FB" locked="0" code="enemyType = &quot;dog&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ground" x="3392" y="0" name="inst_A9B050CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ground" x="3424" y="0" name="inst_9B01FE49" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

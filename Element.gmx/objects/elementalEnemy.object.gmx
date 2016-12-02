@@ -574,7 +574,7 @@ if (place_meeting(x, y, water)) {
         if (enemyType = "boar" || enemyType = "goat")
             boarCharge = chargeSpeed * 0.3;
         if (fireAbility)
-            health -= 6 / room_speed;
+            instanceHealth -= 6 / room_speed;
     } else
     run = runSpeed;
     walk = walkSpeed;
@@ -747,8 +747,12 @@ if(!dead) {
                                 sprite_index = walkLeft;
                                 
                             x -= run;
-                        } else 
+                        } else {
+                            if (charge) {
+                                charge = false;
+                            }
                             sprite_index = standLeft;
+                        }
                     } else {
                         if ((enemyType = "boar" || enemyType = "goat") &amp;&amp; charge)
                             run = boarCharge;
@@ -763,10 +767,17 @@ if(!dead) {
                                 sprite_index = walkRight;
                                 
                             x += run;
-                        } else
+                        } else {
+                            if (charge) {
+                                charge = false;
+                            }
                             sprite_index = standRight;
+                        }
                     }
                 } else {
+                    if (charge) {
+                        charge = false;
+                    }
                     if (left) {
                         sprite_index = standLeft;
                     } else {

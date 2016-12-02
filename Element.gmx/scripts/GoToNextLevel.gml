@@ -23,4 +23,11 @@ else if (room = DeepEarth1)
     room_goto(DeepEarth2);
 else if (room = DeepEarth2)
     room_goto(DeepEarth3);
+else if (room = DeepEarth3)
+    room_goto(DeepEarth4);
+else {
+    win = true;
+    global.roomStartX = 256;
+    room_goto(winRoom);
+}
     

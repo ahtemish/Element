@@ -373,7 +373,7 @@ if(!dead) {
                 right = true;
             }
             
-            if(!attack &amp;&amp; y &gt; 660) {
+            if(!attack &amp;&amp; place_meeting(x, y + sprite_width, terrain)) {
                 
                 attack = true;
                 attackType = irandom(11);

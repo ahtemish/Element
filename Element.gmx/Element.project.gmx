@@ -736,6 +736,7 @@
     <timeline>timelines\Forest1Start</timeline>
   </timelines>
   <rooms name="rooms">
+    <room>rooms\DeepEarth2</room>
     <rooms name="Forest">
       <room>rooms\Forest1</room>
       <room>rooms\Forest2</room>
@@ -753,11 +754,11 @@
     </rooms>
     <rooms name="DeepEarth">
       <room>rooms\DeepEarth1</room>
-      <room>rooms\DeepEarth2</room>
       <room>rooms\DeepEarth3</room>
       <room>rooms\DeepEarth4</room>
     </rooms>
     <room>rooms\prototypeLevel</room>
+    <room>rooms\winRoom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
