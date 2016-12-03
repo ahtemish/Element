@@ -485,15 +485,16 @@
           <sprites name="Left">
             <sprite>sprites\dragonStandLeft_spr</sprite>
             <sprite>sprites\dragonBreatheLeft_spr</sprite>
-            <sprite>sprites\dragonStunLeft</sprite>
+            <sprite>sprites\dragonStunLeft_spr</sprite>
             <sprite>sprites\dragonFireballLeft_spr</sprite>
             <sprite>sprites\dragonFireballLanded_spr</sprite>
+            <sprite>sprites\dragonStompLeft_spr</sprite>
           </sprites>
           <sprites name="Right">
             <sprite>sprites\dragonStandRight_spr</sprite>
             <sprite>sprites\dragonBreatheRight_spr</sprite>
             <sprite>sprites\dragonStunRight_spr</sprite>
-            <sprite>sprites\dragonFirballRight_spr</sprite>
+            <sprite>sprites\dragonFireballRight_spr</sprite>
           </sprites>
         </sprites>
       </sprites>

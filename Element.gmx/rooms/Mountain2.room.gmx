@@ -1079,6 +1079,7 @@
     <instance objName="mountainSlopeLeft" x="1280" y="256" name="inst_D4DDC3EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainBG" x="96" y="160" name="inst_08BE6F3E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="mountainSurfaceLeft" x="960" y="448" name="inst_C0A2F8F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cutsceneManager" x="128" y="160" name="inst_CFC370C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
