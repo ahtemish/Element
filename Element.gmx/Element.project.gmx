@@ -173,6 +173,7 @@
         <sprite>sprites\treeTop_spr</sprite>
         <sprite>sprites\treeTrunk_spr</sprite>
         <sprite>sprites\treeStump_spr</sprite>
+        <sprite>sprites\saveStation_spr</sprite>
       </sprites>
     </sprites>
     <sprites name="Enemies">

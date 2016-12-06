@@ -3896,7 +3896,6 @@
     <instance objName="groundDirt" x="8128" y="544" name="inst_15C09DCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundDirt" x="8096" y="544" name="inst_98B32E97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="SaveStation" x="416" y="256" name="inst_9984DD57" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="signPost" x="416" y="256" name="inst_929BEC20" locked="0" code="signText = &quot;    Attack me!&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="waterSpout" x="320" y="224" name="inst_72FFF818" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="forestBG" x="96" y="64" name="inst_7AECAD07" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cutsceneManager" x="128" y="64" name="inst_8CBB7577" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
