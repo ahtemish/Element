@@ -100,40 +100,21 @@ alarm[1] = room_speed * 2;
 }  else {
     move_towards_point(pointX, pointY, 4);
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="Player">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>effectiveDamage = 15;
-if (Player.earthAbility)
-    effectiveDamage *= 0.35;
-else if (Player.waterAbility)
-    effectiveDamage /= 1.5;
-else if (Player.airAbility)
-    effectiveDamage *= 2;
-if(!Player.inv) {
-    audio_play_sound(snd_playerDamaged, 10, false);
-    Player.health -= effectiveDamage;
-    Player.inv = true;
-    Player.alarm[7] = room_speed * (1/2);
+
+if (place_meeting(x, y, Player)) {
+    effectiveDamage = 15;
+    if (Player.earthAbility)
+        effectiveDamage *= 0.35;
+    else if (Player.waterAbility)
+        effectiveDamage /= 1.5;
+    else if (Player.airAbility)
+        effectiveDamage *= 2;
+    if(!Player.inv) {
+        audio_play_sound(snd_playerDamaged, 10, false);
+        Player.health -= effectiveDamage;
+        Player.inv = true;
+        Player.alarm[7] = room_speed * (1/2);
+    }
 }
 </string>
           </argument>

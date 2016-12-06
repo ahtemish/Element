@@ -21,7 +21,8 @@ if (!boulderMove) {
         if (place_meeting(x - effectiveSpeed, y, terrain) && earthAbility) {
             climbThis = instance_place(x - effectiveSpeed, y, terrain);
             x = climbThis.x + climbThis.sprite_width;
-            y -= 90 / room_speed;
+            if (!place_meeting(x, y - 4, terrain))
+                y -= 150 / room_speed;
             ladder = true;
             runLeft = false;
         } else {

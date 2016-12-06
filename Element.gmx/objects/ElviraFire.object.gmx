@@ -302,6 +302,8 @@ if(instanceHealth &lt;= 0) {
         global.ElviraFirstDefeated = true;
         cutsceneManager.textNum = 0;
         Player.hasWater = true;
+        with (fireShieldLeft) instance_destroy();
+        with (fireShieldRight) instance_destroy();
         instance_change(elementalEnemyDead, true);
     }
 }

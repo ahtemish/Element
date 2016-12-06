@@ -92,7 +92,8 @@ instance_deactivate_object(falseTrapDoor);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_message("Congratulations! You've completed the Element beta!");
+            <string>/// Beat the game
+show_message("Congratulations! You've completed the Element beta!");
 </string>
           </argument>
         </arguments>
@@ -747,7 +748,7 @@ if(!cutscene &amp;&amp; !dead &amp;&amp; !flung) {
             waterJump = 9;
         }
     }
-    if (ladder) {
+    /*if (ladder) {
         if (place_meeting(x - 1, y, terrain) || place_meeting(x + sprite_width, y, terrain)) { 
             y -= 90 / room_speed;
         } else if (place_meeting(x - 1, y + 90 / room_speed, terrain)) {
@@ -757,7 +758,7 @@ if(!cutscene &amp;&amp; !dead &amp;&amp; !flung) {
             x += 1;
             ladder = false;
         }
-    }
+    }*/
 }
 </string>
           </argument>
@@ -1215,9 +1216,9 @@ if (initial) {
     initial = false;
 } else {
     dead = false;
-    health = global.roomStartHealth;
     x = global.roomStartX;
     y = global.roomStartY;
+    health = global.roomStartHealth;
     hasWater = global.roomStartHasWater;
     hasAir = global.roomStartHasAir;
     hasEarth = global.roomStartHasEarth;
@@ -1251,6 +1252,44 @@ if (initial) {
         earthAbility = true;
     else
         fireAbility = true;
+    
+    if (airAbility) {
+        standLeft = standLeftAir_spr;
+        walkLeft = walkLeftAir_spr;
+        punchLeft = attackLeftAir_spr;
+        dieLeft = dieLeftAir_spr;
+        standRight = standRightAir_spr;
+        walkRight = walkRightAir_spr;
+        punchRight = attackRightAir_spr;
+        dieRight = dieRightAir_spr;
+    } else if (earthAbility) {
+        standLeft = standLeftEarth_spr;
+        walkLeft = walkLeftEarth_spr;
+        punchLeft = attackLeftEarth_spr;
+        dieLeft = dieLeftEarth_spr;
+        standRight = standRightEarth_spr;
+        walkRight = walkRightEarth_spr;
+        punchRight = attackRightEarth_spr;
+        dieRight = dieRightEarth_spr;
+    } else if (waterAbility) {
+        standLeft = standLeftWater_spr;
+        walkLeft = walkLeftWater_spr;
+        punchLeft = attackLeftWater_spr;
+        dieLeft = dieLeftWater_spr;
+        standRight = standRightWater_spr;
+        walkRight = walkRightWater_spr;
+        punchRight = attackRightWater_spr;
+        dieRight = dieRightWater_spr;
+    } else if (fireAbility) {
+        standLeft = standLeftFire_spr;
+        walkLeft = walkLeftFire_spr;
+        punchLeft = attackLeftFire_spr;
+        dieLeft = dieLeftFire_spr;
+        standRight = standRightFire_spr;
+        walkRight = walkRightFire_spr;
+        punchRight = attackRightFire_spr;
+        dieRight = dieRightFire_spr;
+    }
 }
 
 if (room = global.lastRoom)

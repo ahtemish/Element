@@ -761,8 +761,8 @@
       <room>rooms\DeepEarth3</room>
       <room>rooms\DeepEarth4</room>
     </rooms>
-    <room>rooms\prototypeLevel</room>
     <room>rooms\winRoom</room>
+    <room>rooms\prototypeLevel</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

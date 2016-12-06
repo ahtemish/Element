@@ -27,9 +27,9 @@
             <kind>1</kind>
             <string>/// Set health and heal rate
 
-initialHealth = 10;
+initialHealth = 40;
 initial = true;
-healRate = 0.1;
+healRate = 0.3;
 image_speed = 8 / room_speed;
 
 gameStarted = false;

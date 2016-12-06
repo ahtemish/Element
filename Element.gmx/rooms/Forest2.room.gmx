@@ -1491,14 +1491,12 @@
     <instance objName="groundDirt" x="6048" y="576" name="inst_D2A3D808" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundDirt" x="6080" y="576" name="inst_FD2B3D95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundDirt" x="6112" y="576" name="inst_EB27D87D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="4768" y="640" name="inst_8D758408" locked="0" code="enemyType = &quot;boar&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="4480" y="640" name="inst_542BBDBA" locked="0" code="enemyType = &quot;boar&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="elementalEnemy" x="4032" y="640" name="inst_383DBDF0" locked="0" code="enemyType = &quot;boar&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="elementalEnemy" x="4384" y="640" name="inst_383DBDF0" locked="0" code="enemyType = &quot;boar&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="elementalEnemy" x="4480" y="288" name="inst_0E215D97" locked="0" code="enemyType = &quot;bear&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="elementalEnemy" x="3840" y="320" name="inst_7D52C92C" locked="0" code="enemyType = &quot;dog&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="elementalEnemy" x="3584" y="320" name="inst_D7C153EC" locked="0" code="enemyType = &quot;dog&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="elementalEnemy" x="4544" y="288" name="inst_6D7996AA" locked="0" code="enemyType = &quot;dog&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="waterSpout" x="2944" y="352" name="inst_6C83FDF6" locked="0" code="initialHealth = 15;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="waterSpout" x="2944" y="352" name="inst_6C83FDF6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundSlopeRight" x="2976" y="416" name="inst_B9239D19" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="groundSlopeLeft" x="2944" y="416" name="inst_8FC26671" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="treeStump" x="1184" y="448" name="inst_30421738" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

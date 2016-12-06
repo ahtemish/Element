@@ -155,9 +155,6 @@ attackType = irandom(8);
 
 if (!dead) {
     alarm[3] = room_speed * (16/30);
-    /*if(hitByWater &amp;&amp; !waterAbility) {
-        alarm[3] *= 2;
-    }*/
     if(left) {
         sprite_index = standLeft;
     } else {
@@ -496,20 +493,20 @@ if(!dead) {
             
         if (!attack) {
             if (fireAbility) {
-                if (attackType &lt; 4) {
-                    image_index = 0;
+                if (attackType &lt; 4 &amp;&amp; left) {
+                        image_index = 0;
                 
-                    destinationX = Player.x;
-                    attack = true;
+                        destinationX = Player.x;
+                        attack = true;
                     
-                    nextTongue = instance_create(x, y + 16, geckoTongue);
-                    nextTongue.destinationX = destinationX;
-                    nextTongue.damage = whipDamage;
+                        nextTongue = instance_create(x, y + 16, geckoTongue);
+                        nextTongue.destinationX = destinationX;
+                        nextTongue.damage = whipDamage;
                     
-                    if (left)
-                        sprite_index = tongueAttackLeft;
-                    else
-                        sprite_index = tongueAttackRight;
+                        if (left)
+                            sprite_index = tongueAttackLeft;
+                        else
+                            sprite_index = tongueAttackRight;
                 } else {
                     image_index = 0;
                  
@@ -517,32 +514,19 @@ if(!dead) {
                     
                     effectiveDamage = fireballDamage;
                     
-                    if(Player.earthAbility &amp;&amp; !earthAbility) {
+                    if(Player.earthAbility)
                         effectiveDamage *= 0.7;
-                    }
-                    if (airAbility) {
-                        if (Player.fireAbility || Player.earthAbility) {
-                            effectiveDamage /= 2;
-                        }
-                    } else if (waterAbility) {
-                        if (Player.fireAbility) {
-                            effectiveDamage *= 2;
-                        }
-                    } else if (fireAbility) {
-                        if (Player.earthAbility) {
-                            effectiveDamage /= 2;
-                        } else if (Player.waterAbility){
-                            effectiveDamage /= 1.5;
-                        } else if (Player.airAbility) {
-                            effectiveDamage *= 2;
-                        }
-                    }
+                    if (Player.earthAbility)
+                        effectiveDamage /= 2;
+                    else if (Player.waterAbility)
+                        effectiveDamage /= 1.5;
+                    else if (Player.airAbility)
+                        effectiveDamage *= 2;
                     
-                    if (left) {
-                        enFireball = instance_create(x, y, fireball);
-                    } else {
-                        enFireball = instance_create(x + sprite_width, y, fireball);
-                    }
+                    if (left)
+                        enFireball = instance_create(x - 16, y + 12, fireball);
+                    else
+                        enFireball = instance_create(x + sprite_width + 2, y + 12, fireball);
                     enFireball.firedBy = enemy;
                     enFireball.damage = effectiveDamage;
                     attack = true;
@@ -554,7 +538,7 @@ if(!dead) {
                         sprite_index = attackRight;
                 }
             } else {
-                if (Player.x &lt; 1152 || attackType &lt; 3 &amp;&amp; Player.x &lt; x) {
+                if (Player.x &lt; 1152 || attackType &lt; 3 &amp;&amp; left) {
                     image_index = 0;
                 
                     destinationX = Player.x;

@@ -28,7 +28,7 @@
             <string>/// Initial values
 
 initial = true;
-enemyType = "Dragon";
+enemyType = "dragon";
 
 gameStarted = false;
 phase1 = true;
@@ -156,8 +156,6 @@ if (!dead) {
     if(place_meeting(x, y, fireball)) {
         conFireball = instance_place(x, y, fireball);
         if(conFireball.firedBy = Player) {
-            instanceHealth -= 3;
-            hitByFireball = true;
             with(conFireball) {
                 instance_destroy();
             }

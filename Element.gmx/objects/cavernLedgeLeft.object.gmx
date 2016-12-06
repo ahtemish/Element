@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>cavernDirt</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>cavernDirt_spr</maskName>
   <events/>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
